@@ -12,6 +12,16 @@ children:
             label       : Your credentials
             required    : true
             events      : ["keyup"] # Only subscribe for keyup
+        - select:
+            name: options
+            options:
+              - label: One
+                value: 1
+              - label: Two
+                value: 2
+                selected: true
+              - label: Three
+                value: 3
         - input:
             type        : password
             name        : password

@@ -18,12 +18,14 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
     @default =
       events:
         input   : ["keyup", "keypress"]
+        select  : ["change"]
         button  : ["touch"]
     super
 
   value: ->
     properties = {}
     properties[input.attributes.name] = input.value() for input in @input
+    properties[select.attributes.name] = select.value() for select in @select
     properties
 
   inputKeypress: (event, atom) =>
@@ -35,3 +37,7 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
   buttonTouch: (event, atom) =>
     event.preventDefault()
     @trigger "submit", event, atom
+
+  selectChange: (event, atom) =>
+    event.preventDefault()
+    @trigger "change", event, atom
