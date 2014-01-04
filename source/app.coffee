@@ -5,3 +5,5 @@ Atoms.App =
   Modal   : {}
   Section : {}
   Template: {}
+
+  Url: null

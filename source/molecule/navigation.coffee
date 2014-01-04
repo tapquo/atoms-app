@@ -34,7 +34,7 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
 
     path = atom.attributes.path
     if path is "aside"
-      Atoms.Url.aside()
+      Atoms.App.Url.aside()
     else if path is "back"
       Atoms.Url.back()
     else if path?
