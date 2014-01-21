@@ -25,7 +25,7 @@ class Atoms.Molecule.Confirm extends Atoms.Molecule.Modal
   constructor: ->
     super
     navigation = new Atoms.Molecule.Navigation
-      parent: @article.children("footer")
+      parent: @el.find("footer")
       events: ["select"]
       children: [
         button: text: @attributes.accept, action: "accept"
@@ -35,5 +35,5 @@ class Atoms.Molecule.Confirm extends Atoms.Molecule.Modal
     navigation.bind "select", @navigationSelect
 
   navigationSelect: (event, atom) =>
-    @trigger atom.action
+    @trigger atom.attributes.action
     @hide()
