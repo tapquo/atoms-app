@@ -12,9 +12,9 @@ class Atoms.Organism.Aside extends Atoms.Class.Organism
 
   @template = """<aside></aside>"""
 
-  constructor: (@attributes)->
+  constructor: (attributes = {})->
     attributes.method = "prepend"
-    super
+    super attributes
     Atoms.App.Aside[@constructor.name] = @
 
   render: ->
