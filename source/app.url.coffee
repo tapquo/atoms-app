@@ -17,7 +17,7 @@ Atoms.App.Url = do (a = Atoms) ->
 
   # Private
   _onChangeArticleSection = (properties) ->
-    article = a.App.Article[a.Core.Helper.className(properties.article)]
+    article = a.App.Article[properties.article.toClassName()]
 
     unless article.el then article.render()
     setTimeout ->

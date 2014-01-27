@@ -37,6 +37,7 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
   buttonTouch: (event, atom) =>
     event.preventDefault()
     @trigger "submit", event, atom
+    @bubble "submit", event
 
   selectChange: (event, atom) =>
     event.preventDefault()

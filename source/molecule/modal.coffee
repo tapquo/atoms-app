@@ -16,10 +16,8 @@ class Atoms.Molecule.Modal extends Atoms.Class.Molecule
     </div>"""
 
   constructor: (@attributes={}) ->
-    @attributes.parent = document.body
     super @attributes
     @article = @el.children("article")
-    # @TODO: Test in QuoJS
     @article.bind Atoms.Core.Constants.ANIMATION.END, @onAnimationEnd
     Atoms.App.Modal[@constructor.name] = @
 
