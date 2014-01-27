@@ -1,7 +1,7 @@
 nav
   // line-height: 1rem
 
-  body > article section &, body > article footer &
+  [data-atoms="app"] > article section &, [data-atoms="app"] > article footer &
     width: 100%
     display-box()
     box-pack(justify)
@@ -13,16 +13,16 @@ nav
       width: 1px
       margin: 0
 
-  section & > button
+  [data-atoms="app"] section & > button
     height:  HEADER_HEIGHT
 
-  body > article footer & > button
+  [data-atoms="app"] > article footer & > button
     height:  FOOTER_HEIGHT
     font-size: (FONT_SIZE_NORMAL * 2.25)
 
 
 
-  aside section &
+  [data-atoms="app"] aside section &
     & > a
       display: block
       line-height: HEADER_HEIGHT
