@@ -15,3 +15,5 @@ class Atoms.Atom.Link extends Atoms.Class.Atom
       {{#if.icon}}<span class="icon {{icon}}"></span>{{/if.icon}}
       {{#if.text}}{{text}}{{/if.text}}
     </a>"""
+
+  @base = "Link"

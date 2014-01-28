@@ -1,4 +1,15 @@
+###
+@TODO
+
+@namespace Atoms.Atom
+@class Select
+
+@author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+###
+"use strict"
+
 class Atoms.Atom.Select extends Atoms.Class.Atom
+
   @template = """
     <select name="{{name}}">
       {{#options}}
@@ -7,5 +18,6 @@ class Atoms.Atom.Select extends Atoms.Class.Atom
     </select>
   """
 
+  @base = "Select"
   value: (value) ->
     if value? then @el.val value else @el.val()

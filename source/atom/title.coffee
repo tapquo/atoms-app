@@ -15,3 +15,5 @@ class Atoms.Atom.Title extends Atoms.Class.Atom
       {{#if.image}}<img src="image" />{{/if.image}}
       {{#if.text}}{{text}}{{/if.text}}
     </h1>"""
+
+  @base = "Title"

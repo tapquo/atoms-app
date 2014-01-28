@@ -13,6 +13,8 @@ class Atoms.Atom.Input extends Atoms.Class.Atom
   @template = """
     <input type="{{type}}" name="{{name}}" placeholder="{{placeholder}}" class="{{style}}" {{#if.value}}value="{{value}}"{{/if.value}} {{#required}}required{{/required}} />"""
 
+  @base = "Input"
+
   value: (value) ->
     if value? then @el.val value else @el.val()
 

@@ -15,3 +15,5 @@ class Atoms.Atom.Button extends Atoms.Class.Atom
       {{#if.icon}}<span class="icon {{icon}}"></span>{{/if.icon}}
       {{#if.text}}<abbr>{{text}}</abbr>{{/if.text}}
     </button>"""
+
+  @base = "Button"

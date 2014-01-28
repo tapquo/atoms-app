@@ -16,3 +16,6 @@ class Atoms.Atom.Label extends Atoms.Class.Atom
       {{text}}
       {{#if.count}}<strong>{{count}}</strong>{{/if.count}}
     </label>"""
+
+
+  @base = "Label"
