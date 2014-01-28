@@ -12,10 +12,6 @@ class Atoms.Molecule.List extends Atoms.Class.Molecule
 
   @template = """<ul></ul>"""
 
-  constructor: ->
-    super
-    @entity @attributes.entity if @attributes.entity
-
   # Publics
   filter: -> @
 
