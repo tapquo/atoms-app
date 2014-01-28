@@ -1,0 +1,33 @@
+[data-atoms="app"] li
+
+  list-style-type: none
+  position: relative
+  text-align: -webkit-match-parent
+  line-height: inherit
+
+[data-atom=lithumbnail]
+
+  border-bottom: solid 1px #ccc
+  display-box()
+  box-orient(horizontal)
+
+  padding: PADDING
+
+  > figure
+    width: 44px
+    height: 44px
+    margin-right:  PADDING
+
+  > div
+    box-flex(1)
+
+    span
+      float: right
+      font-size: FONT_SIZE_TINY
+
+    strong, small
+      display: block
+      line-height: 1.4rem
+
+    small
+      font-size: FONT_SIZE_SMALL
