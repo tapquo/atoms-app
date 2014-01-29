@@ -19,7 +19,7 @@ class Atoms.Organism.Header extends Atoms.Class.Organism
 
 class Atoms.Organism.Section extends Atoms.Class.Organism
   @template = """
-    <section {{#if.id}}id="{{id}}"{{/if.id}}></section>
+    <section {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></section>
   """
   constructor: ->
     super
