@@ -10,9 +10,7 @@ HTML5 API History Wrapper
 
 Atoms.App.Url = do (a = Atoms) ->
 
-
   _article = undefined
-
   _options = Atoms.Url.options
 
   # Private
