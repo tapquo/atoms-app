@@ -19,13 +19,10 @@ class Atoms.Molecule.Search extends Atoms.Class.Molecule
   constructor: ->
     @default =
       children: [
-        input: type: "search", placeholder: "Type your search..."
+        input: type: "search", placeholder: "Type your search...", events: ["keyup"]
       ,
-        button: text: "Go!"
+        button: text: "Go!", events: ["touch"]
       ]
-      events:
-        input: ["keyup"]
-        button: ["touch"]
     super
 
   inputKeyup: (event, atom) =>

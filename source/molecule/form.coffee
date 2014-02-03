@@ -15,11 +15,6 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
   available: ["label", "input", "textarea", "select", "button"]
 
   constructor: ->
-    @default =
-      events:
-        input   : ["keyup", "keypress"]
-        select  : ["change"]
-        button  : ["touch"]
     super
 
   value: ->
@@ -28,17 +23,17 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
     properties[select.attributes.name] = select.value() for select in @select
     properties
 
-  inputKeypress: (event, atom) =>
-    @trigger "keypress", event.keyCode, atom
+  bubbleInputKeypress: (event, atom) =>
+    @bubble "keypress", event.keyCode
 
-  inputKeyup: (event, atom) =>
-    @trigger "keyup", event.keyCode, atom
+  bubbleInputKeyup: (event, atom) =>
+    @bubble "keyup", event.keyCode
 
-  buttonTouch: (event, atom) =>
+  bubbleButtonTouch: (event, atom) =>
     event.preventDefault()
-    @trigger "submit", event, atom
     @bubble "submit", event
+    false
 
-  selectChange: (event, atom) =>
+  bubbleSelectChange: (event, atom) =>
     event.preventDefault()
-    @trigger "change", event, atom
+    @bubble "change", event

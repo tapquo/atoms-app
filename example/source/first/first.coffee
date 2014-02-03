@@ -11,8 +11,6 @@ class First extends Atoms.Organism.Article
 
   render: ->
     super
-    new Atoms.App.Section.Form  parent: @, "source/first/form.yml"
-
     list = new Atoms.Molecule.ListContacts
       parent    : @
       container : @el.find("section#list") # "section#list"
@@ -33,8 +31,27 @@ class First extends Atoms.Organism.Article
     console.log ">>> bubble", atom, atom.attributes.entity
     # atom.entity.updateAttributes text: "Hello", description: "UPDATED!",
 
+  # Form events
+  bubbleFormKeyup: (event, form, hierarchy...) ->
+    console.info "ku", event, form, hierarchy
+
+  bubbleFormKeypress: (event, form, hierarchy...) ->
+    console.info "kp", event, form, hierarchy
+
+  bubbleSelectChange: (event, form, hierarchy...) ->
+    console.info "bubbleSelectChange", event, form, hierarchy
+
+  bubbleFormChange: (event, form, hierarchy...) ->
+    console.info "bubbleFormChange", event, form, hierarchy
+
   bubbleFormSubmit: (event, form, hierarchy...) ->
-    console.info "<article> bubbleFormSubmit", form.value()
+    console.info "submit", event, form.value()
+
+  _modalShow: () ->
+    Atoms.App.Modal.Loading.show()
+    setTimeout ->
+      Atoms.App.Modal.Loading.hide()
+    , 850
 
 first = new First()
 
@@ -48,5 +65,3 @@ class Atoms.Entity.Contact extends Atoms.Class.Entity
     date        : @when
     text        : @name
     description : @description
-
-

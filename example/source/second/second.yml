@@ -16,3 +16,28 @@ children:
               - button:
                   icon: forward
                   path: third/one
+
+  - Organism.Section:
+      id: "main"
+      children:
+        - Atom.Button:
+            id    : este
+            style: fluid
+            icon: search
+            text: Find your friends
+            events: []
+
+        - Molecule.Navigation:
+            children:
+              - button:
+                  style: accept
+                  icon: checkmark
+                  path: third/one
+                  events: ["touch", "hold"]
+                  action: [null, "delete"]
+
+              - button:
+                  style: cancel
+                  icon: checkmark
+                  events: ["touch"]
+                  action: ["add"]

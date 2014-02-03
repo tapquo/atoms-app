@@ -12,30 +12,19 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
 
   @template = """<nav class="{{style}}"></nav>"""
 
-  available: ["button", "link"]
+  available: ["button"]
 
-  constructor: ->
-    @default =
-      events:
-        link:   ["touch"]
-        button: ["touch"]
-    super
-
-  linkTouch: (event, atom) =>
-    @_trigger event, atom
-
-  buttonTouch: (event, atom) =>
-    @_trigger event, atom
-
-  _trigger: (event, atom) ->
-    event.preventDefault()
+  bubbleButtonTouch: (event, atom) =>
     atom.el.addClass("active").siblings().removeClass("active")
-    @trigger "select", event, atom
+
+    @bubble "select", event if "select" in @attributes.events?
 
     path = atom.attributes.path
-    if path is "aside"
-      Atoms.App.Url.aside()
-    else if path is "back"
-      Atoms.Url.back()
-    else if path?
-      Atoms.Url.path path
+    if path
+      if path is "aside"
+        Atoms.App.Url.aside()
+      else if path is "back"
+        Atoms.Url.back()
+      else if path?
+        Atoms.Url.path path
+      false
