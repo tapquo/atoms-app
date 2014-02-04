@@ -28,12 +28,12 @@ class Atoms.Molecule.Confirm extends Atoms.Molecule.Modal
       parent    : @
       container : @el.find("footer")
       children  : [
-        button: text: @attributes.accept, action: "accept"
+        "Atom.Button": text: @attributes.accept, action: "accept"
       ,
-        button: text: @attributes.cancel, action: "cancel"
+        "Atom.Button": text: @attributes.cancel, action: "cancel"
       ]
 
-  bubbleButtonTouch: (event, atom) ->
+  onButtonTouch: (event, atom) ->
     @trigger atom.attributes.action
     @hide()
     false

@@ -7,13 +7,13 @@ children:
         - Molecule.Navigation:
             style: left
             children:
-              - button:
+              - Atom.Button:
                   icon: back
                   path: "back"
         - Molecule.Navigation:
             style: right
             children:
-              - button:
+              - Atom.Button:
                   icon: forward
                   path: third/one
 
@@ -21,23 +21,18 @@ children:
       id: "main"
       children:
         - Atom.Button:
-            id    : este
-            style: fluid
-            icon: search
-            text: Find your friends
-            events: []
+            style     : fluid
+            icon      : search
+            text      : Find your friends
+            events    : ["hold", "touch"]
+            callbacks : ["onFindFriends", "onFindFriends"]
 
         - Molecule.Navigation:
             children:
-              - button:
+              - Atom.Button:
                   style: accept
-                  icon: checkmark
+                  icon : checkmark
                   path: third/one
-                  events: ["touch", "hold"]
-                  action: [null, "delete"]
-
-              - button:
+              - Atom.Button:
                   style: cancel
                   icon: checkmark
-                  events: ["touch"]
-                  action: ["add"]

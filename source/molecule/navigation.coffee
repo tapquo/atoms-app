@@ -12,9 +12,9 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
 
   @template = """<nav class="{{style}}"></nav>"""
 
-  available: ["button"]
+  available: ["Atom.Button"]
 
-  bubbleButtonTouch: (event, atom) =>
+  onButtonTouch: (event, atom) =>
     atom.el.addClass("active").siblings().removeClass("active")
 
     @bubble "select", event if "select" in @attributes.events?

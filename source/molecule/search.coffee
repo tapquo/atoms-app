@@ -14,14 +14,14 @@ class Atoms.Molecule.Search extends Atoms.Class.Molecule
     <fieldset></fieldset>
   """
 
-  available: ["input", "button"]
+  available: ["Atom.Input", "Atom.Button"]
 
   constructor: ->
     @default =
       children: [
-        input: type: "search", placeholder: "Type your search...", events: ["keyup"]
+        "Atom.Input": type: "search", placeholder: "Type your search...", events: ["keyup"]
       ,
-        button: text: "Go!", events: ["touch"]
+        "Atom.Button": icon: "Search", events: ["touch"]
       ]
     super
 

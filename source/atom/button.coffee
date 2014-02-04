@@ -19,6 +19,6 @@ class Atoms.Atom.Button extends Atoms.Class.Atom
   @base = "Button"
 
   constructor: (attributes) ->
-    attributes.events = attributes.events or []
-    unless "touch" in attributes.events then attributes.events.push "touch"
-    super attributes
+    @default =
+      events: ["touch"]
+    super

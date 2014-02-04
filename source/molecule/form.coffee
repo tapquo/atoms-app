@@ -12,28 +12,28 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
 
   @template = """<form {{#if.style}}style="{{style}}"{{/if.style}}></form>"""
 
-  available: ["label", "input", "textarea", "select", "button"]
+  available: ["Atom.Label", "Atom.Input", "Atom.Textarea", "Atom.Select", "Atom.Button"]
 
   constructor: ->
     super
 
   value: ->
     properties = {}
-    properties[input.attributes.name] = input.value() for input in @input
-    properties[select.attributes.name] = select.value() for select in @select
+    for child in @children when child.value?
+      properties[child.attributes.name] = child.value()
     properties
 
-  bubbleInputKeypress: (event, atom) =>
-    @bubble "keypress", event.keyCode
+  onInputKeypress: (event, atom) =>
+    @bubble "keypress", event
 
-  bubbleInputKeyup: (event, atom) =>
-    @bubble "keyup", event.keyCode
+  onInputKeyup: (event, atom) =>
+    @bubble "keyup", event
 
-  bubbleButtonTouch: (event, atom) =>
+  onButtonTouch: (event, atom) =>
     event.preventDefault()
     @bubble "submit", event
     false
 
-  bubbleSelectChange: (event, atom) =>
+  onSelectChange: (event, atom) =>
     event.preventDefault()
     @bubble "change", event

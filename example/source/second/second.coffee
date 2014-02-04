@@ -11,8 +11,7 @@ class Second extends Atoms.Organism.Article
   deleteButtonTouch: (event) ->
     @
 
-  bubbleButtonTouch: (event, dispatcher, hierarchy...)->
-    console.log "argynebts", event, dispatcher.attributes.id
+  onFindFriends: (event, dispatcher, hierarchy...) ->
     modal = new Atoms.Molecule.Confirm
       icon    : "search"
       title   : "Find your friends"
@@ -23,13 +22,14 @@ class Second extends Atoms.Organism.Article
     modal.bind "accept", @acceptConfirm
     modal.bind "cancel", @cancelConfirm
 
+  onButtonTouch: (event, dispatcher, hierarchy...)->
+    console.log "onButtonTouch"
+
   acceptConfirm: ->
     console.log "accept"
     Atoms.App.Modal.Loading.show()
 
   cancelConfirm: ->
     console.log "cancel"
-
-
 
 second = new Second()

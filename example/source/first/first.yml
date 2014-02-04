@@ -8,14 +8,14 @@ children:
         - Molecule.Navigation:
             style: left
             children:
-              - button:
+              - Atom.Button:
                   icon: navicon
                   path: aside
         - Molecule.Navigation:
             style: right
             # events: ["select"]
             children:
-              - button:
+              - Atom.Button:
                   icon: forward
                   path: "second/main"
 
@@ -25,16 +25,16 @@ children:
         - Molecule.Form:
             events: ["keyup", "keypress", "submit"]
             children:
-              - label:
+              - Atom.Label:
                   text: General Info
-              - input:
+              - Atom.Input:
                   type        : text
                   name        : name
                   placeholder : Type your name...
                   label       : Your credentials
                   required    : true
                   events      : ["keyup", "keypress", "swipe"] # Only subscribe for keyup
-              - select:
+              - Atom.Select:
                   name: options
                   options:
                     - label: One
@@ -45,27 +45,27 @@ children:
                     - label: Three
                       value: 3
                   events: ["change"]
-              - input:
+              - Atom.Input:
                   type        : password
                   name        : password
                   placeholder : Type your password...
                   events      : ["keyup"]
-              - label:
+              - Atom.Label:
                   text        : Other Information
-              - input:
+              - Atom.Input:
                   type        : email
                   name        : mail
                   placeholder : Type your mail...
-              - input:
+              - Atom.Input:
                   type        : text
                   name        : username
                   style       : big
                   placeholder : Typer your username...
-              - input:
+              - Atom.Input:
                   type        : number
                   name        : years
                   placeholder : Years...
-              - button:
+              - Atom.Button:
                   text        : Save
                   icon        : checkmark
                   style       : accept fluid
@@ -80,9 +80,10 @@ children:
         - Molecule.Search:
             events: ["enter"]
             children:
-              - input:
+              - Atom.Input:
                   placeholder: "Search..."
-
+              - Atom.Button:
+                  icon: search
 
   - Organism.Section:
       id: list
@@ -91,10 +92,10 @@ children:
       children:
         - Molecule.Navigation:
             children:
-              - button:
+              - Atom.Button:
                   style: active
                   icon: archive
                   path: first/form
-              - button:
+              - Atom.Button:
                   icon: clipboard
                   path: first/list

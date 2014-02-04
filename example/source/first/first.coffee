@@ -27,25 +27,25 @@ class First extends Atoms.Organism.Article
   _log: (method, event) -> console.log "article > #{method}", event
 
 
-  bubbleLiTouch: (event, atom) ->
+  onLiTouch: (event, atom) ->
     console.log ">>> bubble", atom, atom.attributes.entity
     # atom.entity.updateAttributes text: "Hello", description: "UPDATED!",
 
   # Form events
-  bubbleFormKeyup: (event, form, hierarchy...) ->
+  onFormKeyup: (event, form, hierarchy...) ->
     console.info "ku", event, form, hierarchy
 
-  bubbleFormKeypress: (event, form, hierarchy...) ->
+  onFormKeypress: (event, form, hierarchy...) ->
     console.info "kp", event, form, hierarchy
 
-  bubbleSelectChange: (event, form, hierarchy...) ->
+  onSelectChange: (event, form, hierarchy...) ->
     console.info "bubbleSelectChange", event, form, hierarchy
 
-  bubbleFormChange: (event, form, hierarchy...) ->
+  onFormChange: (event, form, hierarchy...) ->
     console.info "bubbleFormChange", event, form, hierarchy
 
-  bubbleFormSubmit: (event, form, hierarchy...) ->
-    console.info "submit", event, form.value()
+  onFormSubmit: (event, form, hierarchy...) ->
+    console.info "submit", form.value()
 
   _modalShow: () ->
     Atoms.App.Modal.Loading.show()
