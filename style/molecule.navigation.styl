@@ -13,12 +13,18 @@ nav
       width: 1px
       margin: 0
 
+  [data-atoms="app"] header &
+    height:  HEADER_HEIGHT
+    min-width: HEADER_HEIGHT
+
   [data-atoms="app"] section & > button
     height:  HEADER_HEIGHT
 
-  [data-atoms="app"] > article footer & > button
+  [data-atoms="app"] > article footer &
     height:  FOOTER_HEIGHT
-    font-size: (FONT_SIZE_NORMAL * 2.25)
+    & > button
+      height:  FOOTER_HEIGHT
+      font-size: (FONT_SIZE_NORMAL * 2.25)
 
 
 
