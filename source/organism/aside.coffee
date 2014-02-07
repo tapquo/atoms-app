@@ -10,7 +10,9 @@
 
 class Atoms.Organism.Aside extends Atoms.Class.Organism
 
-  @template = """<aside style="{{style}}"></aside>"""
+  @template : """<aside {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></aside>"""
+
+  @available: ["Organism.Header", "Organism.Section", "Organism.Footer"]
 
   constructor: (attributes = {})->
     attributes.method = "prepend"

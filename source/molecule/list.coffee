@@ -10,7 +10,11 @@ Base for lists
 
 class Atoms.Molecule.List extends Atoms.Class.Molecule
 
-  @template = """<ul></ul>"""
+  @template : """<ul {{#if.style}}class="{{style}}"{{/if.style}}></ul>"""
+
+  @available: ["Atom.Li"]
+
+  @base : "List"
 
   # Publics
   filter: -> @

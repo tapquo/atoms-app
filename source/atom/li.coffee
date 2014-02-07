@@ -10,7 +10,7 @@
 
 class Atoms.Atom.Li extends Atoms.Class.Atom
 
-  @template = """
+  @template : """
     <li class="{{style}}">
       {{#if.image}}
       <figure style="background-image: {{image}}"></figure>
@@ -28,4 +28,4 @@ class Atoms.Atom.Li extends Atoms.Class.Atom
       </div>
     </li>"""
 
-  @base = "Li"
+  @base : "Li"

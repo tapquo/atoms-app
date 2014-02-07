@@ -10,11 +10,11 @@ Basic fieldset for search
 
 class Atoms.Molecule.Search extends Atoms.Class.Molecule
 
-  @template = """
-    <fieldset></fieldset>
-  """
+  @template : """<fieldset {{#if.style}}class="{{style}}"{{/if.style}}></fieldset>"""
 
-  available: ["Atom.Input", "Atom.Button"]
+  @available: ["Atom.Input", "Atom.Button"]
+
+  @base : "Search"
 
   constructor: ->
     @default =

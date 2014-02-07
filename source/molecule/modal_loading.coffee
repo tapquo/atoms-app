@@ -10,8 +10,8 @@ Base class for Organism
 
 class Atoms.Molecule.Loading extends Atoms.Molecule.Modal
 
-  @template = """
-    <div data-component="modal" class="loading">
+  @template : """
+    <div data-component="modal" class="loading {{#if.style}}{{style}}{{/if.style}}">
       <article></article>
     </div>"""
 

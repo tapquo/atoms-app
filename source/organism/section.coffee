@@ -2,34 +2,20 @@
 Basic fieldset for search
 
 @namespace Atoms.Organism
-@class Header, Section, Footer
+@class Section
 
 @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
 ###
 "use strict"
 
-class Atoms.Organism.Header extends Atoms.Class.Organism
-  @template = """
-    <header></header>
-  """
-  constructor: ->
-    super
-    @render()
-
-
 class Atoms.Organism.Section extends Atoms.Class.Organism
-  @template = """
+
+  @template : """
     <section {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></section>
   """
-  constructor: ->
-    super
-    @render()
 
+  @available: ["Molecule.Form", "Molecule.Navigation", "Molecule.List", "Atom.Button"]
 
-class Atoms.Organism.Footer extends Atoms.Class.Organism
-  @template = """
-    <footer></footer>
-  """
   constructor: ->
     super
     @render()

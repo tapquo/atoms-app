@@ -10,8 +10,8 @@ Base class for Organism
 
 class Atoms.Molecule.Confirm extends Atoms.Molecule.Modal
 
-  @template = """
-    <div data-component="modal" class="confirm">
+  @template : """
+    <div data-component="modal" class="confirm {{#if.style}}{{style}}{{/if.style}}">
       <article>
         <header>
           {{#if.icon}}<span class="icon {{icon}}"></span>{{/if.icon}}

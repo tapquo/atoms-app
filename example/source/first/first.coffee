@@ -11,15 +11,12 @@ class First extends Atoms.Organism.Article
 
   render: ->
     super
-    list = new Atoms.Molecule.ListContacts
-      parent    : @
-      container : @el.find("section#list") # "section#list"
-
+    list =  @children[2].instance "Molecule", "ListContacts"
     # Example of Async Process Render
     Atoms.Entity.Contact.create name: "@soyjavi", description: "Test", url: "sjsjjs"
-    Atoms.Entity.Contact.create name: "@piniphone", description: "Test 2", when: new Date()
+    Atoms.Entity.Contact.create name: "@piniphone", description: "Test 2", when: "10/04/1980"
     Atoms.Entity.Contact.create name: "@tapquo"
-
+    # Entity
     list.entityAtom "Li"
     list.entity Atoms.Entity.Contact.all()
 

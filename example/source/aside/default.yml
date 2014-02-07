@@ -7,7 +7,7 @@ children:
         - Molecule.Navigation:
             style: right
             children:
-              - button:
+              - Atom.Button:
                   icon: navicon
                   path: "second/main"
 
@@ -16,16 +16,16 @@ children:
       children:
         - Molecule.Navigation:
             children:
-              - link:
+              - Atom.Link:
                   style: active
                   icon: archive
                   text: Sample
                   path: first/form
-              - link:
+              - Atom.Link:
                   icon: clipboard
                   text: sample 2
                   path: first/list
-              - button:
+              - Atom.Button:
                   text: Button sample
         - Atom.Button:
             text: "Add Contact"

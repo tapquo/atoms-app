@@ -10,9 +10,11 @@ Basic fieldset for search
 
 class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
 
-  @template = """<nav class="{{style}}"></nav>"""
+  @template : """<nav {{#if.style}}class="{{style}}"{{/if.style}}></nav>"""
 
-  available: ["Atom.Button"]
+  @available: ["Atom.Button", "Atom.Link"]
+
+  @base : "Navigation"
 
   onButtonTouch: (event, atom) =>
     atom.el.addClass("active").siblings().removeClass("active")

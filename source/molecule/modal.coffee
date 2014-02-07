@@ -10,10 +10,12 @@ Base for Modals
 
 class Atoms.Molecule.Modal extends Atoms.Class.Molecule
 
-  @template = """
-    <div data-component="modal">
+  @template : """
+    <div data-component="modal" {{#if.style}}class="{{style}}"{{/if.style}}">
       <article></article>
     </div>"""
+
+  @base : "Modal"
 
   constructor: (@attributes={}) ->
     super @attributes

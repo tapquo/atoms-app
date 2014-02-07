@@ -10,7 +10,7 @@
 
 class Atoms.Atom.Select extends Atoms.Class.Atom
 
-  @template = """
+  @template : """
     <select name="{{name}}">
       {{#options}}
         <option value="{{value}}" {{#selected}}selected{{/selected}}>{{label}}</option>
@@ -18,6 +18,7 @@ class Atoms.Atom.Select extends Atoms.Class.Atom
     </select>
   """
 
-  @base = "Select"
+  @base : "Select"
+
   value: (value) ->
     if value? then @el.val value else @el.val()

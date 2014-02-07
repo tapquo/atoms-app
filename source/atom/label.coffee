@@ -10,12 +10,11 @@
 
 class Atoms.Atom.Label extends Atoms.Class.Atom
 
-  @template = """
+  @template : """
     <label {{#if.style}}class="{{style}}"{{/if.style}}>
       {{#if.icon}}<span class="icon {{icon}}"></span>{{/if.icon}}
       {{text}}
       {{#if.count}}<strong>{{count}}</strong>{{/if.count}}
     </label>"""
 
-
-  @base = "Label"
+  @base : "Label"
