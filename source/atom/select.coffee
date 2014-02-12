@@ -13,12 +13,16 @@ class Atoms.Atom.Select extends Atoms.Class.Atom
   @template : """
     <select name="{{name}}">
       {{#options}}
-        <option value="{{value}}" {{#selected}}selected{{/selected}}>{{label}}</option>
+        <option value="{{value}}">{{label}}</option>
       {{/options}}
     </select>
   """
 
   @base : "Select"
+
+  constructor: (attributes) ->
+    super attributes
+    @value attributes.value if attributes.value?
 
   value: (value) ->
     if value? then @el.val value else @el.val()
