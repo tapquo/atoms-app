@@ -16,6 +16,10 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
 
   @base : "Navigation"
 
+  constructor: (attributes={}) ->
+    @default = style: "left"
+    super attributes
+
   onButtonTouch: (event, atom) =>
     atom.el.addClass("active").siblings().removeClass("active")
 
