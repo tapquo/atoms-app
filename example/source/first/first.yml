@@ -21,6 +21,7 @@ children:
 
   - Organism.Section:
       id: form
+      style: padding
       children:
         - Molecule.Form:
             events: ["keyup", "keypress", "submit"]
