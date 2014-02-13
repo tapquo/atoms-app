@@ -19,9 +19,12 @@ nav
         color: WHITE !important
 
   [data-atoms="app"] footer & button
-    color: lighten(DARK, 50%)
+    color: lighten(DARK, 35%)
+    text-shadow: 0 .1rem darken(DARK, 12.5%)
     &:active, &:hover, &.active
       color: WHITE
+    &.active
+      background-color: darken(DARK, 25%)
 
 
 

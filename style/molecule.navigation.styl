@@ -8,25 +8,24 @@ nav
     & > button
       box-flex(1)
       display: block
-      padding: 0
-      text-align: center
-      width: 1px
       margin: 0
+      padding: 0
+      width: 1px
+      text-align: center
 
   [data-atoms="app"] header &
     height:  HEADER_HEIGHT
-    min-width: HEADER_HEIGHT
+    min-width: (HEADER_HEIGHT * 0.75)
 
-  [data-atoms="app"] section & > button
-    height:  HEADER_HEIGHT
+  [data-atoms="app"] section &
+    &, > button
+      height:  HEADER_HEIGHT
 
   [data-atoms="app"] > article footer &
     height:  FOOTER_HEIGHT
     & > button
       height:  FOOTER_HEIGHT
-      font-size: (FONT_SIZE_NORMAL * 2.25)
-
-
+      font-size: (FONT_SIZE_NORMAL * 1.5)
 
   [data-atoms="app"] aside section &
     & > a
