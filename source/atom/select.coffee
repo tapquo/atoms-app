@@ -11,7 +11,7 @@
 class Atoms.Atom.Select extends Atoms.Class.Atom
 
   @template : """
-    <select name="{{name}}">
+    <select name="{{name}}" {{#if.style}}class="{{style}}"{{/if.style}}>
       {{#options}}
         <option value="{{value}}">{{label}}</option>
       {{/options}}

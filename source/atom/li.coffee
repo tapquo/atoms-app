@@ -11,7 +11,7 @@
 class Atoms.Atom.Li extends Atoms.Class.Atom
 
   @template : """
-    <li class="{{style}}">
+    <li {{#if.style}}class="{{style}}"{{/if.style}}>
       {{#if.image}}
       <figure style="background-image: {{image}}"></figure>
       {{/if.image}}
