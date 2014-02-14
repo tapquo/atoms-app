@@ -1,0 +1,27 @@
+###
+@TODO
+
+@namespace Atoms.Atom
+@class Textarea
+
+@author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+###
+"use strict"
+
+class Atoms.Atom.Textarea extends Atoms.Class.Atom
+
+  @template : """
+    <textarea name="{{name}}" placeholder="{{placeholder}}" {{#if.style}}class="{{style}}"{{/if.style}}  {{#required}}required{{/required}}>
+      {{#if.value}}{{value}}{{/if.value}}
+    </textarea>"""
+
+  @base : "Textarea"
+
+  value: (value) ->
+    if value? then @el.val value else @el.val()
+
+  error: (value) ->
+    if value?
+      @el.addClass "error"
+    else
+      @el.removeClass "error"

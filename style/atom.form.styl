@@ -15,6 +15,7 @@
         position: absolute
         right: 1px
 
+  /* -------------------------- DEFAULTS -------------------------- */
   input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
     display: inline-block
     width: 100%
@@ -41,3 +42,24 @@
     &.tiny
       padding: 0.35rem 0.75rem
       font-size: FONT_SIZE_TINY
+
+  /* -------------------------- TEXTAREA -------------------------- */
+  textarea
+    min-height: 5em
+    line-height: FONT_SIZE_BIG
+
+  /* -------------------------- RANGE -------------------------- */
+  & input[type="range"]
+    height: .2rem
+    width: 100%
+    margin: 1.5em 0
+    padding: 0
+    border: none
+    -webkit-appearance: none
+    outline: none
+    &::-webkit-slider-thumb
+      position: relative
+      width: SIZE = 1.5rem
+      height: SIZE
+      -webkit-appearance: none
+      border: none

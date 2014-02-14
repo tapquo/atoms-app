@@ -33,3 +33,16 @@
       color: FORM_COLOR
     &:-ms-input-placeholder
       color: FORM_COLOR
+
+
+  /* -------------------------- RANGE -------------------------- */
+  & input[type=range]
+    background-color: FORM_COLOR
+    border-radius: (BORDER_RADIUS / 2)
+    &:hover, &:active
+      background-color: THEME !important
+    &::-webkit-slider-thumb
+      border-radius: 50%
+      background-color: lighten(FORM_COLOR, 95%)
+      border: 1px solid FORM_COLOR
+      // box-shadow: 0 1px 4px hsla(0, 0%,0%,.15)
