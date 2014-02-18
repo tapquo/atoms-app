@@ -21,7 +21,9 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
     super
 
   onButtonTouch: (event, atom) =>
-    atom.el.addClass("active").siblings().removeClass("active")
+    # atom.el.addClass("active").siblings().removeClass("active")
+    $$(atom.el[0].parentNode).find("[data-atom=button]").removeClass("active")
+    atom.el.addClass("active")
     @bubble "select", event if @attributes.events? and "select" in @attributes.events
 
     path = atom.attributes.path
