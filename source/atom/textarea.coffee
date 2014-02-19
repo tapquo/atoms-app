@@ -11,9 +11,7 @@
 class Atoms.Atom.Textarea extends Atoms.Class.Atom
 
   @template : """
-    <textarea name="{{name}}" placeholder="{{placeholder}}" {{#if.style}}class="{{style}}"{{/if.style}}  {{#required}}required{{/required}}>
-      {{#if.value}}{{value}}{{/if.value}}
-    </textarea>"""
+    <textarea name="{{name}}" {{#if.placeholder}}placeholder="{{placeholder}}"{{/if.placeholder}} {{#if.style}}class="{{style}}"{{/if.style}}  {{#required}}required{{/required}}>{{#if.value}}{{value}}{{/if.value}}</textarea>"""
 
   @base : "Textarea"
 
