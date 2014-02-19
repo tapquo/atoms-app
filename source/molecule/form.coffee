@@ -12,7 +12,7 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
 
   @template : """<form {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}style="{{style}}"{{/if.style}}></form>"""
 
-  @available: ["Atom.Label", "Atom.Input", "Atom.Textarea", "Atom.Select", "Atom.Button"]
+  @available: ["Atom.Label", "Atom.Input", "Atom.Textarea", "Atom.Select", "Atom.Switch", "Atom.Button"]
 
   @base : "Form"
 
@@ -37,5 +37,9 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
     false
 
   onSelectChange: (event, atom) =>
+    event.preventDefault()
+    @bubble "change", event
+
+  onSwitchChange: (event, atom) =>
     event.preventDefault()
     @bubble "change", event
