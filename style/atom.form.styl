@@ -15,6 +15,12 @@
         position: absolute
         right: 1px
 
+  input, select
+    -webkit-appearance: none
+    -webkit-user-select: text
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+    outline: none
+
   /* -------------------------- DEFAULTS -------------------------- */
   input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
     display: inline-block
@@ -23,11 +29,7 @@
     padding: 0.65rem 0.75rem
     font-family: inherit
     font-size: FONT_SIZE_NORMAL
-    outline: none
     border: none
-    -webkit-appearance: none
-    -webkit-user-select: text
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
     box-sizing border-box
 
     &:focus
@@ -46,7 +48,7 @@
   /* -------------------------- TEXTAREA -------------------------- */
   textarea
     min-height: 5em
-    line-height: FONT_SIZE_BIG
+    // line-height: FONT_SIZE_BIG
 
   /* -------------------------- RANGE -------------------------- */
   & input[type="range"]
@@ -59,7 +61,29 @@
     outline: none
     &::-webkit-slider-thumb
       position: relative
-      width: SIZE = 1.5rem
-      height: SIZE
+      width: FORM_CIRCLE_HEIGHT
+      height: FORM_CIRCLE_HEIGHT
       -webkit-appearance: none
       border: none
+
+  /* -------------------------- CHECKBOX -------------------------- */
+  & input[type="checkbox"]
+      position: relative
+      height: (FORM_CIRCLE_HEIGHT + 2)
+      width: (FORM_CIRCLE_HEIGHT * 2)
+      cursor: pointer
+      transition all 300ms 150ms
+
+      &:after
+        content: ''
+        display: block
+        left: 0
+        top: 0
+        width: FORM_CIRCLE_HEIGHT
+        height: FORM_CIRCLE_HEIGHT
+        position: absolute
+        transition left 150ms
+
+      &:checked
+        &:after
+          left: (FORM_CIRCLE_HEIGHT - 2)

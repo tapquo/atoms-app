@@ -31,10 +31,12 @@
       color: FORM_COLOR
     &::-moz-placeholder
       color: FORM_COLOR
-    &:-ms-input-placeholder
+    &::-ms-input-placeholder
       color: FORM_COLOR
 
 
+  CIRCLE_BORDER = 1px solid FORM_COLOR
+  CIRCLE_BACKGROUND = lighten(FORM_COLOR, 95%)
   /* -------------------------- RANGE -------------------------- */
   & input[type=range]
     background-color: FORM_COLOR
@@ -43,6 +45,21 @@
       background-color: THEME !important
     &::-webkit-slider-thumb
       border-radius: 50%
-      background-color: lighten(FORM_COLOR, 95%)
-      border: 1px solid FORM_COLOR
-      // box-shadow: 0 1px 4px hsla(0, 0%,0%,.15)
+      background-color: CIRCLE_BACKGROUND
+      border: CIRCLE_BORDER
+
+  /* -------------------------- CHECKBOX -------------------------- */
+  & input[type=checkbox]
+    border: 1px solid FORM_COLOR
+    border-radius: RADIUS = 1rem
+    background-color: lighten(FORM_COLOR, 30%)
+    &:after
+      background-color: CIRCLE_BACKGROUND
+      border: CIRCLE_BORDER
+      border-radius: RADIUS
+    &:checked
+      COLOR = THEME
+      border-color: darken(THEME, 10%)
+      background-color: THEME
+      &:after
+        border-color: SUCCESS
