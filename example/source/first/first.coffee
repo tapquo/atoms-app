@@ -44,6 +44,9 @@ class First extends Atoms.Organism.Article
   onFormSubmit: (event, form, hierarchy...) ->
     console.info "submit", form.value()
 
+  onSwitchChange: (event, atom) ->
+    console.log "change??", atom.value()
+
   _modalShow: () ->
     Atoms.App.Modal.Loading.show()
     setTimeout ->

@@ -37,12 +37,12 @@ children:
                   events      : ["keyup", "keypress", "swipe"] # Only subscribe for keyup
               - Atom.Select:
                   name: options
+                  value: 3
                   options:
                     - label: One
                       value: 1
                     - label: Two
                       value: 2
-                      selected: true
                     - label: Three
                       value: 3
                   events: ["change"]
@@ -58,14 +58,28 @@ children:
                   name        : mail
                   placeholder : Type your mail...
               - Atom.Input:
-                  type        : text
-                  name        : username
+                  type        : search
+                  name        : Search...
                   style       : big
                   placeholder : Typer your username...
               - Atom.Input:
                   type        : number
                   name        : years
                   placeholder : Years...
+              - Atom.Input:
+                  type        : range
+                  name        : years
+                  placeholder : Years...
+              - Atom.Switch:
+                  name        : onoff
+                  value       : true
+                  events      : ["change"]
+              - Atom.Switch:
+                  name        : onoff2
+                  value       : false
+                  events      : ["touch"]
+              - Atom.Textarea:
+                  placeholder : Text...
               - Atom.Button:
                   text        : Save
                   icon        : checkmark
