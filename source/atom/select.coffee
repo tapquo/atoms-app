@@ -20,9 +20,9 @@ class Atoms.Atom.Select extends Atoms.Class.Atom
 
   @base : "Select"
 
-  constructor: (attributes) ->
-    super attributes
-    @value attributes.value if attributes.value?
+  constructor: ->
+    super
+    @value @attributes.value if @attributes.value?
 
   value: (value) ->
     if value? then @el.val value else @el.val()
