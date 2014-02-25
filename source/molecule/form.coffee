@@ -40,8 +40,10 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
         required = false
       else
         child.el.removeClass "error"
-    @bubble "submit", event if required
-    false
+
+    if required and @attributes.events? and "submit" in @attributes.events
+      @bubble "submit", event if required
+      false
 
   onSelectChange: (event, atom) =>
     event.preventDefault()
