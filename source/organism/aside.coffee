@@ -14,6 +14,8 @@ class Atoms.Organism.Aside extends Atoms.Class.Organism
 
   @available: ["Organism.Header", "Organism.Section", "Organism.Footer"]
 
+  @base : "Aside"
+
   constructor: (attributes = {})->
     attributes.method = "prepend"
     super attributes

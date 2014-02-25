@@ -12,7 +12,9 @@ class Atoms.Organism.Header extends Atoms.Class.Organism
 
   @template : """<header {{#if.style}}class="{{style}}"{{/if.style}}></header>"""
 
-  @available: ["Atom.Title", "Molecule.Navigation"]
+  @available: ["Atom.Title", "Atom.Icon", "Molecule.Navigation"]
+
+  @base : "Header"
 
   constructor: ->
     super

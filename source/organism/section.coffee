@@ -16,6 +16,8 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
 
   @available: ["Molecule.Form", "Molecule.Navigation", "Molecule.List", "Atom.Button"]
 
+  @base : "Section"
+
   constructor: ->
     super
     @render()

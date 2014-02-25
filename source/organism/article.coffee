@@ -14,13 +14,16 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   @available : ["Organism.Header", "Organism.Section", "Organism.Footer"]
 
+  @base : "Article"
+
   constructor: ->
     super
     Atoms.App.Article[@constructor.name] = @
 
   render: ->
     super
-    @el.bind Atoms.Core.Constants.ANIMATION.END, @_onAnimationEnd
+    for animation_end in Atoms.Core.Constants.ANIMATION.END.split " "
+      @el.bind animation_end, @onAnimationEnd
 
   in: ->
    @state "in"
@@ -51,7 +54,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
       @state if state is "aside-in" then "aside-out" else "aside-in"
     , 0
 
-  _onAnimationEnd: (event) =>
+  onAnimationEnd: (event) =>
     state = @el.attr "data-state"
     @trigger state
     if state in ["in", "back-out"]
