@@ -1,4 +1,4 @@
-[data-atoms="app"] [data-component="modal"]
+[data-system=modal]
   position: absolute
   top: 0
   left: 0
@@ -9,12 +9,28 @@
   box-align(center)
   box-pack(center)
 
-  &:not(.loading) > article
-    width: MODAL_WIDTH
-    text-align: center
+  & > [data-organism]
     transform translate3d(0,0,0)
 
+  & > [data-organism=loading]
+    padding: PADDING
+    &::before, &::after
+      content: ""
+      display: block
+      width: SIZE = (PADDING * 2)
+      height: SIZE
+    &::before
+      float: left
+      margin-right: (PADDING / 2)
+    &::after
+      float: right
+      margin-left: (PADDING / 2)
+
+  & > :not([data-organism=loading])
+    width: MODAL_WIDTH
+    text-align: center
     & > header
+      margin-bottom: PADDING
       & > *
         display: block
         padding-top: 1rem
@@ -25,26 +41,15 @@
         & + h1
           padding-top: 0
 
+    & > section
+      margin: 0 PADDING
+
     & > footer
+      margin-top: PADDING
       & > nav
-        margin: 0 1em
+        margin: 0 PADDING
         font-size: FONT_SIZE_BIG
         & > button
           line-height: (FONT_SIZE_BIG * 2.75)
           width: 100%
           display: block
-
-  &.loading
-    & > article
-      padding: AIR = .75rem
-      &::before, &::after
-        content: ""
-        display: block
-        width: SIZE = (AIR * 2)
-        height: SIZE
-      &::before
-        float: left
-        margin-right: (AIR / 2)
-      &::after
-        float: right
-        margin-left: (AIR / 2)

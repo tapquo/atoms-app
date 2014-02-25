@@ -1,22 +1,9 @@
-[data-atoms="app"] [data-component="modal"]
+[data-system=modal]
   visibility: hidden
-  &:not(.loading) > article
-    background: BACKGROUND
-    & > header
-      color: darken(BACKGROUND, 60%)
-    & > section
-      color: darken(BACKGROUND, 40%)
-    & > footer
-      background: lighten(BACKGROUND, 25%)
-      & > nav
-        & > button
-          &:not(:last-child)
-            border-bottom: solid 1px darken(BACKGROUND, 5%)
-
   &.active
     visibility: visible
-    background-color: rgba(0,0,0,0.25)
-    & > article
+    background-color: rgba(0,0,0,0.5)
+    & > [data-organism]
       backface-visibility hidden
       vendor(animation-duration, ANIMATION_DURATION)
       vendor(animation-timing-function, ANIMATION_EASE)
@@ -30,19 +17,32 @@
         vendor(animation-fill-mode, forwards)
 
 
-  &.loading
-    & > article
-      background: darken(DARK, 50%)
-      border-radius: 1rem
-      &::before, &::after
-        background-color: WHITE
-        border-radius: 50%
-      &.show
-        SPEED = ANIMATION_DURATION * 1.4
-        &::before
-          animation loading-dots SPEED 0 steps(ANIMATION_STEPS) infinite
-        &::after
-          animation loading-dots SPEED (SPEED / 2) steps(ANIMATION_STEPS) infinite
+  & > :not([data-organism=loading])
+      background: BACKGROUND
+      & > header
+        color: darken(BACKGROUND, 60%)
+      & > section
+        color: darken(BACKGROUND, 40%)
+      & > footer
+        background: lighten(BACKGROUND, 25%)
+        & > nav
+          & > button
+            &:not(:last-child)
+              border-bottom: solid 1px darken(BACKGROUND, 5%)
+
+
+  & > [data-organism=loading]
+    background: darken(DARK, 50%)
+    border-radius: 1rem
+    &::before, &::after
+      background-color: WHITE
+      border-radius: 50%
+    &.show
+      SPEED = ANIMATION_DURATION * 1.4
+      &::before
+        animation modal-loading SPEED 0 steps(ANIMATION_STEPS) infinite
+      &::after
+        animation modal-loading SPEED (SPEED / 2) steps(ANIMATION_STEPS) infinite
 
 
 @keyframes modal-show
@@ -57,7 +57,7 @@
   100%
     transform: translateY(0)
 
-@keyframes loading-dots
+@keyframes modal-loading
   0%
     opacity: 1
     transform scale(1)
