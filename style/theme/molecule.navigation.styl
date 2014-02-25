@@ -1,8 +1,8 @@
 nav
-  [data-atoms="app"] article header & button
+  [data-atoms="app"] > article header & button
     color: lighten(THEME, 75%)
 
-  [data-atoms="app"] aside section &
+  [data-atoms="app"] > aside section &
     & a
       font-weight: normal
       &:not(.active)
@@ -11,14 +11,14 @@ nav
         color: WHITE
 
 
-  [data-atoms="app"] aside header & button
+  [data-atoms="app"] > aside header & button
     color: lighten(DARK, 75%)
 
-  [data-atoms="app"] header & button
+  [data-atoms="app"] > article header & button
     &:hover, &:active, &.active
         color: WHITE !important
 
-  [data-atoms="app"] footer & button
+  [data-atoms="app"] > article footer & button
     color: lighten(DARK, 35%)
     text-shadow: 0 .1rem darken(DARK, 12.5%)
     &:active, &:hover, &.active
