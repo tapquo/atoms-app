@@ -19,13 +19,21 @@ children:
 
   - Organism.Section:
       id: "main"
+      style: "padding"
       children:
         - Atom.Button:
-            style     : fluid
+            style     : fluid margin-bottom
             icon      : search
-            text      : Find your friends
+            text      : Confirm
             events    : ["hold", "touch"]
-            callbacks : ["onFindFriends", "onFindFriends"]
+            callbacks : ["onConfirm", "onConfirm"]
+
+        - Atom.Button:
+            style     : fluid margin-bottom
+            icon      : search
+            text      : Form
+            events    : ["touch"]
+            callbacks : ["onForm", "onForm"]
 
         - Molecule.Navigation:
             children:
