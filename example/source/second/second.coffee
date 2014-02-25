@@ -12,19 +12,12 @@ class Second extends Atoms.Organism.Article
     @
 
   onConfirm: (event, dispatcher, hierarchy...) ->
-    modal = new Atoms.Molecule.Confirm
-      icon    : "search"
-      title   : "Find your friends"
-      text    : "lorem ipsum"
-      accept  : "Yes"
-      cancel  : "No"
-    modal.show()
-    modal.bind "accept", @acceptConfirm
-    modal.bind "cancel", @cancelConfirm
+    new ModalConfirm() unless Atoms.App.Modal.ModalConfirm?
+    Atoms.App.Modal.ModalConfirm.show()
 
   onForm: (event, dispatcher, hierarchy...) ->
-    new Window() unless Atoms.App.Modal.Window?
-    Atoms.App.Modal.Window.show()
+    new ModalForm() unless Atoms.App.Modal.ModalForm?
+    Atoms.App.Modal.ModalForm.show()
 
   onButtonTouch: (event, dispatcher, hierarchy...)->
     console.log "onButtonTouch"
@@ -41,31 +34,45 @@ class Second extends Atoms.Organism.Article
 second = new Second()
 
 
-
-class Window extends Atoms.Organism.Modal
+class ModalConfirm extends Atoms.Organism.Modal
 
   constructor: (attributes = {}) ->
     attributes.children = [
       "Organism.Header": children: [
         "Atom.Icon": icon: "help"
-        "Atom.Title": text: "Send"
-      ]
-    ,
-      "Organism.Section": children: [
-        "Molecule.Form": children: [
-          "Atom.Input": type: "text"
-        ,
-          "Atom.Input": type: "password"
-        ,
-          "Atom.Button": style: "fluid accept big", text: "Cancel", callbacks: ["onCancel"]
-        ]
+        "Atom.Title": text: "Send email?"
       ]
     ,
       "Organism.Footer": children: [
         "Molecule.Navigation": children: [
-          "Atom.Button": text: "Accept", callbacks: ["onAccept"]
+          "Atom.Button": text: "Accept"
         ,
-          "Atom.Button": text: "Cancel", callbacks: ["onCancel"]
+          "Atom.Button": text: "Cancel"
+        ]
+      ]
+    ]
+    super attributes
+
+  onButtonTouch: ->
+    @hide()
+
+
+
+class ModalForm extends Atoms.Organism.Modal
+
+  constructor: (attributes = {}) ->
+    attributes.children = [
+      "Organism.Header": children: [
+        "Atom.Title": text: "Fill Form"
+      ]
+    ,
+      "Organism.Section": children: [
+        "Molecule.Form": children: [
+          "Atom.Input": type: "text", placeholder: "..."
+        ,
+          "Atom.Textarea": placeholder: "..."
+        ,
+          "Atom.Button": style: "fluid accept big", text: "Cancel", callbacks: ["onCancel"]
         ]
       ]
     ]
