@@ -11,9 +11,15 @@
 class Atoms.Atom.Title extends Atoms.Class.Atom
 
   @template : """
-    <h1 {{#if.style}}class="{{style}}"{{/if.style}}>
+    <{{size}} {{#if.style}}class="{{style}}"{{/if.style}}>
       {{#if.image}}<img src="image" />{{/if.image}}
       {{#if.text}}{{text}}{{/if.text}}
-    </h1>"""
+    </{{size}}>"""
 
   @base : "Title"
+
+  constructor: ->
+    @default =
+      size: "h1"
+
+    super
