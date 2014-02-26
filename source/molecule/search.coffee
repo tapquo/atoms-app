@@ -21,7 +21,7 @@ class Atoms.Molecule.Search extends Atoms.Class.Molecule
       children: [
         "Atom.Input": type: "search", placeholder: "Type your search...", events: ["keyup"]
       ,
-        "Atom.Button": icon: "Search", events: ["touch"]
+        "Atom.Button": icon: "Search"
       ]
     super
 
@@ -34,4 +34,4 @@ class Atoms.Molecule.Search extends Atoms.Class.Molecule
 
   _search: (event, atom) ->
     value = @input[0].el.val()
-    @trigger "enter", value, atom if value isnt ""
+    @bubble "enter", value, atom if value isnt ""
