@@ -6,8 +6,10 @@
   vendor(animation-timing-function, ANIMATION_EASE)
   &.active
     &[data-state="in"]
+      z-index: 0
       vendor(animation-name, aside-in)
     &[data-state="out"]
+      z-index: -1
       vendor(animation-name, aside-in)
       vendor(animation-direction, reverse)
       vendor(animation-fill-mode, forwards)
@@ -16,7 +18,7 @@
     background-color: darken(DARK, 10%)
 
 
-TRANSLATE = -50%
+TRANSLATE = -25%
 @keyframes aside-in
   0%
     transform: translateX(TRANSLATE)

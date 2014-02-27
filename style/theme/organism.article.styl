@@ -4,26 +4,27 @@
 
   vendor(animation-duration, ANIMATION_DURATION)
   vendor(animation-timing-function, ANIMATION_EASE)
-  // vendor(animation-timing-function, steps(1, start))
   &.active
+    &.aside
+      left: ASIDE_WIDTH
+
     &[data-state="in"]
-      z-index: 1
+      z-index: 2
       vendor(animation-name, article-in)
     &[data-state="out"]
-      z-index: 1
+      z-index: 2
       vendor(animation-name, article-in)
       vendor(animation-direction, reverse)
       vendor(animation-fill-mode, forwards)
     &[data-state="back-in"]
-      z-index: 0
+      z-index: 1
       vendor(animation-name, article-out)
     &[data-state="back-out"]
-      z-index: 0
+      z-index: 1
       vendor(animation-delay, 1)
       vendor(animation-name, article-out)
       vendor(animation-direction, reverse)
       vendor(animation-fill-mode, forwards)
-
     &[data-state="aside-in"]
       vendor(animation-name, article-aside)
       vendor(animation-fill-mode, forwards)

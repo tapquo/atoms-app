@@ -45,14 +45,10 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     @aside() if @el.attr("data-state") is "aside-in"
 
   aside: ->
-    state = @el.attr("data-state")
-    if @attributes.aside?
-      method = (if state? then "out" else "in")
-      do Atoms.App.Aside[@attributes.aside][method]
-    @el.removeAttr("data-state")
-    setTimeout =>
-      @state if state is "aside-in" then "aside-out" else "aside-in"
-    , 0
+    method = if @el.hasClass "aside" then "out" else "in"
+    if @attributes.aside? then do Atoms.App.Aside[@attributes.aside][method]
+    if method is "out" then @el.removeClass "aside"
+    @state "aside-#{method}"
 
   onAnimationEnd: (event) =>
     state = @el.attr "data-state"
@@ -61,6 +57,9 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
       @trigger "active"
     else if state in ["out", "back-in"]
       @trigger "inactive"
-    @el.removeAttr "data-state" unless state in ["aside-in"]
 
-    unless state in ["in", "back-out", "aside-in", "aside-out"] then @el.removeClass "active"
+    unless state in ["in", "back-out", "aside-in", "aside-out"] then @el.removeClass("active")
+    if state is "aside-in" then @el.addClass "aside"
+
+    @el.removeAttr "data-state"
+

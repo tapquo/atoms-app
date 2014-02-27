@@ -23,7 +23,8 @@ class Atoms.Organism.Aside extends Atoms.Class.Organism
 
   render: ->
     super
-    @el.bind Atoms.Core.Constants.ANIMATION.END, @_onAnimationEnd
+    for animation_end in Atoms.Core.Constants.ANIMATION.END.split " "
+      @el.bind animation_end, @onAnimationEnd
 
   in: ->
     unless @el then @render()
@@ -33,7 +34,7 @@ class Atoms.Organism.Aside extends Atoms.Class.Organism
   out: ->
     if @el?.hasClass "active" then @el.attr "data-state", "out"
 
-  _onAnimationEnd: (event) =>
+  onAnimationEnd: (event) =>
     state = @el.attr "data-state"
     @trigger state
     @el.removeAttr "data-state"
