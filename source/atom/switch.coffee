@@ -2,7 +2,7 @@
 @TODO
 
 @namespace Atoms.Atom
-@class Checkbox
+@class Switch
 
 @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
 ###
