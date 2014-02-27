@@ -14,7 +14,7 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
     <section {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></section>
   """
 
-  @available: ["Molecule.Form", "Molecule.Navigation", "Molecule.List", "Molecule.Search", "Atom.Button"]
+  @available: ["Molecule.Form", "Molecule.Navigation", "Molecule.List", "Molecule.Search", "Atom.Button", "Atom.Title", "Atom.Label"]
 
   @base : "Section"
 
