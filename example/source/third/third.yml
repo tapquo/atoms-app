@@ -2,7 +2,7 @@ id: "section"
 children:
   - Organism.Header:
       children:
-        - Atom.Title:
+        - Atom.Heading:
             text: "Third"
         - Molecule.Navigation:
             style: left
@@ -16,26 +16,26 @@ children:
       id: "one"
       class: "active"
       children:
-        - Atom.Title:
+        - Atom.Label:
             text: "section.one"
 
   - Organism.Section:
       id: "two"
       children:
-        - Atom.Title:
+        - Atom.Label:
             text: "section.two"
 
   - Organism.Section:
       id: "three"
       title: "three"
       children:
-        - Atom.Title:
+        - Atom.Label:
             text: "section.three"
 
   - Organism.Section:
       id: "four"
       children:
-        - Atom.Title:
+        - Atom.Label:
             text: "section.four"
 
   - Organism.Footer:

@@ -2,13 +2,13 @@
 @TODO
 
 @namespace Atoms.Atom
-@class Label
+@class Heading
 
 @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
 ###
 "use strict"
 
-class Atoms.Atom.Title extends Atoms.Class.Atom
+class Atoms.Atom.Heading extends Atoms.Class.Atom
 
   @template : """
     <{{size}} {{#if.style}}class="{{style}}"{{/if.style}}>
@@ -16,10 +16,8 @@ class Atoms.Atom.Title extends Atoms.Class.Atom
       {{#if.text}}{{text}}{{/if.text}}
     </{{size}}>"""
 
-  @base : "Title"
+  @base : "Heading"
 
   constructor: ->
-    @default =
-      size: "h1"
-
+    @default = size: "h1"
     super

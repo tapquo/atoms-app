@@ -3,7 +3,7 @@ aside: Options
 children:
   - Organism.Header:
       children:
-        - Atom.Title:
+        - Atom.Heading:
             text: Atoms
         - Molecule.Navigation:
             style: left
@@ -23,6 +23,15 @@ children:
       id: form
       style: padding
       children:
+
+        - Molecule.Search:
+            events: ["enter"]
+            children:
+              - Atom.Input:
+                  placeholder: "Search..."
+              - Atom.Button:
+                  icon: search
+
         - Molecule.Form:
             events: ["keyup", "keypress", "submit"]
             children:
@@ -62,6 +71,8 @@ children:
                   name        : Search...
                   style       : big
                   placeholder : Typer your username...
+              - Atom.Textarea:
+                  placeholder : Text...
               - Atom.Input:
                   type        : number
                   name        : years
@@ -78,8 +89,6 @@ children:
                   name        : onoff2
                   value       : false
                   events      : ["touch"]
-              - Atom.Textarea:
-                  placeholder : Text...
               - Atom.Button:
                   text        : Save
                   icon        : checkmark
@@ -92,13 +101,6 @@ children:
             text  : Find your friends
             events: ["touch"]
 
-        - Molecule.Search:
-            events: ["enter"]
-            children:
-              - Atom.Input:
-                  placeholder: "Search..."
-              - Atom.Button:
-                  icon: search
 
   - Organism.Section:
       id: list

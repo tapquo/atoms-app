@@ -5,14 +5,8 @@ class Second extends Atoms.Organism.Article
     super
     console.log "article.second", @
 
-  esteButtonTouch: (event) ->
-    @
-
-  deleteButtonTouch: (event) ->
-    @
-
   onConfirm: (event, dispatcher, hierarchy...) ->
-    new ModalConfirm() unless Atoms.App.Modal.ModalConfirm?
+    new ModalConfirm container: "article#second" unless Atoms.App.Modal.ModalConfirm?
     Atoms.App.Modal.ModalConfirm.show()
 
   onForm: (event, dispatcher, hierarchy...) ->

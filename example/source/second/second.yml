@@ -2,7 +2,7 @@ id: "second"
 children:
   - Organism.Header:
       children:
-        - Atom.Title:
+        - Atom.Heading:
             text: "Second"
         - Molecule.Navigation:
             style: left

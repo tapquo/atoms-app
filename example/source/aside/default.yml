@@ -2,7 +2,7 @@ id: options
 children:
   - Organism.Header:
       children:
-        - Atom.Title:
+        - Atom.Heading:
             text: Options
         - Molecule.Navigation:
             style: right
