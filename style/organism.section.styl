@@ -3,7 +3,7 @@ section
     overflow-x: hidden
     overflow-y: scroll
     -webkit-overflow-scrolling: touch
-    -webkit-box-flex: 1
+    box-flex(1)
 
     &.padding
       padding: .75rem 1rem
@@ -16,10 +16,7 @@ section
 
     /* BUG (iOS) POSITION: relative childrens */
     & > *
-      -webkit-transform: translate3d(0, 0, 0)
-
-  // [data-atoms="app"] article &
-  //   padding: 0.75rem
+      transform translate3d(0,0,0)
 
   [data-atoms="app"] aside &
     padding: 0.5rem 1rem
