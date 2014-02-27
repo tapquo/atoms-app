@@ -6,7 +6,7 @@ class Second extends Atoms.Organism.Article
     console.log "article.second", @
 
   onConfirm: (event, dispatcher, hierarchy...) ->
-    new ModalConfirm container: "article#second" unless Atoms.App.Modal.ModalConfirm?
+    new ModalConfirm() unless Atoms.App.Modal.ModalConfirm?
     Atoms.App.Modal.ModalConfirm.show()
 
   onForm: (event, dispatcher, hierarchy...) ->
