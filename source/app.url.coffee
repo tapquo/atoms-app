@@ -14,9 +14,10 @@ Atoms.App.Url = do (a = Atoms) ->
   _options = Atoms.Url.options
 
   # Private
-  _onChangeArticleSection = (properties) ->
+  _onChangeRoute = (properties) ->
     article = a.App.Article[properties.article.toClassName()]
 
+    console.log ">>>", a.App.Article
     unless article.el then article.render()
     setTimeout ->
       unless _options.forward then _stepHistory 0
@@ -30,7 +31,7 @@ Atoms.App.Url = do (a = Atoms) ->
           _article.state("out")
           article.state("back-out")
         _article = article
-    , 1
+    , 10
 
   _aside = ->
     _article.aside()
@@ -48,6 +49,6 @@ Atoms.App.Url = do (a = Atoms) ->
     window.history.replaceState steps: value
 
   do ->
-    Atoms.Url.listen "/:article/:section", _onChangeArticleSection
+    Atoms.Url.listen "/:article/:section", _onChangeRoute
 
   aside   : _aside
