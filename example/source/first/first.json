@@ -40,6 +40,27 @@
       }
     },
     {
+        "Molecule.Navigation": {
+            "children": [
+                {
+                  "Atom.Button": {
+                    "style": "active",
+                    "text": "form",
+                    "icon": "clipboard",
+                    "path": "first/form"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "text": "list",
+                    "icon": "navicon",
+                    "path": "first/list"
+                  }
+                }
+              ]
+        }
+    },
+    {
       "Organism.Section": {
         "id": "form",
         "style": "padding",

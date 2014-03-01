@@ -1,8 +1,8 @@
 nav
-  [data-atoms="app"] > article header & button
+  [data-atoms="app"] > article > header & button
     color: lighten(THEME, 75%)
 
-  [data-atoms="app"] > aside section &
+  [data-atoms="app"] > aside > section &
     & a
       font-weight: normal
       &:not(.active)
@@ -10,21 +10,24 @@ nav
       &.active
         color: WHITE
 
-
-  [data-atoms="app"] > aside header & button
+  [data-atoms="app"] > aside > header & button
     color: lighten(DARK, 75%)
 
-  [data-atoms="app"] > article header & button
+  [data-atoms="app"] > article > header & button
     &:hover, &:active, &.active
         color: WHITE !important
 
-  [data-atoms="app"] > article footer & button
+  [data-atoms="app"] > article > footer & button, [data-atoms="app"] > article > & button
     color: lighten(DARK, 35%)
-    text-shadow: 0 .1rem darken(DARK, 12.5%)
     &:active, &:hover, &.active
       color: WHITE
+
+  [data-atoms="app"] > article > &
+    background-color: darken(DARK, 25%)
+    > button.active
+      box-shadow: inset 0 -.25rem THEME
+
+  [data-atoms="app"] > article > footer & button
+    text-shadow: 0 .1rem darken(DARK, 12.5%)
     &.active
       background-color: darken(DARK, 25%)
-
-
-

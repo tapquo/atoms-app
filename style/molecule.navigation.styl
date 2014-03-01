@@ -1,7 +1,6 @@
 nav
-  // line-height: 1rem
 
-  [data-atoms="app"] > article section &, [data-atoms="app"] > article footer &
+  [data-atoms="app"] > article section &, [data-atoms="app"] > article footer &, [data-atoms="app"] > article > &
     width: 100%
     display-box()
     box-pack(justify)
@@ -13,23 +12,25 @@ nav
       width: 1px
       text-align: center
 
-  [data-atoms="app"] header &
+  [data-atoms="app"] > * > header &
     height:  HEADER_HEIGHT
     min-width: HEADER_HEIGHT
-    // min-width: (HEADER_HEIGHT * 0.75)
     text-align: center
 
-  [data-atoms="app"] section &
+  [data-atoms="app"] > article > &
+    height: (FOOTER_HEIGHT / 1.3)
+
+  [data-atoms="app"] > * > section &
     &, > button
       height:  HEADER_HEIGHT
 
-  [data-atoms="app"] > article footer &
+  [data-atoms="app"] > article > footer &
     height:  FOOTER_HEIGHT
     & > button
       height:  FOOTER_HEIGHT
       font-size: (FONT_SIZE_NORMAL * 1.5)
 
-  [data-atoms="app"] aside section &
+  [data-atoms="app"] > aside > section &
     & > a
       display: block
       line-height: HEADER_HEIGHT

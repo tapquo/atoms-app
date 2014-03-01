@@ -12,7 +12,7 @@ class Atoms.Organism.Aside extends Atoms.Class.Organism
 
   @template : """<aside {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></aside>"""
 
-  @available: ["Organism.Header", "Organism.Section", "Organism.Footer"]
+  @available: ["Organism.Header", "Organism.Section", "Organism.Footer", "Molecule.Navigation"]
 
   @base : "Aside"
 
