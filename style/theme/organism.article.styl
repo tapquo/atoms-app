@@ -4,6 +4,7 @@
 
   vendor(animation-duration, ANIMATION_DURATION)
   vendor(animation-timing-function, ANIMATION_EASE)
+
   &.active
     &.aside
       left: ASIDE_WIDTH
@@ -11,6 +12,8 @@
     &[data-state="in"]
       z-index: 2
       vendor(animation-name, article-in)
+      &:only-of-type
+        vendor(animation-duration, 0s)
     &[data-state="out"]
       z-index: 2
       vendor(animation-name, article-in)
