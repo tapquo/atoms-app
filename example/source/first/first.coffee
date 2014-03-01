@@ -1,6 +1,6 @@
 class First extends Atoms.Organism.Article
 
-  @scaffold "source/first/first.yml"
+  @scaffold "source/first/first.json"
 
   constructor: ->
     super

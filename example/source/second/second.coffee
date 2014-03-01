@@ -1,5 +1,5 @@
 class Second extends Atoms.Organism.Article
-  @scaffold "source/second/second.yml"
+  @scaffold "source/second/second.json"
 
   constructor: ->
     super

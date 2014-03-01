@@ -1,0 +1,68 @@
+{
+  "id": "options",
+  "children": [
+    {
+      "Organism.Header": {
+        "children": [
+          {
+            "Atom.Heading": {
+              "text": "Options"
+            }
+          },
+          {
+            "Molecule.Navigation": {
+              "style": "right",
+              "children": [
+                {
+                  "Atom.Button": {
+                    "icon": "navicon",
+                    "path": "second/main"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Organism.Section": {
+        "id": "list",
+        "children": [
+          {
+            "Molecule.Navigation": {
+              "children": [
+                {
+                  "Atom.Link": {
+                    "style": "active",
+                    "icon": "archive",
+                    "text": "Sample",
+                    "path": "first/form"
+                  }
+                },
+                {
+                  "Atom.Link": {
+                    "icon": "clipboard",
+                    "text": "sample 2",
+                    "path": "first/list"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "text": "Button sample"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "Atom.Button": {
+              "text": "Add Contact",
+              "style": "fluid accept"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "section",
+  "children": [
+    {
+      "Organism.Header": {
+        "children": [
+          {
+            "Atom.Heading": {
+              "text": "Third"
+            }
+          },
+          {
+            "Molecule.Navigation": {
+              "style": "left",
+              "children": [
+                {
+                  "Atom.Button": {
+                    "icon": "back",
+                    "path": "back"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Organism.Section": {
+        "id": "one",
+        "class": "active",
+        "children": [
+          {
+            "Atom.Label": {
+              "text": "section.one"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Organism.Section": {
+        "id": "two",
+        "children": [
+          {
+            "Atom.Label": {
+              "text": "section.two"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Organism.Section": {
+        "id": "three",
+        "title": "three",
+        "children": [
+          {
+            "Atom.Label": {
+              "text": "section.three"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Organism.Section": {
+        "id": "four",
+        "children": [
+          {
+            "Atom.Label": {
+              "text": "section.four"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Organism.Footer": {
+        "children": [
+          {
+            "Molecule.Navigation": {
+              "children": [
+                {
+                  "Atom.Button": {
+                    "icon": "people",
+                    "style": "active",
+                    "path": "third/one"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "icon": "social-android",
+                    "path": "third/two"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "icon": "coffee",
+                    "path": "third/three"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "icon": "social-twitter",
+                    "path": "third/four"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
