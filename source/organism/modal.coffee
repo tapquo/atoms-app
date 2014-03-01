@@ -16,10 +16,10 @@ class Atoms.Organism.Modal extends Atoms.Class.Organism
 
   @base     : "Modal"
 
-  constructor: (@attributes={}) ->
-    super @attributes
+  constructor: (attributes = {}) ->
+    super attributes
     block_el = Atoms.$(document.createElement("div")).data "system", "modal"
-    Atoms.$(@attributes.container or document.body).append block_el
+    Atoms.$(@attributes.container or document.body).prepend block_el
     @attributes.container = block_el
 
     do @render
