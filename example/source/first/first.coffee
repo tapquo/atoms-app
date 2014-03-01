@@ -11,7 +11,7 @@ class First extends Atoms.Organism.Article
 
   render: ->
     super
-    list =  @children[2].appendChild "Molecule", "ListContacts"
+    list =  @list.appendChild "Molecule", "ListContacts"
     # Example of Async Process Render
     Atoms.Entity.Contact.create name: "@soyjavi", description: "Test", url: "sjsjjs"
     Atoms.Entity.Contact.create name: "@piniphone", description: "Test 2", when: "10/04/1980"
