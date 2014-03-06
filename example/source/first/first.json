@@ -56,6 +56,13 @@
                     "icon": "navicon",
                     "path": "first/list"
                   }
+                },
+                {
+                  "Atom.Button": {
+                    "text": "Map",
+                    "icon": "map",
+                    "path": "first/map"
+                  }
                 }
               ]
         }
@@ -231,6 +238,11 @@
       }
     },
     {
+      "Organism.GMapFullScreen": {
+        "id": "map"
+      }
+    },
+    {
       "Organism.Footer": {
         "children": [
           {
@@ -247,6 +259,12 @@
                   "Atom.Button": {
                     "icon": "clipboard",
                     "path": "first/list"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "icon": "map",
+                    "path": "first/map"
                   }
                 }
               ]
