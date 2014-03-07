@@ -63,6 +63,13 @@
                     "icon": "map",
                     "path": "first/map"
                   }
+                },
+                {
+                  "Atom.Button": {
+                    "text": "Carousel",
+                    "icon": "image",
+                    "path": "first/carousel"
+                  }
                 }
               ]
         }
@@ -243,6 +250,28 @@
       }
     },
     {
+      "Organism.CarouselSection": {
+        "id": "carousel",
+        "children": [
+          {
+            "Atom.CarouselLayer": {
+              "id": "layer1"
+            }
+          },
+          {
+            "Atom.CarouselLayer": {
+              "id": "layer2"
+            }
+          },
+          {
+            "Atom.CarouselLayer": {
+              "id": "layer3"
+            }
+          }
+        ]
+      }
+    },
+    {
       "Organism.Footer": {
         "children": [
           {
@@ -265,6 +294,12 @@
                   "Atom.Button": {
                     "icon": "map",
                     "path": "first/map"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "icon": "image",
+                    "path": "first/carousel"
                   }
                 }
               ]
