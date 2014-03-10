@@ -256,6 +256,7 @@
           {
             "Molecule.Carousel": {
               "id": "carousel_manager",
+              "auto": true,
               "children": [
                 {
                   "Atom.Figure": {
