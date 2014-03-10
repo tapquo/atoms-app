@@ -250,22 +250,44 @@
       }
     },
     {
-      "Organism.CarouselSection": {
+      "Organism.Section": {
         "id": "carousel",
         "children": [
           {
-            "Atom.CarouselLayer": {
-              "id": "layer1"
-            }
-          },
-          {
-            "Atom.CarouselLayer": {
-              "id": "layer2"
-            }
-          },
-          {
-            "Atom.CarouselLayer": {
-              "id": "layer3"
+            "Molecule.Carousel": {
+              "id": "carousel_manager",
+              "children": [
+                {
+                  "Atom.Figure": {
+                    "url": "http://lorempixel.com/400/200/?1"
+                  }
+                },
+                {
+                  "Atom.Figure": {
+                    "url": "http://lorempixel.com/400/200/?2"
+                  }
+                },
+                {
+                  "Atom.Figure": {
+                    "url": "http://lorempixel.com/400/200/?3"
+                  }
+                },
+                {
+                  "Atom.Figure": {
+                    "url": "http://lorempixel.com/400/200/?4"
+                  }
+                },
+                {
+                  "Atom.Figure": {
+                    "url": "http://lorempixel.com/400/200/?5"
+                  }
+                },
+                {
+                  "Atom.Figure": {
+                    "url": "http://lorempixel.com/400/200/?6"
+                  }
+                }
+              ]
             }
           }
         ]
