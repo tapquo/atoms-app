@@ -10,7 +10,7 @@ Basic fieldset for search
 
 class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
 
-  @template : """<nav {{#if.style}}class="{{style}}"{{/if.style}}></nav>"""
+  @template : """<nav {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></nav>"""
 
   @available: ["Atom.Button", "Atom.Link"]
 

@@ -10,7 +10,7 @@ Basic fieldset for search
 
 class Atoms.Molecule.Search extends Atoms.Class.Molecule
 
-  @template : """<fieldset {{#if.style}}class="{{style}}"{{/if.style}}></fieldset>"""
+  @template : """<fieldset {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></fieldset>"""
 
   @available: ["Atom.Input", "Atom.Button"]
 
