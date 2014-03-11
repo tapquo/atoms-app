@@ -21,11 +21,9 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
     super
 
   onButtonTouch: (event, atom) =>
-    # atom.el.addClass("active").siblings().removeClass("active")
-    $$(atom.el[0].parentNode).find("[data-atom=button]").removeClass("active")
-    atom.el.addClass("active")
-    @bubble "select", event if @attributes.events? and "select" in @attributes.events
+    @__activeChild atom
 
+    @bubble "select", event if @attributes.events? and "select" in @attributes.events
     path = atom.attributes.path
     if path
       if path is "aside"
@@ -35,3 +33,14 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
       else if path?
         Atoms.Url.path path
       false
+
+  onArticleNavigation: (event, article, hierarchy...) ->
+    path = Atoms.Url.path().substr(1)
+    for child in @children when child.attributes.path is path
+      @__activeChild child
+      break
+    false
+
+  __activeChild: (atom) ->
+    @el.parent().find("[data-atom=button]").removeClass("active")
+    atom.el.addClass("active")

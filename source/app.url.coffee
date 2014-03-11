@@ -16,8 +16,6 @@ Atoms.App.Url = do (a = Atoms) ->
   # Private
   _onChangeRoute = (properties) ->
     article = a.App.Article[properties.article.toClassName()]
-
-    console.log ">>>", a.App.Article
     unless article.el then article.render()
     setTimeout ->
       unless _options.forward then _stepHistory 0

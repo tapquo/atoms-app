@@ -26,7 +26,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
       @el.bind animation_end, @onAnimationEnd
 
   in: ->
-   @state "in"
+    @state "in"
 
   out: ->
     @state "out"
@@ -41,6 +41,8 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     @el.addClass("active").attr("data-state", name)
 
   section: (id) ->
+    @tunnel "navigation", @
+
     @el.children("##{id}").addClass("active").siblings("section").removeClass("active")
     @aside() if @el.attr("data-state") is "aside-in"
 
@@ -62,4 +64,3 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     if state is "aside-in" then @el.addClass "aside"
 
     @el.removeAttr "data-state"
-
