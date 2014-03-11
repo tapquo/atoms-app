@@ -23,7 +23,6 @@ class Atoms.Organism.Modal extends Atoms.Class.Organism
     @attributes.container = block_el
 
     do @render
-
     for animation_end in Atoms.Core.Constants.ANIMATION.END.split " "
       @el.bind animation_end, @onAnimationEnd
     Atoms.App.Modal[@constructor.name] = @
@@ -35,11 +34,13 @@ class Atoms.Organism.Modal extends Atoms.Class.Organism
     @trigger "show"
 
   hide: ->
-    @el.removeClass("show").addClass("hide")
+    @el.addClass("hide")
     @trigger "hide"
 
   # Privates
   onAnimationEnd: =>
+    if @el.hasClass "show"
+      @el.removeClass "show"
     if @el.hasClass "hide"
-      @el.parent().removeClass "active"
       @el.removeClass "hide"
+      @el.parent().removeClass "active"

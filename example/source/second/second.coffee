@@ -35,13 +35,21 @@ class ModalConfirm extends Atoms.Organism.Modal
     ,
       "Organism.Footer": children: [
         "Molecule.Navigation": children: [
-          "Atom.Button": text: "Accept"
+          "Atom.Button": text: "Accept", callbacks: ["onAccept"]
         ,
           "Atom.Button": text: "Cancel"
         ]
       ]
     ]
     super attributes
+
+  onAccept: ->
+    @hide()
+    Atoms.App.Modal.Loading.show()
+    setTimeout ->
+      Atoms.App.Modal.Loading.hide()
+    , 3000
+    false
 
   onButtonTouch: ->
     @hide()
@@ -67,14 +75,6 @@ class ModalForm extends Atoms.Organism.Modal
       ]
     ]
     super attributes
-
-  onAccept: ->
-    @hide()
-    Atoms.App.Modal.Loading.show()
-    setTimeout ->
-      Atoms.App.Modal.Loading.hide()
-    , 3000
-    false
 
   onCancel:  ->
     @hide()
