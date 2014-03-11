@@ -1,10 +1,6 @@
 class Second extends Atoms.Organism.Article
   @scaffold "source/second/second.json"
 
-  constructor: ->
-    super
-    console.log "article.second", @
-
   onConfirm: (event, dispatcher, hierarchy...) ->
     new ModalConfirm() unless Atoms.App.Modal.ModalConfirm?
     Atoms.App.Modal.ModalConfirm.show()
