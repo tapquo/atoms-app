@@ -11,22 +11,21 @@ class First extends Atoms.Organism.Article
 
   render: ->
     super
-    list =  @list.appendChild "Molecule", "ListContacts"
-    # Example of Async Process Render
-    Atoms.Entity.Contact.create name: "@soyjavi", description: "Test", url: "sjsjjs"
+    # Example of Async Process Render with Entity
+    Atoms.Entity.Contact.create name: "@soyjavi", description: "Test", url: "http://cdn.tapquo.com/photos/soyjavi.jpg"
     Atoms.Entity.Contact.create name: "@piniphone", description: "Test 2", when: "10/04/1980"
     Atoms.Entity.Contact.create name: "@tapquo"
-    # Entity
-    list.entityAtom "Li"
-    list.entity Atoms.Entity.Contact.all()
+    @contacts.list.entity Atoms.Entity.Contact.all()
 
 
   _log: (method, event) -> console.log "article > #{method}", event
 
 
   onLiTouch: (event, atom) ->
-    console.log ">>> bubble", atom, atom.attributes.entity
-    # atom.entity.updateAttributes text: "Hello", description: "UPDATED!",
+    console.log "+ onLiTouch", atom.entity.uid
+    # atom.entity.destroy()
+    atom.entity.updateAttributes name: "Hello", description: "UPDATED!"
+    false
 
   # Form events
   onFormKeyup: (event, form, hierarchy...) ->

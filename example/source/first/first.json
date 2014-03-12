@@ -54,7 +54,7 @@
                   "Atom.Button": {
                     "text": "list",
                     "icon": "navicon",
-                    "path": "first/list"
+                    "path": "first/contacts"
                   }
                 },
                 {
@@ -241,7 +241,16 @@
     },
     {
       "Organism.Section": {
-        "id": "list"
+        "id": "contacts",
+        "children": [
+          {
+            "Molecule.ListContacts": {
+              "id"          : "list",
+              "entityBind"  : "Contact",
+              "entityAtom"  : "Li"
+            }
+          }
+        ]
       }
     },
     {
@@ -310,7 +319,7 @@
                 {
                   "Atom.Button": {
                     "icon": "clipboard",
-                    "path": "first/list"
+                    "path": "first/contacts"
                   }
                 },
                 {
