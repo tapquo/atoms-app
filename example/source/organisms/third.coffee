@@ -1,4 +1,4 @@
 class Third extends Atoms.Organism.Article
-  @scaffold "source/third/third.json"
+  @scaffold "source/organisms/third.json"
 
 third = new Third()

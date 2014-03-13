@@ -1,5 +1,5 @@
 class Second extends Atoms.Organism.Article
-  @scaffold "source/second/second.json"
+  @scaffold "source/organisms/second.json"
 
   onConfirm: (event, dispatcher, hierarchy...) ->
     new ModalConfirm() unless Atoms.App.Modal.ModalConfirm?

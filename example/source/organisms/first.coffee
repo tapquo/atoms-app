@@ -1,6 +1,6 @@
 class First extends Atoms.Organism.Article
 
-  @scaffold "source/first/first.json"
+  @scaffold "source/organisms/first.json"
 
   constructor: ->
     super
@@ -9,22 +9,30 @@ class First extends Atoms.Organism.Article
     @bind "active", (event) -> @_log "active", event
     @bind "inactive", (event) ->  @_log "inactive", event
 
+    Atoms.Entity.Contact.bind "create", (entity) -> console.log "entity.create.organism"
+    Atoms.Entity.Contact.bind "update", (entity) -> console.log "entity.update.organism"
+    Atoms.Entity.Contact.bind "destroy", (entity) -> console.log "entity.destroy.organism"
+
   render: ->
     super
     # Example of Async Process Render with Entity
-    Atoms.Entity.Contact.create name: "@soyjavi", description: "Test", url: "http://cdn.tapquo.com/photos/soyjavi.jpg"
-    Atoms.Entity.Contact.create name: "@piniphone", description: "Test 2", when: "10/04/1980"
-    Atoms.Entity.Contact.create name: "@tapquo"
-    @contacts.list.entity Atoms.Entity.Contact.all()
+    setTimeout =>
+      Atoms.Entity.Contact.create name: "@soyjavi", description: "Test", url: "http://cdn.tapquo.com/photos/soyjavi.jpg"
+      Atoms.Entity.Contact.create name: "@tapquo", description: "Test 2", when: "10/04/1980"
+      for i in [1..10]
+        Atoms.Entity.Contact.create name: "Name #{i}", when: "10/04/1980"
+      @contacts.list.entity Atoms.Entity.Contact.all()
+    , 1000
 
 
   _log: (method, event) -> console.log "article > #{method}", event
 
+  onContactUpdate: (event, atom) ->
+    atom.entity.updateAttributes name: "Hello Atoms", description: "It's updated!"
+    false
 
-  onLiTouch: (event, atom) ->
-    console.log "+ onLiTouch", atom.entity.uid
-    # atom.entity.destroy()
-    atom.entity.updateAttributes name: "Hello", description: "UPDATED!"
+  onContactDelete: (event, atom) ->
+    atom.entity.destroy()
     false
 
   # Form events
@@ -53,14 +61,3 @@ class First extends Atoms.Organism.Article
     , 850
 
 first = new First()
-
-
-class Atoms.Entity.Contact extends Atoms.Class.Entity
-
-  @fields "id", "name", "description", "url", "when"
-
-  parse: ->
-    image       : @url
-    date        : @when
-    text        : @name
-    description : @description

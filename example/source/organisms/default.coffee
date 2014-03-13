@@ -1,5 +1,5 @@
 class Options extends Atoms.Organism.Aside
-  @scaffold "source/aside/default.json"
+  @scaffold "source/organisms/default.json"
 
   constructor: ->
     super

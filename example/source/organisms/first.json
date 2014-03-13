@@ -246,8 +246,13 @@
           {
             "Molecule.ListContacts": {
               "id"          : "list",
-              "entityBind"  : "Contact",
-              "entityAtom"  : "Li"
+              "bind": {
+                "entity"    : "Contact",
+                "atom"      : "Li",
+                "events"    : ["tap", "swipeLeft"],
+                "callbacks" : ["onContactUpdate", "onContactDelete"],
+                "auto"      : true
+              }
             }
           }
         ]
