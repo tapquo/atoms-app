@@ -269,8 +269,8 @@
         "children": [
           {
             "Molecule.Carousel": {
-              "id": "carousel_manager",
-              "auto": true,
+              "auto" : false,
+              "index": true,
               "children": [
                 {
                   "Atom.Figure": {

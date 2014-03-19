@@ -1,11 +1,7 @@
 Atoms.$ ->
+  console.info "Atoms #{Atoms.version}", Atoms
 
-  console.log "------------------------------------------------------------"
-  console.log "Atoms #{Atoms.version}", Atoms
-  console.log "------------------------------------------------------------"
-
-  if navigator.standalone
-    $(document.body).addClass "standalone"
+  $(document.body).addClass "standalone" if navigator.standalone
 
   # ------------------------------------------------------------
   # URL
