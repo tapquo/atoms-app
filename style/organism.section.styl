@@ -8,16 +8,9 @@ section
     &.padding
       padding: .75rem 1rem
 
-    // & > *
-    //   background: -webkit-linear-gradient(white 30%, hsla(0,0%,100%,0)), -webkit-linear-gradient(hsla(0,0%,100%,0), white 70%) bottom, -webkit-radial-gradient(50% 0, rgba(0,0,0,.2), transparent 70%), -webkit-radial-gradient(50% 100%, rgba(0,0,0,.2), transparent 70%) bottom;
-    //   background-repeat: no-repeat;
-    //   background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-    //   background-attachment: local, local, scroll, scroll;
-
     /* BUG (iOS) POSITION: relative childrens */
     & > *
       transform translate3d(0,0,0)
 
   [data-atoms="app"] aside &
-    padding: 0.5rem 1rem
     width: 100%
