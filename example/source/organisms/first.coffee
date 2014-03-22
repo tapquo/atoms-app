@@ -28,25 +28,34 @@ class First extends Atoms.Organism.Article
     atom.entity.destroy()
     false
 
+  # Serch events
+  onSearchChange: (event, search, hierarchy...) ->
+    console.info "onSearchChange", search.value()
+
+  onSearchEnter: (event, search, hierarchy...) ->
+    console.info "onSearchEnter", search.value()
+
   # Form events
-  onFormKeyup: (event, form, hierarchy...) ->
-    console.info "ku", event, form, hierarchy
-
-  onFormKeypress: (event, form, hierarchy...) ->
-    console.info "kp", event, form, hierarchy
-
-  onSelectChange: (event, form, hierarchy...) ->
-    console.info "bubbleSelectChange", event, form, hierarchy
-
   onFormChange: (event, form, hierarchy...) ->
-    console.info "bubbleFormChange", event, form, hierarchy
+    console.info "onFormChange", event, form, hierarchy
 
   onFormSubmit: (event, form, hierarchy...) ->
-    console.info "submit", form.value()
+    console.info "onFormSubmit", form.value()
+
+  onFormError: (event, form, hierarchy...) ->
+    console.info "onFormError", form.value()
+
+  # Form children events
+  onInputKeyup: (event, atom, hierarchy...) ->
+    console.info "onInputKeyup", atom.value()
+
+  onSelectChange: (event, atom, hierarchy...) ->
+    console.info "onSelectChange", atom.value()
 
   onSwitchChange: (event, atom) ->
-    console.log "change??", atom.value()
+    console.log "onSwitchChange", atom.value()
 
+  # Others
   _modalShow: () ->
     Atoms.App.Modal.Loading.show()
     setTimeout ->

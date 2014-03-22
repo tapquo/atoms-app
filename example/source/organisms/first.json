@@ -80,9 +80,7 @@
         "children": [
           {
             "Molecule.Search": {
-              "events": [
-                "enter"
-              ],
+              "events": ["change", "enter"],
               "children": [
                 {
                   "Atom.Input": {
@@ -100,9 +98,9 @@
           {
             "Molecule.Form": {
               "events": [
-                "keyup",
-                "keypress",
-                "submit"
+                "submit",
+                "error",
+                "change"
               ],
               "children": [
                 {
@@ -117,17 +115,14 @@
                     "placeholder": "Type your name...",
                     "label": "Your credentials",
                     "required": true,
-                    "events": [
-                      "keyup",
-                      "keypress",
-                      "swipe"
-                    ]
+                    "events": ["keyup"]
                   }
                 },
                 {
                   "Atom.Select": {
                     "name": "options",
                     "value": 3,
+                    "required": true,
                     "options": [
                       {
                         "label": "One",
@@ -142,9 +137,7 @@
                         "value": 3
                       }
                     ],
-                    "events": [
-                      "change"
-                    ]
+                    "events": [ "change" ]
                   }
                 },
                 {
@@ -152,9 +145,7 @@
                     "type": "password",
                     "name": "password",
                     "placeholder": "Type your password...",
-                    "events": [
-                      "keyup"
-                    ]
+                    "events": ["keyup"]
                   }
                 },
                 {
@@ -172,14 +163,15 @@
                 {
                   "Atom.Input": {
                     "type": "search",
-                    "name": "Search...",
+                    "name": "search",
                     "style": "big",
-                    "placeholder": "Typer your username..."
+                    "placeholder": "Type a search..."
                   }
                 },
                 {
                   "Atom.Textarea": {
-                    "placeholder": "Text..."
+                    "placeholder": "Text...",
+                    "name": "description"
                   }
                 },
                 {
