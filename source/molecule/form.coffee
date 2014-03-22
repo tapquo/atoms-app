@@ -14,22 +14,28 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
 
   @available: ["Atom.Label", "Atom.Input", "Atom.Textarea", "Atom.Select", "Atom.Switch", "Atom.Button"]
 
-  @base : "Form"
+  @events: ["change", "submit", "error"]
 
-  constructor: ->
-    super
+  @base : "Form"
 
   value: ->
     properties = {}
-    for child in @children when child.value?
-      properties[child.attributes.name] = child.value()
+    for child in @children when child.attributes.name and child.value?
+      properties[child.attributes.name.toLowerCase()] = child.value()
     properties
 
+  # Chldren Bubble Events
   onInputKeypress: (event, atom) =>
-    @bubble "keypress", event
+    @_bubbleFormChange event, atom
 
   onInputKeyup: (event, atom) =>
-    @bubble "keyup", event
+    @_bubbleFormChange event, atom
+
+  onSelectChange: (event, atom) =>
+    @_bubbleFormChange event, atom
+
+  onSwitchChange: (event, atom) =>
+    @_bubbleFormChange event, atom
 
   onButtonTouch: (event, atom) =>
     event.preventDefault()
@@ -41,14 +47,16 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
       else
         child.el.removeClass "error"
 
-    if required and @attributes.events? and "submit" in @attributes.events
-      @bubble "submit", event if required
-      false
+    if required and "submit" in @attributes.events
+      @bubble "submit", event
+    unless required and "error" in @attributes.events
+      @bubble "error", event
+    false
 
-  onSelectChange: (event, atom) =>
+  _bubbleFormChange: (event, atom) ->
     event.preventDefault()
-    @bubble "change", event
-
-  onSwitchChange: (event, atom) =>
-    event.preventDefault()
-    @bubble "change", event
+    if atom.attributes.required and not atom.value()
+      atom.el.addClass "error"
+    else
+      atom.el.removeClass "error"
+    @bubble "change", event if "change" in @attributes.events
