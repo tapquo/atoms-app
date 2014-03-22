@@ -14,9 +14,23 @@ class Atoms.Molecule.List extends Atoms.Class.Molecule
 
   @available: ["Atom.Li"]
 
-  @base : "List"
+  @base     : "List"
 
-  # Publics
-  filter: -> @
+  # Entity Manager
+  findBy: (field, value) =>
+    @select (entity) ->
+      entity if entity[field]?.toLowerCase().trim() is value.toLowerCase().trim()
 
-  clean: -> @
+  select: (callback) =>
+    do @clean
+    @children = []
+    if callback
+      records = (record for record in @_records when callback record.entity)
+    for record in records or @_records
+      @_addAtomEntity record.entity, record = false
+
+  all: ->
+    do @select
+
+  clean: ->
+    @el.html ""
