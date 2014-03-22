@@ -14,6 +14,8 @@ class Atoms.Molecule.Search extends Atoms.Class.Molecule
 
   @available: ["Atom.Input", "Atom.Button"]
 
+  @events   : ["change", "enter"]
+
   @base : "Search"
 
   constructor: ->
@@ -25,13 +27,19 @@ class Atoms.Molecule.Search extends Atoms.Class.Molecule
       ]
     super
 
-  inputKeyup: (event, atom) =>
-    @trigger "keyup", event.keyCode
-    if event.keyCode is 13 then @_search event, atom
+  value: ->
+    @input.value()
 
-  buttonTouch: (event, atom) =>
-    @_search event, atom
+  # Children Bubble Events
+  onInputKeyup: (event, atom) =>
+    @bubble "change", event.keyCode if "change" in @attributes.events
+    if event.keyCode is 13 then @_bubbleSearchEnter event, atom
+    false
 
-  _search: (event, atom) ->
+  onButtonTouch: (event, atom) =>
+    @_bubbleSearchEnter event, atom
+    false
+
+  _bubbleSearchEnter: (event, atom) ->
     value = @input.value()
-    @bubble "enter", value, atom if value isnt ""
+    @bubble "enter", event if value isnt "" and "enter" in @attributes.events
