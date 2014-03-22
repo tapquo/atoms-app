@@ -27,8 +27,8 @@ class Atoms.Molecule.Search extends Atoms.Class.Molecule
       ]
     super
 
-  value: ->
-    @input.value()
+  value: (value) ->
+    if value? then @input.val value else @input.val()
 
   # Children Bubble Events
   onInputKeyup: (event, atom) =>
