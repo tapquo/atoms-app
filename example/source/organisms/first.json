@@ -44,7 +44,6 @@
             "children": [
                 {
                   "Atom.Button": {
-                    "style": "active",
                     "text": "form",
                     "icon": "clipboard",
                     "path": "first/form"
