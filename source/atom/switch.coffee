@@ -28,11 +28,6 @@ class Atoms.Atom.Switch extends Atoms.Class.Atom
     else
       @el.attr("checked")?
 
-  error: (value) ->
-    method = if value? then "addClass" else "removeClass"
-    @el[method] "error"
-
   onTouch: (event) =>
     @value !(@el.attr "checked")
-    if "change" in @attributes.events
-      @bubble "change", event
+    @bubble "change", event if "change" in @attributes.events

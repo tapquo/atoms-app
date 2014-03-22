@@ -17,9 +17,3 @@ class Atoms.Atom.Textarea extends Atoms.Class.Atom
 
   value: (value) ->
     if value? then @el.val value else @el.val()
-
-  error: (value) ->
-    if value?
-      @el.addClass "error"
-    else
-      @el.removeClass "error"

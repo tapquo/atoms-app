@@ -15,15 +15,10 @@ class Atoms.Atom.Input extends Atoms.Class.Atom
 
   @base : "Input"
 
-  constructor: (attributes) ->
-    @default = type: "text"
+  constructor: ->
+    @default =
+      type: "text"
     super
 
   value: (value) ->
     if value? then @el.val value else @el.val()
-
-  error: (value) ->
-    if value?
-      @el.filter("input").addClass "error"
-    else
-      @el.filter("input").removeClass "error"
