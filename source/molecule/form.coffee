@@ -14,9 +14,9 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
 
   @available: ["Atom.Label", "Atom.Input", "Atom.Textarea", "Atom.Select", "Atom.Switch", "Atom.Button"]
 
-  @events: ["change", "submit", "error"]
+  @events   : ["change", "submit", "error"]
 
-  @base : "Form"
+  @base     : "Form"
 
   value: ->
     properties = {}
@@ -24,7 +24,7 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
       properties[child.attributes.name.toLowerCase()] = child.value()
     properties
 
-  # Chldren Bubble Events
+  # Children Bubble Events
   onInputKeypress: (event, atom) =>
     @_bubbleFormChange event, atom
 
