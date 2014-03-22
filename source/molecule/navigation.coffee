@@ -14,14 +14,15 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
 
   @available: ["Atom.Button", "Atom.Link"]
 
-  @base : "Navigation"
+  @base     : "Navigation"
 
   constructor: ->
     @default = style: "left"
     super
 
+  # Children Bubble Events
   onButtonTouch: (event, atom) =>
-    @__activeChild atom
+    @_active atom
 
     @bubble "select", event if @attributes.events? and "select" in @attributes.events
     path = atom.attributes.path
@@ -32,15 +33,15 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
         Atoms.Url.back()
       else if path?
         Atoms.Url.path path
-      false
+    false
 
+  # Parent Tunnel Events
   onArticleNavigation: (event, article, hierarchy...) ->
     path = Atoms.Url.path().substr(1)
     for child in @children when child.attributes.path is path
-      @__activeChild child
+      @_active child
       break
     false
 
-  __activeChild: (atom) ->
-    @el.parent().find("[data-atom=button]").removeClass("active")
-    atom.el.addClass("active")
+  _active: (atom) ->
+    atom.el.addClass("active").siblings().removeClass("active")
