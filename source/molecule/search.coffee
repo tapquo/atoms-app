@@ -16,7 +16,7 @@ class Atoms.Molecule.Search extends Atoms.Class.Molecule
 
   @events   : ["change", "enter"]
 
-  @base : "Search"
+  @base     : "Search"
 
   constructor: ->
     @default =
@@ -28,7 +28,7 @@ class Atoms.Molecule.Search extends Atoms.Class.Molecule
     super
 
   value: (value) ->
-    if value? then @input.val value else @input.val()
+    @input.value value or null
 
   # Children Bubble Events
   onInputKeyup: (event, atom) =>

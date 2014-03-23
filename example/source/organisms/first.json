@@ -30,7 +30,7 @@
                 {
                   "Atom.Button": {
                     "icon": "forward",
-                    "path": "second/main"
+                    "path": "list/contacts"
                   }
                 }
               ]
@@ -58,13 +58,6 @@
                 },
                 {
                   "Atom.Button": {
-                    "text": "Map",
-                    "icon": "map",
-                    "path": "first/map"
-                  }
-                },
-                {
-                  "Atom.Button": {
                     "text": "Carousel",
                     "icon": "image",
                     "path": "first/carousel"
@@ -78,23 +71,6 @@
         "id": "form",
         "style": "padding",
         "children": [
-          {
-            "Molecule.Search": {
-              "events": ["change", "enter"],
-              "children": [
-                {
-                  "Atom.Input": {
-                    "placeholder": "Search..."
-                  }
-                },
-                {
-                  "Atom.Button": {
-                    "icon": "search"
-                  }
-                }
-              ]
-            }
-          },
           {
             "Molecule.Form": {
               "events": [
@@ -231,25 +207,6 @@
       }
     },
     {
-      "Organism.Section": {
-        "id": "contacts",
-        "children": [
-          {
-            "Molecule.ListContacts": {
-              "id"          : "list",
-              "bind": {
-                "entity"    : "Contact",
-                "atom"      : "Li",
-                "events"    : ["tap", "swipeLeft"],
-                "callbacks" : ["onContactUpdate", "onContactDelete"],
-                "auto"      : true
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
       "Organism.GMapFullScreen": {
         "id": "map"
       }
@@ -277,21 +234,6 @@
                   "Atom.Figure": {
                     "url": "http://lorempixel.com/400/200/?3"
                   }
-                },
-                {
-                  "Atom.Figure": {
-                    "url": "http://lorempixel.com/400/200/?4"
-                  }
-                },
-                {
-                  "Atom.Figure": {
-                    "url": "http://lorempixel.com/400/200/?5"
-                  }
-                },
-                {
-                  "Atom.Figure": {
-                    "url": "http://lorempixel.com/400/200/?6"
-                  }
                 }
               ]
             }
@@ -310,12 +252,6 @@
                     "style": "active",
                     "icon": "archive",
                     "path": "first/form"
-                  }
-                },
-                {
-                  "Atom.Button": {
-                    "icon": "clipboard",
-                    "path": "first/contacts"
                   }
                 },
                 {

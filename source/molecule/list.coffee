@@ -16,7 +16,6 @@ class Atoms.Molecule.List extends Atoms.Class.Molecule
 
   @base     : "List"
 
-  # Entity Manager
   findBy: (field, value) =>
     @select (entity) ->
       entity if entity[field]?.toLowerCase().trim() is value.toLowerCase().trim()
