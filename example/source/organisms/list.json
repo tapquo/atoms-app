@@ -65,7 +65,7 @@
               "id"          : "list",
               "bind": {
                 "entity"    : "Contact",
-                "atom"      : "Li",
+                "atom"      : "Atom.Li",
                 "events"    : ["tap", "swipeLeft"],
                 "callbacks" : ["onContactUpdate", "onContactDelete"],
                 "auto"      : true
