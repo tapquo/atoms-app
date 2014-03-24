@@ -1,33 +1,34 @@
-nav
-  [data-atoms="app"] > article > header & button
+[data-atoms="app"]
+  > article > header [data-molecule="navigation"] button
     color: lighten(THEME, 75%)
 
-  [data-atoms="app"] > aside > section &
+  > aside > section [data-molecule="navigation"]
     & a
       font-weight: normal
       &:not(.active)
-        color: THEME
+        color: lighten(DARK, 50%)
       &.active
         color: WHITE
 
-  [data-atoms="app"] > aside > header & button
-    color: lighten(DARK, 75%)
-
-  [data-atoms="app"] > article > header & button
-    &:hover, &:active, &.active
-        color: WHITE !important
-
-  [data-atoms="app"] > article > footer & button, [data-atoms="app"] > article > & button
-    color: lighten(DARK, 35%)
-    &:active, &:hover, &.active
-      color: WHITE
-
-  [data-atoms="app"] > article > &
+  > article > [data-molecule="navigation"]
     background-color: darken(DARK, 25%)
     > button.active
       box-shadow: inset 0 -.25rem THEME
 
-  [data-atoms="app"] > article > footer & button
+  > aside > header [data-molecule="navigation"] button
+    color: lighten(DARK, 75%)
+
+  > article > header [data-molecule="navigation"] button
+    &:hover, &:active, &.active
+        color: WHITE !important
+
+  > article > footer [data-molecule="navigation"] button, > article > [data-molecule="navigation"] button
+    color: lighten(DARK, 35%)
+    &:active, &:hover, &.active
+      color: WHITE
+
+
+  > article > footer [data-molecule="navigation"] button
     text-shadow: 0 .1rem darken(DARK, 12.5%)
     &.active
       background-color: darken(DARK, 25%)

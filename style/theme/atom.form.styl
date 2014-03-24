@@ -1,11 +1,4 @@
 [data-atoms="app"]
-  fieldset, form
-    &[molecule-search]
-      & > button
-        box-shadow: none !important
-        border-radius: 0 BORDER_RADIUS BORDER_RADIUS 0
-        background-color: FORM_COLOR
-        color: WHITE
 
   input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
     font-family: "Helvetica Neue", "Helvetica", Arial
@@ -38,7 +31,7 @@
   CIRCLE_BORDER = 1px solid FORM_COLOR
   CIRCLE_BACKGROUND = lighten(FORM_COLOR, 95%)
   /* -------------------------- RANGE -------------------------- */
-  & input[type=range]
+  input[type=range]
     background-color: FORM_COLOR
     border-radius: (BORDER_RADIUS / 2)
     &:hover, &:active
@@ -49,7 +42,7 @@
       border: CIRCLE_BORDER
 
   /* -------------------------- CHECKBOX -------------------------- */
-  & input[type=checkbox]
+  input[type=checkbox]
     border: 1px solid FORM_COLOR
     border-radius: RADIUS = 1rem
     background-color: lighten(FORM_COLOR, 30%)

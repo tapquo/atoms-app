@@ -1,6 +1,5 @@
-nav
-
-  [data-atoms="app"] > article section &, [data-atoms="app"] > article footer &, [data-atoms="app"] > article > &
+[data-atoms="app"]
+  > article > [data-molecule="navigation"], > article > footer > [data-molecule="navigation"], > article > section [data-molecule="navigation"]
     width: 100%
     display-box()
     box-pack(justify)
@@ -12,28 +11,28 @@ nav
       width: 1px
       text-align: center
 
-  [data-atoms="app"] > * > header &
-    height:  HEADER_HEIGHT
+  > * > header [data-molecule="navigation"]
+    // height:  HEADER_HEIGHT
     min-width: HEADER_HEIGHT
     text-align: center
 
-  [data-atoms="app"] > article > &
+  > article > [data-molecule="navigation"]
     height: (FOOTER_HEIGHT / 1.3)
 
-  [data-atoms="app"] > * > section &
+  > article > section [data-molecule="navigation"]
     &, > button
       height:  HEADER_HEIGHT
 
-  [data-atoms="app"] > article > footer &
+  > aside > section [data-molecule="navigation"]
+    & > a
+      display: block
+      line-height: (HEADER_HEIGHT / 1.4)
+      & .icon
+        font-size: FONT_SIZE_BIG
+        margin-right: 0.25rem
+
+  > article > footer [data-molecule="navigation"]
     height:  FOOTER_HEIGHT
     & > button
       height:  FOOTER_HEIGHT
       font-size: (FONT_SIZE_NORMAL * 1.5)
-
-  [data-atoms="app"] > aside > section &
-    & > a
-      display: block
-      line-height: HEADER_HEIGHT
-      & .icon
-        font-size: FONT_SIZE_BIG
-        margin-right: 0.25rem

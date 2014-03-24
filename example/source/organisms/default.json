@@ -28,7 +28,18 @@
     {
       "Organism.Section": {
         "id": "list",
+        "style": "padding",
         "children": [
+          {
+            "Molecule.List": {
+              "id": "contacts",
+              "bind": {
+                "entity"    : "Contact",
+                "atom"      : "Atom.Li",
+                "auto"      : true
+              }
+            }
+          },
           {
             "Molecule.Navigation": {
               "children": [
@@ -37,19 +48,16 @@
                     "style": "active",
                     "icon": "archive",
                     "text": "Sample",
+                    "href": "#",
                     "path": "first/form"
                   }
                 },
                 {
                   "Atom.Link": {
                     "icon": "clipboard",
+                    "href": "#",
                     "text": "sample 2",
                     "path": "first/list"
-                  }
-                },
-                {
-                  "Atom.Button": {
-                    "text": "Button sample"
                   }
                 }
               ]

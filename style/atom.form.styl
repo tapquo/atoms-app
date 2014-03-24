@@ -1,19 +1,5 @@
 /* INPUT Elements */
 [data-atoms="app"]
-  fieldset, form
-    position: relative
-    width: 100%
-    min-height: 2rem
-
-    &[molecule-search]
-      display-box()
-      box-pack(justify)
-      & > *
-        display: inline-block
-        box-flex(1)
-      & > button
-        position: absolute
-        right: 1px
 
   input, select
     -webkit-appearance: none
@@ -51,7 +37,7 @@
     margin-bottom: 0rem
 
   /* -------------------------- RANGE -------------------------- */
-  & input[type="range"]
+  input[type="range"]
     height: .2rem
     width: 100%
     margin: 1.5em 0
@@ -67,23 +53,23 @@
       border: none
 
   /* -------------------------- CHECKBOX -------------------------- */
-  & input[type="checkbox"]
-      position: relative
-      height: (FORM_CIRCLE_HEIGHT + 2)
-      width: (FORM_CIRCLE_HEIGHT * 2)
-      cursor: pointer
-      transition all 300ms 150ms
+  input[type="checkbox"]
+    position: relative
+    height: (FORM_CIRCLE_HEIGHT + 2)
+    width: (FORM_CIRCLE_HEIGHT * 2)
+    cursor: pointer
+    transition all 300ms 150ms
 
+    &:after
+      content: ''
+      display: block
+      left: 0
+      top: 0
+      width: FORM_CIRCLE_HEIGHT
+      height: FORM_CIRCLE_HEIGHT
+      position: absolute
+      transition left 150ms
+
+    &:checked
       &:after
-        content: ''
-        display: block
-        left: 0
-        top: 0
-        width: FORM_CIRCLE_HEIGHT
-        height: FORM_CIRCLE_HEIGHT
-        position: absolute
-        transition left 150ms
-
-      &:checked
-        &:after
-          left: (FORM_CIRCLE_HEIGHT - 2)
+        left: (FORM_CIRCLE_HEIGHT - 2)

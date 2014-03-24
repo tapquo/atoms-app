@@ -61,7 +61,7 @@
             }
           },
           {
-            "Molecule.ListContacts": {
+            "Molecule.List": {
               "id"          : "list",
               "bind": {
                 "entity"    : "Contact",

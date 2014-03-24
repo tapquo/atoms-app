@@ -1,11 +1,15 @@
-[data-atoms="app"] li
+[data-atoms="app"]
 
-  &[data-atom=li]
-
-    border-bottom: solid 1px darken(BACKGROUND, 10%)
-
+  [data-atom=li]
     > figure
       background-color: darken(BACKGROUND, 10%)
-
     strong
       font-weight: bold
+
+  article > section [data-atom=li]
+    border-bottom: solid 1px darken(BACKGROUND, 10%)
+
+  aside > section [data-atom=li]
+    color: lighten(DARK, 85%)
+    border-bottom: solid 1px lighten(DARK, 5%)
+
