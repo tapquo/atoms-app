@@ -1,0 +1,124 @@
+{
+  "id": "section",
+  "children": [
+    {
+      "Organism.Header": {
+        "children": [
+          {
+            "Atom.Heading": {
+              "text": "Extensions"
+            }
+          },
+          {
+            "Molecule.Navigation": {
+              "style": "left",
+              "children": [
+                {
+                  "Atom.Button": {
+                    "icon": "back",
+                    "path": "back"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Molecule.Navigation": {
+          "children": [
+            {
+              "Atom.Button": {
+                "icon": "map",
+                "path": "extensions/map"
+              }
+            },
+            {
+              "Atom.Button": {
+                "icon": "images",
+                "path": "extensions/carousel"
+              }
+            },
+            {
+              "Atom.Button": {
+                "icon": "coffee",
+                "path": "extensions/appnima"
+              }
+            }
+          ]
+      }
+    },
+    {
+      "Organism.GMapFullScreen": {
+        "id": "map"
+      }
+    },
+    {
+      "Organism.Section": {
+        "id": "carousel",
+        "children": [
+          {
+            "Molecule.Carousel": {
+              "auto" : false,
+              "index": true,
+              "children": [
+                {
+                  "Atom.Figure": {
+                    "url": "http://lorempixel.com/400/200/?1"
+                  }
+                },
+                {
+                  "Atom.Figure": {
+                    "url": "http://lorempixel.com/400/200/?2"
+                  }
+                },
+                {
+                  "Atom.Figure": {
+                    "url": "http://lorempixel.com/400/200/?3"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Organism.Section": {
+        "id": "appnima",
+        "title": "three"
+      }
+    },
+    {
+      "Organism.Footer": {
+        "children": [
+          {
+            "Molecule.Navigation": {
+              "children": [
+                {
+                  "Atom.Button": {
+                    "icon": "map",
+                    "path": "extensions/map"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "icon": "images",
+                    "path": "extensions/carousel"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "icon": "coffee",
+                    "path": "extensions/appnima"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

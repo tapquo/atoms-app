@@ -40,33 +40,6 @@
       }
     },
     {
-        "Molecule.Navigation": {
-            "children": [
-                {
-                  "Atom.Button": {
-                    "text": "form",
-                    "icon": "clipboard",
-                    "path": "first/form"
-                  }
-                },
-                {
-                  "Atom.Button": {
-                    "text": "list",
-                    "icon": "navicon",
-                    "path": "first/contacts"
-                  }
-                },
-                {
-                  "Atom.Button": {
-                    "text": "Carousel",
-                    "icon": "image",
-                    "path": "first/carousel"
-                  }
-                }
-              ]
-        }
-    },
-    {
       "Organism.Section": {
         "id": "form",
         "style": "padding",
@@ -91,6 +64,7 @@
                     "placeholder": "Type your name...",
                     "label": "Your credentials",
                     "required": true,
+                    "value"   : "@soyjavi",
                     "events": ["keyup"]
                   }
                 },
@@ -200,72 +174,6 @@
               "text": "Find your friends",
               "events": [
                 "touch"
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Organism.GMapFullScreen": {
-        "id": "map"
-      }
-    },
-    {
-      "Organism.Section": {
-        "id": "carousel",
-        "children": [
-          {
-            "Molecule.Carousel": {
-              "auto" : false,
-              "index": true,
-              "children": [
-                {
-                  "Atom.Figure": {
-                    "url": "http://lorempixel.com/400/200/?1"
-                  }
-                },
-                {
-                  "Atom.Figure": {
-                    "url": "http://lorempixel.com/400/200/?2"
-                  }
-                },
-                {
-                  "Atom.Figure": {
-                    "url": "http://lorempixel.com/400/200/?3"
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Organism.Footer": {
-        "children": [
-          {
-            "Molecule.Navigation": {
-              "children": [
-                {
-                  "Atom.Button": {
-                    "style": "active",
-                    "icon": "archive",
-                    "path": "first/form"
-                  }
-                },
-                {
-                  "Atom.Button": {
-                    "icon": "map",
-                    "path": "first/map"
-                  }
-                },
-                {
-                  "Atom.Button": {
-                    "icon": "image",
-                    "path": "first/carousel"
-                  }
-                }
               ]
             }
           }

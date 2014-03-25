@@ -10,16 +10,6 @@
             }
           },
           {
-            "Namespace.Atom.Project": {
-              "text": "Test"
-            }
-          },
-          {
-            "Namespace.Atom.Title": {
-              "text": "______________Test"
-            }
-          },
-          {
             "Molecule.Navigation": {
               "style": "left",
               "children": [
@@ -39,7 +29,7 @@
                 {
                   "Atom.Button": {
                     "icon": "forward",
-                    "path": "third/one"
+                    "path": "extensions/carousel"
                   }
                 }
               ]
