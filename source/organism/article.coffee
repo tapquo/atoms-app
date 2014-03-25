@@ -44,6 +44,13 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     @tunnel "navigation", @
 
     @el.children("##{id}").addClass("active").siblings("section").removeClass("active")
+     # @TODO: Optimize section triggers
+    for child in @children when child.constructor.base is "Section"
+      if child.attributes.id is id
+        child.show()
+      else
+        child.hide()
+
     @aside() if @el.attr("data-state") is "aside-in"
 
   aside: ->
