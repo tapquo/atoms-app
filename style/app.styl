@@ -5,6 +5,10 @@
   padding: 0
   overflow: hidden
 
+[data-atoms="app"]
+  vendor(perspective, 800px)
+  vendor(transform-style, preserve-3d)
+
   & > aside, & > article
     display-box()
     box-orient(vertical)
@@ -13,7 +17,6 @@
 
     & > header, > footer
       box-flex(0)
-      z-index: 3
       position: relative
 
     & > header
@@ -34,13 +37,7 @@
     & > article
       padding-top: 16px
 
-[data-atoms="app"]
-  vendor(perspective, 800px)
-  vendor(transform-style, preserve-3d)
-
-
   /* -------------------------- CLASSES -------------------------- */
-
   .left
     float: left
   .right
@@ -48,7 +45,6 @@
 
   .rounded
     border-radius: 1rem
-
   .circular
     border-radius: 500rem
 
