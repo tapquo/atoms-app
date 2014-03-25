@@ -29,6 +29,12 @@
               "children": [
                 {
                   "Atom.Button": {
+                    "icon": "person-b-add",
+                    "callbacks": ["onLoadContacts"]
+                  }
+                },
+                {
+                  "Atom.Button": {
                     "icon": "forward",
                     "path": "second/main"
                   }

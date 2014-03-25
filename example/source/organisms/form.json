@@ -1,5 +1,5 @@
 {
-  "id": "first",
+  "id": "form",
   "aside": "Options",
   "children": [
     {
@@ -41,7 +41,7 @@
     },
     {
       "Organism.Section": {
-        "id": "form",
+        "id": "main",
         "style": "padding",
         "children": [
           {
@@ -169,14 +169,20 @@
           {
             "Atom.Button": {
               "style": "fluid",
-              "disabled": true,
               "icon": "search",
               "text": "Find your friends",
-              "events": [
-                "touch"
-              ]
+              "events": ["touch"]
+            }
+          },
+          {
+            "Atom.Button": {
+              "style": "fluid",
+              "disabled": true,
+              "text": "Disabled",
+              "events": []
             }
           }
+
         ]
       }
     }
