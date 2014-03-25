@@ -24,6 +24,10 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
       properties[child.attributes.name.toLowerCase()] = child.value()
     properties
 
+  clean: ->
+    child.value "" for child in @children when child.attributes.name and child.value?
+    true
+
   # Children Bubble Events
   onInputKeypress: (event, atom) =>
     @_bubbleFormChange event, atom
