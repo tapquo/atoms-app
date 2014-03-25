@@ -181,6 +181,29 @@
               "text": "Disabled",
               "events": []
             }
+          },
+          {
+            "Molecule.Navigation": {
+              "style": "margin-top",
+              "children": [
+                {
+                  "Atom.Button": {
+                    "icon": "checkmark"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "style": "accept",
+                    "icon": "checkmark"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "text": "example"
+                  }
+                }
+              ]
+            }
           }
 
         ]

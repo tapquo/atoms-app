@@ -61,7 +61,6 @@
           {
             "Molecule.Carousel": {
               "auto" : true,
-              "index": true,
               "style": "small",
               "children": [
                 {

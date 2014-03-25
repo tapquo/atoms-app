@@ -71,28 +71,6 @@
                 "onForm"
               ]
             }
-          },
-          {
-            "Molecule.Navigation": {
-              "children": [
-                {
-                  "Atom.Button": {
-                    "icon": "checkmark"
-                  }
-                },
-                {
-                  "Atom.Button": {
-                    "style": "accept",
-                    "icon": "checkmark"
-                  }
-                },
-                {
-                  "Atom.Button": {
-                    "text": "example"
-                  }
-                }
-              ]
-            }
           }
         ]
       }
