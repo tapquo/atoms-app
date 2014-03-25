@@ -1,5 +1,5 @@
 class Second extends Atoms.Organism.Article
-  @scaffold "source/organisms/second.json"
+  @scaffold "source/organisms/modals.json"
 
   onConfirm: (event, dispatcher, hierarchy...) ->
     new ModalConfirm() unless Atoms.App.Modal.ModalConfirm?
@@ -30,14 +30,14 @@ class ModalConfirm extends Atoms.Organism.Modal
     attributes.children = [
       "Organism.Header": children: [
         "Atom.Icon": icon: "help"
-        "Atom.Title": text: "Send email?"
+        "Atom.Heading": text: "Send email?"
       ]
     ,
       "Organism.Footer": children: [
         "Molecule.Navigation": children: [
           "Atom.Button": text: "Accept", callbacks: ["onAccept"]
         ,
-          "Atom.Button": text: "Cancel"
+          "Atom.Button": text: "Cancel", callbacks: ["onCancel"]
         ]
       ]
     ]
@@ -48,12 +48,12 @@ class ModalConfirm extends Atoms.Organism.Modal
     Atoms.App.Modal.Loading.show()
     setTimeout ->
       Atoms.App.Modal.Loading.hide()
-    , 3000
+    , 1000
     false
 
-  onButtonTouch: ->
+  onCancel: ->
     @hide()
-
+    false
 
 
 class ModalForm extends Atoms.Organism.Modal
@@ -61,7 +61,7 @@ class ModalForm extends Atoms.Organism.Modal
   constructor: (attributes = {}) ->
     attributes.children = [
       "Organism.Header": children: [
-        "Atom.Title": text: "Fill Form"
+        "Atom.Heading": text: "Fill Form"
       ]
     ,
       "Organism.Section": children: [

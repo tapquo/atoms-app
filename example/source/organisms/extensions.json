@@ -60,8 +60,9 @@
         "children": [
           {
             "Molecule.Carousel": {
-              "auto" : false,
+              "auto" : true,
               "index": true,
+              "style": "small",
               "children": [
                 {
                   "Atom.Figure": {

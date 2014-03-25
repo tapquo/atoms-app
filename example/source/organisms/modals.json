@@ -6,7 +6,7 @@
         "children": [
           {
             "Atom.Heading": {
-              "text": "Second"
+              "text": "Modals"
             }
           },
           {
@@ -77,15 +77,18 @@
               "children": [
                 {
                   "Atom.Button": {
-                    "style": "accept",
-                    "icon": "checkmark",
-                    "path": "third/one"
+                    "icon": "checkmark"
                   }
                 },
                 {
                   "Atom.Button": {
-                    "style": "cancel",
+                    "style": "accept",
                     "icon": "checkmark"
+                  }
+                },
+                {
+                  "Atom.Button": {
+                    "text": "example"
                   }
                 }
               ]
