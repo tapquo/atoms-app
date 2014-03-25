@@ -88,7 +88,15 @@
     {
       "Organism.Section": {
         "id": "appnima",
-        "title": "three"
+        "title": "three",
+        "children": [
+           {
+              "Atom.GMap": {
+                "style": "small"
+              }
+           }
+
+        ]
       }
     },
     {
