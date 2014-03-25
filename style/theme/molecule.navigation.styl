@@ -3,12 +3,22 @@
     color: lighten(THEME, 75%)
 
   > aside > section [data-molecule="navigation"]
-    & a
+    & [data-atom="link"]
       font-weight: normal
       &:not(.active)
         color: lighten(DARK, 50%)
       &.active
         color: WHITE
+
+  > article > section [data-molecule="navigation"] > [data-atom="button"]
+      &:not(:first-child):not(:last-child)
+        border-radius: 0
+      &:not(:first-child)
+        border-left: solid 1px rgba(0,0,0,0.05)
+      &:first-child
+        border-radius: BORDER_RADIUS 0 0 BORDER_RADIUS
+      &:last-child
+        border-radius: 0 BORDER_RADIUS BORDER_RADIUS 0
 
   > article > [data-molecule="navigation"]
     background-color: darken(DARK, 25%)
