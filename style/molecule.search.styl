@@ -1,17 +1,22 @@
-[data-atoms="app"] [data-molecule="search"]
-  display-box()
-  box-pack(justify)
-  box-orient(horizontal)
+[data-atoms="app"]
+  [data-molecule="search"]
+    position: relative
+    width: 100%
+    > *
+      margin-top: 0px !important
+      margin-bottom: 0px !important
+    > button
+      position: absolute
+      top: 0px
+      right: 0px
+      & , & > .icon
+        line-height: 0.85rem
 
-  > *
-    display: inline-block
-
-  > input
-    box-flex(1)
-    width: 80%
-
-  > button
-    box-flex(0)
-    float: right
-    & , & > .icon
-      line-height: 0.875rem
+  [data-molecule="navigation"] > [data-molecule="search"]
+    padding: AIR = .3rem
+    > *
+      height: (ARTICLE_NAV_HEIGHT - AIR)
+    > button
+      top: AIR
+      right: AIR
+      width: 2.25rem

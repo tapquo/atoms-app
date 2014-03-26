@@ -8,22 +8,20 @@ Basic fieldset for search
 ###
 "use strict"
 
-class Atoms.Molecule.Search extends Atoms.Class.Molecule
-
-  @template : """<fieldset {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></fieldset>"""
+class Atoms.Molecule.Search extends Atoms.Molecule.Form
 
   @available: ["Atom.Input", "Atom.Button"]
 
-  @events   : ["change", "enter"]
+  @events   : ["change", "submit"]
 
-  @base     : "Search"
+  @extends  : true
 
   constructor: ->
     @default =
       children: [
         "Atom.Input": id: "input", type: "search", placeholder: "Type your search...", events: ["keyup"]
       ,
-        "Atom.Button": icon: "Search"
+        "Atom.Button": icon: "search"
       ]
     super
 
@@ -32,14 +30,16 @@ class Atoms.Molecule.Search extends Atoms.Class.Molecule
 
   # Children Bubble Events
   onInputKeyup: (event, atom) =>
+    event.preventDefault()
     @bubble "change", event.keyCode if "change" in @attributes.events
-    if event.keyCode is 13 then @_bubbleSearchEnter event, atom
+    if event.keyCode is 13 then @_bubbleSearchSubmit event, atom
     false
 
   onButtonTouch: (event, atom) =>
-    @_bubbleSearchEnter event, atom
+    event.preventDefault()
+    @_bubbleSearchSubmit event, atom
     false
 
-  _bubbleSearchEnter: (event, atom) ->
+  _bubbleSearchSubmit: (event, atom) ->
     value = @input.value()
-    @bubble "enter", event if value isnt "" and "enter" in @attributes.events
+    @bubble "submit", event if value isnt "" and "submit" in @attributes.events
