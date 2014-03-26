@@ -12,7 +12,7 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
 
   @template : """<nav {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></nav>"""
 
-  @available: ["Atom.Button", "Atom.Link"]
+  @available: ["Molecule.Form", "Atom.Button", "Atom.Link"]
 
   @base     : "Navigation"
 

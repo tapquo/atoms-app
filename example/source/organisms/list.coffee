@@ -12,11 +12,11 @@ class List extends Atoms.Organism.Article
     else
       @contacts.list.all()
 
-  onSearchEnter: (event, search) ->
-     @contacts.list.findBy "name", search.value()
+  onSearchSubmit: (event, search) ->
+    @contacts.list.findBy "name", search.value()
 
   # Children Bubble Events with Custom Callbacks
-  onContactUpdate: (event, atom) ->
+  onContactUpdate: (event, atom, hierarchy...) ->
     atom.entity.updateAttributes name: "Hello Atoms", description: "It's updated!"
     false
 

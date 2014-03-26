@@ -46,26 +46,20 @@
       }
     },
     {
-      "Organism.Section": {
-        "id": "contacts",
+      "Molecule.Navigation": {
         "children": [
           {
             "Molecule.Search": {
-              "events": ["change", "enter"],
-              "children": [
-                {
-                  "Atom.Input": {
-                    "placeholder": "Search..."
-                  }
-                },
-                {
-                  "Atom.Button": {
-                    "style": "hidden"
-                  }
-                }
-              ]
+              "events": ["change", "enter"]
             }
-          },
+          }
+        ]
+      }
+    },
+    {
+      "Organism.Section": {
+        "id": "contacts",
+        "children": [
           {
             "Molecule.List": {
               "id"          : "list",
