@@ -13,10 +13,12 @@
         line-height: 0.85rem
 
   [data-molecule="navigation"] > [data-molecule="search"]
-    padding: AIR = .3rem
+    padding: AIR = .4rem
     > *
-      height: (ARTICLE_NAV_HEIGHT - AIR)
+      height: (ARTICLE_NAV_HEIGHT - (AIR * 1.375))
+
     > button
+      z-index: 2
       top: AIR
       right: AIR
       width: 2.25rem

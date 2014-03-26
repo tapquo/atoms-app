@@ -50,7 +50,7 @@
         "children": [
           {
             "Molecule.Search": {
-              "events": ["change", "enter"]
+              "events": ["change", "submit"]
             }
           }
         ]
