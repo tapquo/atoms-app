@@ -28,6 +28,7 @@ class List extends Atoms.Organism.Article
     # Example of Async Process Render with Entity
     Atoms.Entity.Contact.create name: "@soyjavi", description: "Test", url: "http://cdn.tapquo.com/photos/soyjavi.jpg"
     Atoms.Entity.Contact.create name: "@tapquo", description: "Test 2", when: "10/04/1980"
+    Atoms.Entity.Contact.create name: "Mock Data", style: "anchor"
     Atoms.Entity.Contact.create name: "Name #{i}", when: "10/04/1980" for i in [1..10]
 
 list = new List()

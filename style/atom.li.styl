@@ -6,12 +6,16 @@
   line-height: inherit
 
   &[data-atom=li]
-
-    border-bottom: solid 1px #ccc
     display-box()
     box-orient(horizontal)
 
-    padding: PADDING
+    &:not(.anchor)
+      padding: PADDING
+
+    &.anchor
+      font-size: FONT_SIZE_TINY
+      text-transform: uppercase
+      padding: PADDING PADDING (PADDING / 3) PADDING
 
     > figure
       width: 44px

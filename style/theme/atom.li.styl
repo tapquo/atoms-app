@@ -6,10 +6,17 @@
     strong
       font-weight: bold
 
-  article > section [data-atom=li]
-    border-bottom: solid 1px darken(BACKGROUND, 10%)
+  article > section
+    & [data-atom=li]
+      border-bottom: solid 1px darken(BACKGROUND, 10%)
+      &.anchor
+        color: darken(BACKGROUND, 50%)
+    &:not(.padding) [data-atom=li]:not(.anchor)
+      background-color: WHITE
 
   aside > section [data-atom=li]
-    color: lighten(DARK, 85%)
     border-bottom: solid 1px lighten(DARK, 5%)
-
+    &:not(.anchor)
+      color: lighten(DARK, 85%)
+    &.anchor
+      color: lighten(DARK, 42.5%)
