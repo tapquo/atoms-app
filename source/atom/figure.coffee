@@ -13,4 +13,6 @@ class Atoms.Atom.Figure extends Atoms.Class.Atom
   @template : """
     <figure {{#if.style}}class="{{style}}"{{/if.style}} {{#if.url}}style="background-image: url({{url}});"{{/if.url}}></figure>"""
 
-  @base : "Figure"
+  @base     : "Figure"
+
+  @events   : ["touch", "tap", "hold", "swipe", "rotate"]

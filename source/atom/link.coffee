@@ -16,4 +16,6 @@ class Atoms.Atom.Link extends Atoms.Class.Atom
       {{#if.text}}{{text}}{{/if.text}}
     </a>"""
 
-  @base : "Link"
+  @base     : "Link"
+
+  @events   : ["touch"]

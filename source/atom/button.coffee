@@ -16,7 +16,9 @@ class Atoms.Atom.Button extends Atoms.Class.Atom
       {{#if.text}}<abbr>{{text}}</abbr>{{/if.text}}
     </button>"""
 
-  @base : "Button"
+  @base     : "Button"
+
+  @events   : ["touch"]
 
   constructor: ->
     @default =

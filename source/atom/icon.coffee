@@ -13,4 +13,4 @@ class Atoms.Atom.Icon extends Atoms.Class.Atom
   @template : """
     <span class="icon {{#if.icon}}{{icon}}{{/if.icon}} {{#if.style}}{{style}}{{/if.style}}"></span>"""
 
-  @base : "Icon"
+  @base     : "Icon"

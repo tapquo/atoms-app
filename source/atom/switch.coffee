@@ -13,7 +13,9 @@ class Atoms.Atom.Switch extends Atoms.Class.Atom
   @template : """
     <input type="checkbox"/>"""
 
-  @base : "Switch"
+  @base     : "Switch"
+
+  @events   : ["change"]
 
   constructor: ->
     super

@@ -16,7 +16,7 @@ class Atoms.Atom.Heading extends Atoms.Class.Atom
       {{#if.text}}{{text}}{{/if.text}}
     </{{size}}>"""
 
-  @base : "Heading"
+  @base     : "Heading"
 
   constructor: ->
     @default =

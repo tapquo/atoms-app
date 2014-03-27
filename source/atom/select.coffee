@@ -18,7 +18,9 @@ class Atoms.Atom.Select extends Atoms.Class.Atom
     </select>
   """
 
-  @base : "Select"
+  @base     : "Select"
+
+  @events   : ["change"]
 
   constructor: ->
     super

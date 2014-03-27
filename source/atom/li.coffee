@@ -28,4 +28,6 @@ class Atoms.Atom.Li extends Atoms.Class.Atom
       </div>
     </li>"""
 
-  @base : "Li"
+  @base     : "Li"
+
+  @events   : ["singleTap", "doubleTap", "hold", "swipeLeft", "swipeRight"]
