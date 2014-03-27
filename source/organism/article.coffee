@@ -12,9 +12,11 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   @template : """<article {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></article>"""
 
-  @available : ["Organism.Header", "Organism.Section", "Organism.Footer", "Molecule.Navigation"]
+  @available: ["Organism.Header", "Organism.Section", "Organism.Footer", "Molecule.Navigation"]
 
-  @base : "Article"
+  @base     : "Article"
+
+  @events   : ["in", "out", "active", "inactive"]
 
   constructor: ->
     super

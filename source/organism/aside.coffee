@@ -14,7 +14,9 @@ class Atoms.Organism.Aside extends Atoms.Class.Organism
 
   @available: ["Organism.Header", "Organism.Section", "Organism.Footer", "Molecule.Navigation"]
 
-  @base : "Aside"
+  @base     : "Aside"
+
+  @events   : ["active", "inactive"]
 
   constructor: (attributes = {})->
     attributes.method = "prepend"

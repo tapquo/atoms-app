@@ -14,7 +14,7 @@ class Atoms.Organism.Footer extends Atoms.Class.Organism
 
   @available: ["Molecule.Navigation"]
 
-  @base : "Footer"
+  @base     : "Footer"
 
   constructor: ->
     super

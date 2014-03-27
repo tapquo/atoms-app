@@ -16,6 +16,8 @@ class Atoms.Organism.Modal extends Atoms.Class.Organism
 
   @base     : "Modal"
 
+  @events   : ["active", "inactive"]
+
   constructor: (attributes = {}) ->
     super attributes
     block_el = Atoms.$(document.createElement("div")).data "system", "modal"

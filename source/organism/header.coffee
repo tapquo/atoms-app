@@ -14,7 +14,7 @@ class Atoms.Organism.Header extends Atoms.Class.Organism
 
   @available: ["Atom.Heading", "Atom.Icon", "Molecule.Navigation"]
 
-  @base : "Header"
+  @base     : "Header"
 
   constructor: ->
     super
