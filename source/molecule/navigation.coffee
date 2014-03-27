@@ -16,6 +16,8 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
 
   @base     : "Navigation"
 
+  @events   : ["select"]
+
   constructor: ->
     @default = style: "left"
     super

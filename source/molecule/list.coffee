@@ -16,6 +16,8 @@ class Atoms.Molecule.List extends Atoms.Class.Molecule
 
   @base     : "List"
 
+  @events   : ["active"]
+
   findBy: (field, value) =>
     @select (entity) ->
       entity if entity[field]?.toLowerCase().trim() is value.toLowerCase().trim()
