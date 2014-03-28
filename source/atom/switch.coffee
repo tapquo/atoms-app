@@ -32,4 +32,4 @@ class Atoms.Atom.Switch extends Atoms.Class.Atom
 
   onTouch: (event) =>
     @value !(@el.attr "checked")
-    @bubble "change", event if "change" in @attributes.events
+    @bubble "change", event

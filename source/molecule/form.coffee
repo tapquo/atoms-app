@@ -51,10 +51,8 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
       else
         child.el.removeClass "error"
 
-    if required and "submit" in @attributes.events
-      @bubble "submit", event
-    unless required and "error" in @attributes.events
-      @bubble "error", event
+    method = if required then "submit" else "error"
+    @bubble method, event
     false
 
   _bubbleFormChange: (event, atom) ->
@@ -63,4 +61,4 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
       atom.el.addClass "error"
     else
       atom.el.removeClass "error"
-    @bubble "change", event if "change" in @attributes.events
+    @bubble "change", event

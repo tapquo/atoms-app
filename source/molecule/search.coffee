@@ -31,7 +31,7 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
   # Children Bubble Events
   onInputKeyup: (event, atom) =>
     event.preventDefault()
-    @bubble "change", event.keyCode if "change" in @attributes.events
+    @bubble "change", event.keyCode
     if event.keyCode is 13 then @_bubbleSearchSubmit event, atom
     false
 
@@ -42,4 +42,4 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
 
   _bubbleSearchSubmit: (event, atom) ->
     value = @input.value()
-    @bubble "submit", event if value isnt "" and "submit" in @attributes.events
+    @bubble "submit", event if value isnt ""
