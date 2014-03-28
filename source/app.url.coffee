@@ -16,20 +16,23 @@ Atoms.App.Url = do (a = Atoms) ->
   # Private
   _onChangeRoute = (properties) ->
     article = a.App.Article[properties.article.toClassName()]
-    unless article.el then article.render()
-    setTimeout ->
-      unless _options.forward then _stepHistory 0
-      _activeSection article, properties.section
-      if _article isnt article
-        if _options.forward
-          _stepHistory 1
-          article.state("in")
-          _article.state("back-in") if _article
-        else
-          _article.state("out")
-          article.state("back-out")
-        _article = article
-    , 10
+    if article
+      unless article.el then article.render()
+      setTimeout ->
+        unless _options.forward then _stepHistory 0
+        _activeSection article, properties.section
+        if _article isnt article
+          if _options.forward
+            _stepHistory 1
+            article.state("in")
+            _article.state("back-in") if _article
+          else
+            _article.state("out")
+            article.state("back-out")
+          _article = article
+      , 10
+    else
+      console.error "[ATOMS]: Url #{properties.url} not exists."
 
   _aside = ->
     _article.aside()
