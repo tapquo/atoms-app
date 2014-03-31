@@ -17,10 +17,8 @@ class Atoms.Atom.Input extends Atoms.Class.Atom
 
   @events   : ["keypress", "keyup", "change"]
 
-  constructor: ->
-    @default =
-      type: "text"
-    super
+  @default  :
+    type: "text"
 
   value: (value) ->
     if value? then @el.val value else @el.val()

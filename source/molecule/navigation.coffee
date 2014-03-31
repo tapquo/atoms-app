@@ -18,10 +18,6 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
 
   @events   : ["select"]
 
-  constructor: ->
-    @default = style: "left"
-    super
-
   # Children Bubble Events
   onButtonTouch: (event, atom) =>
     @_active atom

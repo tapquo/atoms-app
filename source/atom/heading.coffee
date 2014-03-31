@@ -18,7 +18,5 @@ class Atoms.Atom.Heading extends Atoms.Class.Atom
 
   @base     : "Heading"
 
-  constructor: ->
-    @default =
-      size: "h1"
-    super
+  @default  :
+    size: "h1"

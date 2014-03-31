@@ -16,14 +16,13 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
 
   @extends  : true
 
-  constructor: ->
-    @default =
-      children: [
-        "Atom.Input": id: "input", type: "search", placeholder: "Type your search...", events: ["keyup"]
-      ,
-        "Atom.Button": icon: "search"
-      ]
-    super
+  @default  :
+    events  : ["submit"]
+    children: [
+      "Atom.Input": id: "input", type: "search", placeholder: "Type your search...", events: ["keyup"]
+    ,
+      "Atom.Button": icon: "search"
+    ]
 
   value: (value) ->
     @input.value value or null
