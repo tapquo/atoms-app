@@ -20,7 +20,7 @@ class Atoms.Organism.Modal extends Atoms.Class.Organism
 
   constructor: (attributes = {}) ->
     super attributes
-    block_el = Atoms.$(document.createElement("div")).data "system", "modal"
+    block_el = Atoms.$(document.createElement("div")).attr "data-system", "modal"
     Atoms.$(@attributes.container or document.body).prepend block_el
     @attributes.container = block_el
 
