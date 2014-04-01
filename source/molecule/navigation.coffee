@@ -23,12 +23,14 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
     @_active atom
     @bubble "select", event, atom
     path = atom.attributes.path
-    if path
-      if path is "aside"
-        Atoms.App.Url.aside()
-      else if path is "back"
-        Atoms.Url.back()
-      else if path?
+    if path?
+      parts = path.split("/")
+      if parts.length is 1
+        if parts[0] is "back"
+          Atoms.Url.back()
+        else
+          Atoms.App.Url.aside parts[0]
+      else if parts.length is 2
         Atoms.Url.path path
     false
 

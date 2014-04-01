@@ -55,9 +55,10 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
     @aside() if @el.attr("data-state") is "aside-in"
 
-  aside: ->
+  aside: (id) ->
     method = if @el.hasClass "aside" then "out" else "in"
-    if @attributes.aside? then do Atoms.App.Aside[@attributes.aside][method]
+
+    do Atoms.App.Aside[id.toClassName()]?[method]
     if method is "out" then @el.removeClass "aside"
     @state "aside-#{method}"
 

@@ -1,6 +1,5 @@
 {
   "id": "form",
-  "aside": "Options",
   "children": [
     {
       "Organism.Header": {
@@ -17,7 +16,7 @@
                 {
                   "Atom.Button": {
                     "icon": "navicon",
-                    "path": "aside"
+                    "path": "options"
                   }
                 }
               ]
