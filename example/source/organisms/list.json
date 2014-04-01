@@ -50,7 +50,12 @@
         "children": [
           {
             "Molecule.Search": {
-              "events": ["change", "submit"]
+              "events": ["change", "submit"],
+              "children": [
+              {
+                "Atom.Input": {"placeholder": "Search...", "value": "Name 1"}
+              }
+              ]
             }
           }
         ]

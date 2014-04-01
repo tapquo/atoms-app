@@ -43,15 +43,16 @@
             {
               "Atom.Button": {
                 "icon": "coffee",
-                "path": "extensions/appnima"
+                "path": "extensions/test"
               }
             }
           ]
       }
     },
     {
-      "Organism.GMapFullScreen": {
-        "id": "map"
+      "Organism.GMap": {
+        "id": "map",
+        "events": ["menu"]
       }
     },
     {
@@ -86,12 +87,13 @@
     },
     {
       "Organism.Section": {
-        "id": "appnima",
+        "id": "test",
         "title": "three",
         "children": [
            {
               "Atom.GMap": {
-                "style": "small"
+                "style" : "big",
+                "id"    : "gmap"
               }
            }
 
@@ -119,7 +121,7 @@
                 {
                   "Atom.Button": {
                     "icon": "coffee",
-                    "path": "extensions/appnima"
+                    "path": "extensions/test"
                   }
                 }
               ]
