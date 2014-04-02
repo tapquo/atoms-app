@@ -31,8 +31,6 @@ Atoms.App.Url = do (a = Atoms) ->
             article.state("back-out")
           _article = article
       , 10
-    else
-      console.error "[ATOMS]: Url #{properties.url} not exists."
 
   _aside = (id) ->
     _article?.aside id
