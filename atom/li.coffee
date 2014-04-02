@@ -16,9 +16,9 @@ class Atoms.Atom.Li extends Atoms.Class.Atom
       <figure style="background-image: url({{image}});"></figure>
       {{/if.image}}
       <div>
-        {{#if.date}}
-          <span>{{date}}</span>
-        {{/if.date}}
+        {{#if.info}}
+          <span>{{info}}</span>
+        {{/if.info}}
         {{#if.text}}
           <strong>{{text}}</strong>
         {{/if.text}}
