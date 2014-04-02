@@ -35,7 +35,7 @@ Atoms.App.Url = do (a = Atoms) ->
       console.error "[ATOMS]: Url #{properties.url} not exists."
 
   _aside = (id) ->
-    _article.aside id
+    _article?.aside id
 
   _activeSection = (article, section) ->
     _addStepHistory()

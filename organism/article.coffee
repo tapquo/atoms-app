@@ -56,11 +56,12 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     @aside() if @el.attr("data-state") is "aside-in"
 
   aside: (id) ->
-    method = if @el.hasClass "aside" then "out" else "in"
+    if Atoms.App.Aside[id.toClassName()]?
+      method = if @el.hasClass "aside" then "out" else "in"
 
-    do Atoms.App.Aside[id.toClassName()]?[method]
-    if method is "out" then @el.removeClass "aside"
-    @state "aside-#{method}"
+      do Atoms.App.Aside[id.toClassName()][method]
+      if method is "out" then @el.removeClass "aside"
+      @state "aside-#{method}"
 
   onAnimationEnd: (event) =>
     state = @el.attr "data-state"

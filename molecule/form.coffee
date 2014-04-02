@@ -30,16 +30,16 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
 
   # Children Bubble Events
   onInputKeypress: (event, atom) =>
-    @_bubbleFormChange event, atom
+    @_bubbleChange event, atom
 
   onInputKeyup: (event, atom) =>
-    @_bubbleFormChange event, atom
+    @_bubbleChange event, atom
 
   onSelectChange: (event, atom) =>
-    @_bubbleFormChange event, atom
+    @_bubbleChange event, atom
 
   onSwitchChange: (event, atom) =>
-    @_bubbleFormChange event, atom
+    @_bubbleChange event, atom
 
   onButtonTouch: (event, atom) =>
     event.preventDefault()
@@ -55,7 +55,7 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
     @bubble method, event
     false
 
-  _bubbleFormChange: (event, atom) ->
+  _bubbleChange: (event, atom) ->
     event.preventDefault()
     if atom.attributes.required and not atom.value()
       atom.el.addClass "error"
