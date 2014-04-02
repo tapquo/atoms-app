@@ -19,7 +19,7 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
   @default  :
     events  : ["submit"]
     children: [
-      "Atom.Input": id: "input", type: "search", placeholder: "Type your search...", events: ["keyup"]
+      "Atom.Input": id: "input", type: "search", placeholder: "Type your search...", events: ["keyup"], required: true
     ,
       "Atom.Button": icon: "search"
     ]
@@ -31,14 +31,14 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
   onInputKeyup: (event, atom) =>
     event.preventDefault()
     @bubble "change", event.keyCode
-    if event.keyCode is 13 then @_bubbleSearchSubmit event, atom
+    if event.keyCode is 13 then @_bubbleSubmit event, atom
     false
 
   onButtonTouch: (event, atom) =>
     event.preventDefault()
-    @_bubbleSearchSubmit event, atom
+    @_bubbleSubmit event, atom
     false
 
-  _bubbleSearchSubmit: (event, atom) ->
+  _bubbleSubmit: (event, atom) ->
     value = @input.value()
     @bubble "submit", event if value isnt ""

@@ -18,6 +18,9 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
 
   @base     : "Form"
 
+  @defaults :
+    events: ["submit"]
+
   value: ->
     properties = {}
     for child in @children when child.attributes.name and child.value?

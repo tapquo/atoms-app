@@ -16,7 +16,7 @@ class Atoms.Molecule.List extends Atoms.Class.Molecule
 
   @base     : "List"
 
-  @events   : ["active"]
+  @events   : ["select"]
 
   findBy: (field, value) =>
     @select (entity) ->
@@ -35,3 +35,9 @@ class Atoms.Molecule.List extends Atoms.Class.Molecule
 
   clean: ->
     @el.html ""
+
+  # Children Bubble Events
+  onSingletap: (event, atom) =>
+    event.preventDefault()
+    @bubble "select", event
+    false
