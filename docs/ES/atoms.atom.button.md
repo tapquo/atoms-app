@@ -14,5 +14,5 @@ path : [OPTIONAL]
 
 ### Events
 
-#### touch
+#### touch [DEFAULT]
 Cualquier instancia de botón desplega el evento *Bubble.Touch* cuando es pulsado.

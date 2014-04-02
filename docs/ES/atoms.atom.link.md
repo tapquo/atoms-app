@@ -16,5 +16,5 @@ path  : [OPTIONAL]
 
 ### Events
 
-#### touch
+#### touch [DEFAULT]
 Cualquier instancia puede desplegar el evento *Touch* cuando es pulsado.
