@@ -1,0 +1,9 @@
+[submodule "extension/gmaps"]
+	path = extension/gmaps
+	url = https://github.com/tapquo/atoms-app-gmaps
+[submodule "extension/carousel"]
+	path = extension/carousel
+	url = https://github.com/tapquo/atoms-app-carousel
+[submodule "extension/appnima"]
+	path = extension/appnima
+	url = https://github.com/tapquo/atoms-app-appnima
