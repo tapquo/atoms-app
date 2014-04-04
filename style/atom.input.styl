@@ -31,11 +31,6 @@
       padding: 0.35rem 0.75rem
       font-size: FONT_SIZE_TINY
 
-  /* -------------------------- TEXTAREA -------------------------- */
-  textarea
-    min-height: 5em
-    margin-bottom: 0rem
-
   /* -------------------------- RANGE -------------------------- */
   input[type="range"]
     height: .2rem
@@ -52,24 +47,4 @@
       -webkit-appearance: none
       border: none
 
-  /* -------------------------- CHECKBOX -------------------------- */
-  input[type="checkbox"]
-    position: relative
-    height: (FORM_CIRCLE_HEIGHT + 2)
-    width: (FORM_CIRCLE_HEIGHT * 2)
-    cursor: pointer
-    transition all 300ms 150ms
 
-    &:after
-      content: ''
-      display: block
-      left: 0
-      top: 0
-      width: FORM_CIRCLE_HEIGHT
-      height: FORM_CIRCLE_HEIGHT
-      position: absolute
-      transition left 150ms
-
-    &:checked
-      &:after
-        left: (FORM_CIRCLE_HEIGHT - 2)

@@ -31,5 +31,6 @@ class Atoms.Atom.Switch extends Atoms.Class.Atom
       @el.attr("checked")?
 
   onTap: (event) =>
+    event.stopPropagation()
     @value !(@el.attr "checked")
     @bubble "change", event
