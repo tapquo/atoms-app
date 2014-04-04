@@ -33,8 +33,7 @@
       margin-bottom: PADDING
       & > *
         display: block
-        padding-top: 1rem
-        text-align: center
+        padding-top: PADDING
       & .icon
         font-size: 3.5rem
         line-height: 3.5rem
@@ -46,10 +45,7 @@
 
     & > footer
       margin-top: PADDING
-      & > nav
-        margin: 0 PADDING
-        font-size: FONT_SIZE_BIG
-        & > button
-          line-height: (FONT_SIZE_BIG * 2.75)
-          width: 100%
-          display: block
+
+    &, & > *
+      min-height: PADDING
+
