@@ -20,7 +20,8 @@ class Atoms.Atom.Switch extends Atoms.Class.Atom
   constructor: ->
     super
     @value @attributes.value if @attributes.value?
-    @el.bind "tap", @onTap
+    event_name = if $$?.isMobile?() then "tap" else "change"
+    @el.bind event_name, @onTap
 
   value: (value) ->
     if value is true
@@ -31,6 +32,6 @@ class Atoms.Atom.Switch extends Atoms.Class.Atom
       @el.attr("checked")?
 
   onTap: (event) =>
-    event.stopPropagation()
+    event.preventDefault()
     @value !(@el.attr "checked")
     @bubble "change", event
