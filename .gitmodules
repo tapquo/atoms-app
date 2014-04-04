@@ -7,6 +7,3 @@
 [submodule "extension/appnima"]
 	path = extension/appnima
 	url = https://github.com/tapquo/atoms-app-appnima
-[submodule "style/theme"]
-	path = style/theme
-	url = https://github.com/tapquo/atoms-app-theme.git
