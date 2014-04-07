@@ -37,7 +37,13 @@ class Atoms.Molecule.List extends Atoms.Class.Molecule
     @el.html ""
 
   # Children Bubble Events
-  onSingletap: (event, atom) =>
+  onLiSingleTap: (event, atom) =>
+    @_bubbleSelect event, atom
+
+  onLiTap: (event, atom) =>
+    @_bubbleSelect event, atom
+
+  _bubbleSelect: (event, atom) ->
     event.preventDefault()
-    @bubble "select", event
+    @bubble "select", atom
     false
