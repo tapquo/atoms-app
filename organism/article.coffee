@@ -16,7 +16,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   @base     : "Article"
 
-  @events   : ["in", "out", "active", "inactive"]
+  @events   : ["show", "hide"]
 
   constructor: ->
     super
@@ -27,51 +27,35 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     for animation_end in Atoms.Core.Constants.ANIMATION.END.split " "
       @el.bind animation_end, @onAnimationEnd
 
-  in: ->
-    @state "in"
-
-  out: ->
-    @state "out"
-
-  backIn: ->
-    @state "back-in"
-
-  backOut: ->
-    @state "back-out"
-
   state: (name) ->
     @el.addClass("active").attr("data-state", name)
 
   section: (id) ->
     @tunnel "navigation", @
 
-    @el.children("##{id}").addClass("active").siblings("section").removeClass("active")
-     # @TODO: Optimize section triggers
     for child in @children when child.constructor.base is "Section"
       if child.attributes.id is id
         child.show()
       else
         child.hide()
 
-    @aside() if @el.attr("data-state") is "aside-in"
+    @aside() if @el.attr("data-state") is "aside-show"
 
   aside: (id) ->
     if Atoms.App.Aside[id.toClassName()]?
-      method = if @el.hasClass "aside" then "out" else "in"
-
+      method = if @el.hasClass "aside" then "hide" else "show"
       do Atoms.App.Aside[id.toClassName()][method]
-      if method is "out" then @el.removeClass "aside"
+      if method is "hide" then @el.removeClass "aside"
       @state "aside-#{method}"
 
   onAnimationEnd: (event) =>
     state = @el.attr "data-state"
-    @trigger state
     if state in ["in", "back-out"]
-      @trigger "active"
+      @trigger "show"
     else if state in ["out", "back-in"]
-      @trigger "inactive"
+      @trigger "hide"
 
-    unless state in ["in", "back-out", "aside-in", "aside-out"] then @el.removeClass("active")
-    if state is "aside-in" then @el.addClass "aside"
+    unless state in ["in", "back-out", "aside-show", "aside-hide"] then @el.removeClass("active")
+    if state is "aside-show" then @el.addClass "aside"
 
     @el.removeAttr "data-state"

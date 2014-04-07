@@ -25,7 +25,9 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
     do @render
 
   show: ->
-    @trigger "show"
+    @el.addClass "active"
+    @bubble "show"
 
   hide: ->
-    @trigger "hide"
+    @el.removeClass "active"
+    @bubble "hide"

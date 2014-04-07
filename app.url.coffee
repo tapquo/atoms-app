@@ -48,6 +48,6 @@ Atoms.App.Url = do (a = Atoms) ->
     window.history.replaceState steps: value
 
   do ->
-    Atoms.Url.listen "/:article/:section", _onChangeRoute
+    a.Url.listen "/:article/:section", _onChangeRoute
 
   aside   : _aside

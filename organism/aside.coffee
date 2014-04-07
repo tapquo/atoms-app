@@ -16,7 +16,7 @@ class Atoms.Organism.Aside extends Atoms.Class.Organism
 
   @base     : "Aside"
 
-  @events   : ["active", "inactive"]
+  @events   : ["show", "hide"]
 
   constructor: (attributes = {})->
     attributes.method = "prepend"
@@ -28,16 +28,16 @@ class Atoms.Organism.Aside extends Atoms.Class.Organism
     for animation_end in Atoms.Core.Constants.ANIMATION.END.split " "
       @el.bind animation_end, @onAnimationEnd
 
-  in: ->
+  show: ->
     unless @el then @render()
     @el.addClass "active"
     @el.attr "data-state", "in"
 
-  out: ->
+  hide: ->
     if @el?.hasClass "active" then @el.attr "data-state", "out"
 
   onAnimationEnd: (event) =>
     state = @el.attr "data-state"
-    @trigger state
+    @trigger (if state is "in" then "show" else "hide")
     @el.removeAttr "data-state"
     @el.removeClass "active" if state is "out"

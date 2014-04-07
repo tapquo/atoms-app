@@ -16,7 +16,7 @@ class Atoms.Organism.Modal extends Atoms.Class.Organism
 
   @base     : "Modal"
 
-  @events   : ["active", "inactive"]
+  @events   : ["show", "hide"]
 
   constructor: (attributes = {}) ->
     super attributes
