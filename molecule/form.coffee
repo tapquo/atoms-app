@@ -65,3 +65,4 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
     else
       atom.el.removeClass "error"
     @bubble "change", event
+    false
