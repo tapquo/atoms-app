@@ -30,4 +30,4 @@ class Atoms.Atom.Li extends Atoms.Class.Atom
 
   @base     : "Li"
 
-  @events   : ["singleTap", "doubleTap", "hold", "swipeLeft", "swipeRight"]
+  @events   : ["tap", "singleTap", "doubleTap", "hold", "swipeLeft", "swipeRight"]
