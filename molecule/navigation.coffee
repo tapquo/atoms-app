@@ -22,16 +22,11 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
   onButtonTouch: (event, atom) =>
     @_active atom
     @bubble "select", event, atom
-    path = atom.attributes.path
-    if path?
-      parts = path.split("/")
-      if parts.length is 1
-        if parts[0] is "back"
-          Atoms.Url.back()
-        else
-          Atoms.App.Url.aside parts[0]
-      else if parts.length is 2
-        Atoms.Url.path path
+    __path atom.attributes.path
+    false
+
+  onLinkTouch: (event, atom) ->
+    __path atom.attributes.path
     false
 
   # Parent Tunnel Events
@@ -44,3 +39,24 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
 
   _active: (atom) ->
     atom.el.addClass("active").siblings().removeClass("active")
+
+
+__path = (path) ->
+  if path?
+    parts = path.split("/")
+
+    # If it's back or aside
+    if parts.length is 1
+      if parts[0] is "back"
+        Atoms.Url.back()
+      else
+        Atoms.App.Url.aside parts[0]
+
+    # If it's the same address
+    else if Atoms.Url.path() is "/#{path}"
+      Atoms.App.Url.aside()
+
+    # If it's a different address
+    else if parts.length is 2
+      Atoms.Url.path path
+  false

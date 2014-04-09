@@ -11,6 +11,7 @@ HTML5 API History Wrapper
 Atoms.App.Url = do (a = Atoms) ->
 
   _article = undefined
+  _aside   = undefined
   _options = Atoms.Url.options
 
   # Private
@@ -21,6 +22,7 @@ Atoms.App.Url = do (a = Atoms) ->
       setTimeout ->
         unless _options.forward then _stepHistory 0
         _activeSection article, properties.section
+
         if _article isnt article
           if _options.forward
             _stepHistory 1
@@ -30,10 +32,12 @@ Atoms.App.Url = do (a = Atoms) ->
             _article.state("out")
             article.state("back-out")
           _article = article
+        else
+          _article.aside _aside if _article?.el.hasClass "aside"
       , 10
 
-  _aside = (id) ->
-    _article?.aside id
+  _aside = (id = _aside) ->
+    _article?.aside _aside = id
 
   _activeSection = (article, section) ->
     _addStepHistory()
