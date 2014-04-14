@@ -51,7 +51,9 @@ Atoms.App.Url = do (a = Atoms) ->
   _stepHistory = (value) ->
     window.history.replaceState steps: value
 
-  do ->
-    a.Url.listen "/:article/:section", _onChangeRoute
+  Atoms.$ ->
+    url = Atoms.Url.path().split("/")
+    if url.length is 3 then _onChangeRoute article: url[1], section: url[2]
+    Atoms.Url.listen "/:article/:section", _onChangeRoute
 
   aside   : _aside
