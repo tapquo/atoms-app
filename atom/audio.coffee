@@ -39,4 +39,3 @@ class Atoms.Atom.Audio extends Atoms.Class.Atom
 
   _listen: (event, bubble) ->
     @el.bind event, (event) => @bubble bubble, event
-
