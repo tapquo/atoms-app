@@ -1,12 +1,15 @@
 header
-  [data-atoms="app"] > article &, [data-atoms="app"] > aside &
+  [data-atoms=app] > article &, [data-atoms=app] > aside &
     height: HEADER_HEIGHT
     line-height: HEADER_HEIGHT
 
-    & h1
+    & [data-atom=heading]
       z-index: 0
       position: absolute
       left: 25%
       width: 50%
       text-align: center
 
+  [data-atoms=app].standalone > article &, [data-atoms=app].standalone > aside &
+    height: auto
+    border-top: solid IOS_STANDALONE_HEIGHT #000

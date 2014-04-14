@@ -7,3 +7,6 @@ window.__ = Atoms.App =
 
   Extension : {}
   Url: null
+
+Atoms.$ ->
+  Atoms.$(document.body).addClass "standalone" if navigator.standalone
