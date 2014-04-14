@@ -15,7 +15,7 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
   """
 
   @available: ["Molecule.Div", "Molecule.Form", "Molecule.List",  "Molecule.Navigation",
-               "Atom.Figure", "Atom.Button", "Atom.GMap", "Atom.Heading", "Atom.Icon", "Atom.Image"]
+               "Atom.Audio", "Atom.Figure", "Atom.Button", "Atom.GMap", "Atom.Heading", "Atom.Icon", "Atom.Image", "Atom.Video"]
 
   @base     : "Section"
 
