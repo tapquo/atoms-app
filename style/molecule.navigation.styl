@@ -1,0 +1,52 @@
+[data-atoms="app"]
+  > article > [data-molecule="navigation"], > article > footer > [data-molecule="navigation"], > article > section [data-molecule="navigation"]
+    width: 100%
+    display-box()
+    box-pack(justify)
+    & > button
+      box-flex(1)
+      display: block
+      margin: 0
+      padding: 0
+      width: 1px
+      text-align: center
+
+  > * > header [data-molecule="navigation"]
+    height:  HEADER_HEIGHT
+    min-width: HEADER_HEIGHT
+    text-align: center
+
+  > article > [data-molecule="navigation"]
+    min-height: ARTICLE_NAV_HEIGHT
+
+  > article > section [data-molecule="navigation"]
+    &, > button
+      height:  HEADER_HEIGHT
+
+  > aside > section [data-molecule="navigation"]
+    min-height: HEADER_HEIGHT
+    & > a
+      display: block
+      line-height: (HEADER_HEIGHT / 1.4)
+      & .icon
+        font-size: FONT_SIZE_BIG
+        margin-right: 0.25rem
+
+  > article > footer [data-molecule="navigation"]
+    height:  FOOTER_HEIGHT
+    & > button
+      height:  FOOTER_HEIGHT
+      font-size: (FONT_SIZE_NORMAL * 1.5)
+
+  > [data-system=modal] > article
+    & > section, & > footer
+      & > nav
+        min-height: MIN_HEIGHT
+
+    & > footer > nav
+      margin: 0 PADDING
+      font-size: FONT_SIZE_BIG
+      & > button
+        line-height: (FONT_SIZE_BIG * 2.75)
+        width: 100%
+        display: block

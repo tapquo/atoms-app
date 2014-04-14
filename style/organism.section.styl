@@ -1,0 +1,16 @@
+section
+  [data-atoms="app"] article &, [data-atoms="app"] aside &
+    overflow-x: hidden
+    overflow-y: scroll
+    -webkit-overflow-scrolling: touch
+    box-flex(1)
+
+    &.padding
+      padding: .75rem 1rem
+
+    /* BUG (iOS) POSITION: relative childrens */
+    & > *
+      transform translate3d(0,0,0)
+
+  [data-atoms="app"] aside &
+    width: 100%

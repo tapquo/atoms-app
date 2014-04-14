@@ -1,0 +1,28 @@
+[data-atoms="app"]
+  input[type="checkbox"]
+    display: block
+    position: relative
+    height: (FORM_CIRCLE_HEIGHT + 2)
+    width: (FORM_CIRCLE_HEIGHT * 2)
+    margin: 0.2rem 0
+    cursor: pointer
+
+    &:after
+      content: ''
+      display: block
+      width: FORM_CIRCLE_HEIGHT
+      height: FORM_CIRCLE_HEIGHT
+      position: absolute
+
+    &:checked
+      &:after
+        left: (FORM_CIRCLE_HEIGHT - 2)
+
+
+  label + input[type="checkbox"], input[type="checkbox"] + input[type="checkbox"]
+    display: inline-table
+    vertical-align: middle
+    margin-left: .5rem
+
+  input[type="checkbox"] + label
+    display: block
