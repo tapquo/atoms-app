@@ -1,4 +1,4 @@
-[submodule "extension/gmaps"]
+gr[submodule "extension/gmaps"]
 	path = extension/gmaps
 	url = https://github.com/tapquo/atoms-app-gmaps
 [submodule "extension/carousel"]
@@ -7,6 +7,9 @@
 [submodule "extension/appnima"]
 	path = extension/appnima
 	url = https://github.com/tapquo/atoms-app-appnima
+[submodule "extension/stripe"]
+    path = extension/stripe
+    url = https://github.com/tapquo/atoms-app-stripe
 [submodule "theme"]
 	path = theme
 	url = https://github.com/tapquo/atoms-app-theme.git
