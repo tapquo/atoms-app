@@ -1,0 +1,51 @@
+[data-system=modal]
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 1980
+  display-box()
+  box-align(center)
+  box-pack(center)
+
+  & > [data-organism]
+    transform translate3d(0,0,0)
+
+  & > [data-organism=loading]
+    padding: PADDING
+    &::before, &::after
+      content: ""
+      display: block
+      width: SIZE = (PADDING * 2)
+      height: SIZE
+    &::before
+      float: left
+      margin-right: (PADDING / 2)
+    &::after
+      float: right
+      margin-left: (PADDING / 2)
+
+  & > :not([data-organism=loading])
+    width: MODAL_WIDTH
+    text-align: center
+    & > header
+      margin-bottom: PADDING
+      & > *
+        display: block
+        padding-top: PADDING
+      & .icon
+        font-size: 3.5rem
+        line-height: 3.5rem
+        & + h1
+          padding-top: 0
+
+    & > section
+      padding: PADDING
+
+    & > footer
+      margin-top: PADDING
+
+    &, & > *
+      min-height: PADDING
+

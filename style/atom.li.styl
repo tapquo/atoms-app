@@ -1,0 +1,38 @@
+[data-atoms="app"] li
+
+  list-style-type: none
+  position: relative
+  text-align: -webkit-match-parent
+  line-height: inherit
+
+  &[data-atom=li]
+    display-box()
+    box-orient(horizontal)
+
+    &:not(.anchor)
+      padding: PADDING
+
+    &.anchor
+      font-size: FONT_SIZE_TINY
+      text-transform: uppercase
+      padding: PADDING PADDING (PADDING / 3) PADDING
+
+    > figure
+      width: 44px
+      height: 44px
+      margin-right:  PADDING
+      background-size: cover
+
+    > div
+      box-flex(1)
+
+      span
+        float: right
+        font-size: FONT_SIZE_TINY
+
+      strong, small
+        display: block
+        line-height: 1.4rem
+
+      small
+        font-size: FONT_SIZE_SMALL
