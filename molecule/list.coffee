@@ -28,7 +28,7 @@ class Atoms.Molecule.List extends Atoms.Class.Molecule
     if callback
       records = (record for record in @_records when callback record.entity)
     for record in records or @_records
-      @_addAtomEntity record.entity, record = false
+      @_addAtomEntity record.entity, @attributes.bind, record = false
 
   all: ->
     do @select
