@@ -10,7 +10,7 @@ Basic fieldset for search
 
 class Atoms.Molecule.Form extends Atoms.Class.Molecule
 
-  @template : """<form {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></form>"""
+  @template : """<form {{#if.style}}class="{{style}}"{{/if.style}}></form>"""
 
   @available: ["Atom.Label", "Atom.Input", "Atom.Textarea", "Atom.Select", "Atom.Switch", "Atom.Button"]
 
