@@ -33,10 +33,21 @@
       ordinal-group(4)
 
   /* -------------------------- CLASSES -------------------------- */
-  .left
-    float: left
-  .right
-    float: right
+  :not(.align)
+    &.left
+      float: left
+    &.right
+      float: right
+
+  .align
+    &.left
+      text-align: left
+    &.center
+      text-align: center
+    &.right
+      text-align: right
+    &.justify
+      text-align: justify
 
   .rounded
     border-radius: 1rem
@@ -60,3 +71,4 @@
     padding-bottom: PADDING
   .padding-left
     padding-left: PADDING
+
