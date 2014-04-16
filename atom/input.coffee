@@ -23,6 +23,9 @@ class Atoms.Atom.Input extends Atoms.Class.Atom
   value: (value) ->
     if value? then @el.val value else @el.val()
 
-  error: (value) ->
-    method = if value is true then "addClass" else "removeClass"
+  error: (value, focus = true) ->
+    method = "removeClass"
+    if value
+      method = "addClass"
+      @el[0].focus() if focus
     @el[method] "error"
