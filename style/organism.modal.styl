@@ -1,7 +1,7 @@
 [data-system=modal]
-  position: absolute
-  top: 0
-  left: 0
+  position: fixed
+  top: 0px
+  left: 0px
   width: 100%
   height: 100%
   z-index: 1980
@@ -29,22 +29,13 @@
   & > :not([data-organism=loading])
     width: MODAL_WIDTH
     text-align: center
+    & > header, & > section
+      padding: PADDING
     & > header
-      margin-bottom: PADDING
       & > *
         display: block
-        padding-top: PADDING
       & .icon
         font-size: 3.5rem
-        line-height: 3.5rem
-        & + h1
-          padding-top: 0
-
-    & > section
-      padding: PADDING
-
-    & > footer
-      margin-top: PADDING
 
     &, & > *
       min-height: PADDING
