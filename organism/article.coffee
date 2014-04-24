@@ -36,8 +36,10 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     for child in @children when child.constructor.base is "Section"
       if child.attributes.id is id
         child.show()
-      else
+        child.el.focus()
+      else if child.el.hasClass "active"
         child.hide()
+        child.el.blur()
 
     @aside() if @el.attr("data-state") is "aside-show"
 
