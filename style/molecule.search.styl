@@ -14,11 +14,10 @@
 
   [data-molecule="navigation"] > [data-molecule="search"]
     padding: AIR = .4rem
-    > *
-      height: (ARTICLE_NAV_HEIGHT - (AIR * 1.375))
-
+    > input
+      border: none
+      height: ARTICLE_NAV_HEIGHT - AIR
+      padding: 0 AIR / 2
+      vertical-align: bottom
     > button
-      z-index: 2
-      top: AIR
-      right: AIR
-      width: 2.25rem
+      display: none

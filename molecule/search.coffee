@@ -10,6 +10,8 @@ Basic fieldset for search
 
 class Atoms.Molecule.Search extends Atoms.Molecule.Form
 
+  @template : """<form {{#if.style}}class="{{style}}"{{/if.style}} onsubmit="return false;"></form>"""
+
   @available: ["Atom.Input", "Atom.Button"]
 
   @events   : ["change", "submit"]
@@ -19,7 +21,7 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
   @default  :
     events  : ["submit"]
     children: [
-      "Atom.Input": id: "input", type: "search", placeholder: "Type your search...", events: ["keyup"], required: true
+      "Atom.Input": id: "input", type: "search", placeholder: "Type your search...", events: ["keypress", "keyup"], required: true
     ,
       "Atom.Button": icon: "search"
     ]
@@ -29,9 +31,11 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
 
   # Children Bubble Events
   onInputKeyup: (event, atom) =>
-    event.preventDefault()
-    @bubble "change", event.keyCode
-    if event.keyCode is 13 then @_bubbleSubmit event, atom
+    @bubble "change", event unless event.keyCode is 13
+    false
+
+  onInputKeypress: (event, atom) =>
+    @_bubbleSubmit event, atom if event.keyCode is 13
     false
 
   onButtonTouch: (event, atom) =>
@@ -40,5 +44,6 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
     false
 
   _bubbleSubmit: (event, atom) ->
+    atom?.el?[0].blur()
     value = @input.value()
     @bubble "submit", event if value isnt ""
