@@ -19,11 +19,15 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
 
   @base     : "Section"
 
-  @events   : ["show", "hide"]
+  @events   : ["show", "hide", "scroll"]
 
   constructor: ->
     super
     do @render
+
+  render: ->
+    super
+    do @bindScroll if "scroll" in @attributes.events
 
   show: ->
     @el.addClass "active"
@@ -32,3 +36,12 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
   hide: ->
     @el.removeClass "active"
     @bubble "hide"
+
+  bindScroll: ->
+    @el.bind "scroll", (event) =>
+      event =
+        height : parseInt(event.target.scrollHeight - event.target.getBoundingClientRect().height)
+        scroll : event.target.scrollTop
+      event.percent = parseInt((100 * event.scroll) / event.height)
+
+      @bubble "scroll", event

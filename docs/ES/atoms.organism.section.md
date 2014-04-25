@@ -38,3 +38,13 @@ Cualquier instancia puede desplegar el evento *show* cuando se muestra la propia
 
 #### hide
 Cualquier instancia puede desplegar el evento *hide* cuando se oculta la propia instancia.
+
+
+#### scroll
+Cualquier instancia puede desplegar el evento *scroll*  cuando se hace scroll sobre la misma, el evento devuelve un objeto de la siguiente manera:
+
+```
+height  : "Tamaño de la seccion"
+scroll  : "Scroll actual en pixels"
+percent : "Porcentaje"
+```
