@@ -19,3 +19,11 @@ class Atoms.Organism.Header extends Atoms.Class.Organism
   constructor: ->
     super
     @render()
+
+  # Parent Tunnel Events
+  onSectionScroll: (event, dispatcher) ->
+    if event.down
+      @el.addClass "scroll"
+    else
+      @el.removeClass "scroll"
+    false

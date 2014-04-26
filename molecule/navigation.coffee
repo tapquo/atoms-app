@@ -30,7 +30,7 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
     false
 
   # Parent Tunnel Events
-  onArticleNavigation: (event, article, hierarchy...) ->
+  onArticleChange: (event, article, hierarchy...) ->
     path = Atoms.Url.path().substr(1)
     for child in @children when child.attributes.path is path
       @_active child

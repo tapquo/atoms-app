@@ -31,7 +31,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     @el.addClass("active").attr("data-state", name)
 
   section: (id) ->
-    @tunnel "navigation", @
+    @tunnel "onArticleChange", @
 
     for child in @children when child.constructor.base is "Section"
       if child.attributes.id is id
@@ -50,6 +50,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
       if method is "hide" then @el.removeClass "aside"
       @state "aside-#{method}"
 
+  # Instance Events
   onAnimationEnd: (event) =>
     state = @el.attr "data-state"
     if state in ["in", "back-out"]
@@ -61,3 +62,8 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     if state is "aside-show" then @el.addClass "aside"
 
     @el.removeAttr "data-state"
+
+  # Children Bubble Events
+  onSectionScroll: (event, section) ->
+    @tunnel "onSectionScroll", event
+    false
