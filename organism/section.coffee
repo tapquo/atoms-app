@@ -27,7 +27,7 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
 
   render: ->
     super
-    do @bindScroll if "scroll" in @attributes.events
+    do @bindScroll if "scroll" in @attributes.events or []
 
   show: ->
     @el.addClass "active"
@@ -38,10 +38,15 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
     @bubble "hide"
 
   bindScroll: ->
+    @current_scroll = 0
     @el.bind "scroll", (event) =>
+      down = if event.target.scrollTop > @current_scroll then true else false
+      @current_scroll = event.target.scrollTop
       event =
         height : parseInt(event.target.scrollHeight - event.target.getBoundingClientRect().height)
         scroll : event.target.scrollTop
+        down   : down
+        up     : !down
       event.percent = parseInt((100 * event.scroll) / event.height)
 
       @bubble "scroll", event
