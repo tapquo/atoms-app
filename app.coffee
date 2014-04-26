@@ -1,12 +1,12 @@
 # Globals
 window.__ = Atoms.App =
-  version   : "0.04.25"
+  version   : "0.04.26"
   Article   : {}
   Aside     : {}
   Modal     : {}
 
   Extension : {}
-  Url: null
+  Url       : null
 
 Atoms.$ ->
   Atoms.$(document.body).addClass "standalone" if navigator.standalone
