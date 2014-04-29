@@ -30,6 +30,16 @@ section_instance.hide();
 ```
 
 
+#### .refresh()
+Este método te permite eliminar el estado desplegado por el evento *pull*:
+
+**Example**
+
+```
+section_instance.refresh();
+```
+
+
 ### Events
 
 #### show
@@ -48,3 +58,7 @@ height  : "Tamaño de la seccion"
 scroll  : "Scroll actual en pixels"
 percent : "Porcentaje"
 ```
+
+
+#### pull
+Cualquier instancia puede desplegar el evento *pull* cuando se arrastra el dedo verticalmente y hacia abajo cuando nos encontramos en el scroll minimo

@@ -19,7 +19,7 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
 
   @base     : "Section"
 
-  @events   : ["show", "hide", "scroll"]
+  @events   : ["show", "hide", "scroll", "pull"]
 
   constructor: ->
     super
@@ -27,7 +27,8 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
 
   render: ->
     super
-    do @bindScroll if "scroll" in @attributes.events or []
+    do @bindScroll if "scroll" in (@attributes.events or [])
+    do @bindPull if "pull" in (@attributes.events or [])
 
   show: ->
     @el.addClass "active"
@@ -36,6 +37,11 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
   hide: ->
     @el.removeClass "active"
     @bubble "hide"
+
+  refresh: ->
+    @pulling = false
+    @el.removeAttr "data-state"
+    @el.removeAttr "style"
 
   bindScroll: ->
     @current_scroll = 0
@@ -48,5 +54,21 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
         down   : down
         up     : !down
       event.percent = parseInt((100 * event.scroll) / event.height)
-
       @bubble "scroll", event
+
+  bindPull: ->
+    @pulling = false
+    @el.bind "swiping", (event) =>
+      y = event.quoData.delta.y
+      if @el[0].scrollTop < 16 and not @pulling and y > 0
+        event.originalEvent.preventDefault()
+        y = event.quoData.delta.y
+        if y >= 0 and y <= 80
+          @el.attr "style", "position: relative; top: #{y}px"
+          if y > 72
+            @pulling = true
+            @bubble "pull", event
+            @el.attr "data-state", "pull"
+
+    @el.bind "touchend", (event) =>
+      do @refresh if not @pulling
