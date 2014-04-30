@@ -5,7 +5,7 @@
     path = extension/carousel
     url = https://github.com/tapquo/atoms-app-carousel
 [submodule "extension/appnima-user"]
-    path = extension/appnima
+    path = extension/appnima-user
     url = https://github.com/tapquo/atoms-app-appnima-user
 [submodule "extension/stripe"]
     path = extension/stripe
