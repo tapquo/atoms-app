@@ -18,10 +18,20 @@
       padding: PADDING PADDING (PADDING / 3) PADDING
 
     > figure
-      width: 44px
-      height: 44px
+      width: SIZE = 2.8rem
+      height: SIZE
       margin-right:  PADDING
       background-size: cover
+      display-box()
+      box-align(center)
+      box-pack(center)
+      .icon
+        display: block
+        font-size: SIZE = 1.8rem
+        width: SIZE
+        height: SIZE
+        animation figure-loading 1.6s infinite linear
+        transform-origin: 50% 50%
 
     > div
       box-flex(1)
