@@ -17,5 +17,11 @@ section
     & > *
       transform translate3d(0,0,0)
 
+  [data-atoms="app"] article.active > &
+    &:not(.active)
+      display: none
+    &.active
+      display: block
+
   [data-atoms="app"] aside &
     width: 100%
