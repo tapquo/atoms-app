@@ -27,10 +27,10 @@ Atoms.App.Url = do (a = Atoms) ->
           if _options.forward
             _stepHistory 1
             article.state("in")
-            _article.state("back-in") if _article
+            _article.state("back-in").addClass(article.attributes.style) if _article
           else
             _article.state("out")
-            article.state("back-out")
+            article.state("back-out").removeClass(_article.attributes.style)
           _article = article
         else
           _article.aside _aside if _article?.el.hasClass "aside"
