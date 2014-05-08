@@ -18,6 +18,8 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   @events   : ["show", "hide"]
 
+  ACTIVE_STATES = ["in", "back-out", "aside-show", "aside-hide", "aside-show-right", "aside-hide-right"]
+
   constructor: ->
     super
     Atoms.App.Article[@constructor.name] = @
@@ -43,11 +45,17 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
     @aside() if @el.attr("data-state") is "aside-show"
 
-  aside: (id) ->
-    if Atoms.App.Aside[id.toClassName()]?
+  aside: (id) =>
+    aside_instance = Atoms.App.Aside[id.toClassName()]
+    if aside_instance?
       method = if @el.hasClass "aside" then "hide" else "show"
-      do Atoms.App.Aside[id.toClassName()][method]
-      if method is "hide" then @el.removeClass "aside"
+      do aside_instance[method]
+      if method is "hide"
+        @el.removeClass("aside").removeClass("right")
+
+      if aside_instance.attributes.style is "right"
+        method += "-right"
+
       @state "aside-#{method}"
 
   # Instance Events
@@ -58,8 +66,10 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     else if state in ["out", "back-in"]
       @trigger "hide"
 
-    unless state in ["in", "back-out", "aside-show", "aside-hide"] then @el.removeClass("active")
-    if state is "aside-show" then @el.addClass "aside"
+    unless state in ACTIVE_STATES then @el.removeClass("active")
+    if state in ["aside-show", "aside-show-right"]
+      @el.addClass "aside"
+      @el.addClass "right" if state is "aside-show-right"
 
     @el.removeAttr "data-state"
 

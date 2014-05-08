@@ -1,9 +1,13 @@
 [data-atoms="app"] > aside
   position: absolute
   display-box()
-  left: 0
   top: 0
   height: 100%
+
+  &:not(.right)
+    left: 0
+  &.right
+    right: 0
 
   &:not(.active)
     visibility: hidden
