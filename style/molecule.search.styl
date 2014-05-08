@@ -1,5 +1,5 @@
-[data-atoms="app"]
-  [data-molecule="search"]
+[data-atoms=app]
+  [data-molecule=form][data-extend=search]
     position: relative
     width: 100%
     > *
@@ -12,7 +12,7 @@
       & , & > .icon
         line-height: 0.85rem
 
-  [data-molecule="navigation"] > [data-molecule="search"]
+  [data-molecule=navigation] > [data-molecule=form][data-extend=search]
     padding: AIR = .4rem
     > input
       border: none

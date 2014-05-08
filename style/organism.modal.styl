@@ -12,7 +12,7 @@
   & > [data-organism]
     transform translate3d(0,0,0)
 
-  & > [data-organism=loading]
+  & > [data-extend=loading]
     padding: PADDING
     &::before, &::after
       content: ""
@@ -26,7 +26,7 @@
       float: right
       margin-left: (PADDING / 2)
 
-  & > :not([data-organism=loading])
+  & > :not([data-extend=loading])
     width: MODAL_WIDTH
     text-align: center
     & > header, & > section
