@@ -8,10 +8,22 @@ Basic fieldset for search
 ###
 "use strict"
 
-class Atoms.Molecule.Tags extends Atoms.Class.Molecule
+class Atoms.Molecule.Tags extends Atoms.Molecule.Div
 
-  @template : """<nav {{#if.style}}class="{{style}}"{{/if.style}} onsubmit="return false;"></nav>"""
+  @extends   : true
 
   @available: ["Atom.Label"]
 
-  @base     : "Tags"
+  @events   : ["select"]
+
+  # Children Bubble Events
+  onLabelSingleTap: (event, atom) =>
+    @_bubbleSelect event, atom
+
+  onLabelTap: (event, atom) =>
+    @_bubbleSelect event, atom
+
+  _bubbleSelect: (event, atom) ->
+    event.preventDefault()
+    @bubble "select", atom
+    false
