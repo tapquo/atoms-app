@@ -6,7 +6,7 @@ Elemento que representa un botón en nuestra interfaz, este puede ser contenido 
 
 ```
 id   : [OPTIONAL]
-style: tiny|small|big|fluid [OPTIONAL]
+style: tiny|small|big|fluid|loading [OPTIONAL]
 icon : [OPTIONAL]
 text : [OPTIONAL]
 path : [OPTIONAL]

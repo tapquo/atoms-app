@@ -25,6 +25,21 @@ button
   & > .icon + abbr
     margin-left: 0.25em
 
+  &.loading
+    & > .icon:before, & > abbr:before
+      content: "\f29d"
+      font-family: "Ionicons"
+      font-weight: 100
+      transform-origin: 50% 50%
+      animation loading-spin 2s infinite linear
+    & > .icon:before
+      position: relative
+    & > abbr:before
+      position: absolute
+      left: 1rem
+    & > .icon + abbr:before
+      content: ""
+
   [data-atoms="app"] header &
     height: HEADER_HEIGHT
     padding: 0 0.6em
@@ -36,7 +51,7 @@ button
     padding: 0.8em 1.0em
     margin: 0.2em 0
     & .icon
-      font-size: 1.1em
+      font-size: FONT_SIZE_BIG
     &.big
       font-size: FONT_SIZE_BIG
     &:not(.big):not(.small):not(.tiny)
