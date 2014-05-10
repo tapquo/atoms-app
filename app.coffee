@@ -1,6 +1,6 @@
 # Globals
 window.__ = Atoms.App =
-  version   : "0.05.08"
+  version   : "0.05.10"
   Article   : {}
   Aside     : {}
   Modal     : {}
