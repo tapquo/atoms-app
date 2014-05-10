@@ -34,6 +34,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   section: (id) ->
     @tunnel "onArticleChange", @
+    @tunnel "onSectionScroll"
 
     for child in @children when child.constructor.base is "Section"
       if child.attributes.id is id
