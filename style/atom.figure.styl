@@ -1,11 +1,24 @@
 [data-atoms=app]
 
   [data-atom=figure]
+    display-box()
+    box-align(center)
+    box-pack(center)
     &.tiny
       height: HEIGHT_TINY
+      line-height: HEIGHT_TINY
     &.small
       height: HEIGHT_SMALL
+      line-height: HEIGHT_SMALL
     &.normal
       height: HEIGHT_NORMAL
+      line-height: HEIGHT_NORMAL
     &.big
       height: HEIGHT_BIG
+      line-height: HEIGHT_BIG
+    & .icon
+      display: block
+      font-size: SIZE = 3rem
+      width: SIZE
+      height: SIZE
+      color: WHITE
