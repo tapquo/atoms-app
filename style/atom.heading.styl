@@ -1,0 +1,18 @@
+[data-atom=heading]
+  [data-organism=header] > &
+    z-index: 0
+    position: absolute
+    left: 25%
+    width: 50%
+    min-height: HEADER_HEIGHT
+    text-align: center
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    display: block
+
+    & + [data-atom=heading]
+      bottom: .2rem
+      min-height: HEIGHT = (HEADER_HEIGHT / 3.5)
+      line-height: HEIGHT
+      font-size: FONT_SIZE_TINY !important
