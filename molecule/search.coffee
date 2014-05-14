@@ -1,5 +1,5 @@
 ###
-Basic fieldset for search
+Basic fieldset for search based on Form molecule
 
 @namespace Atoms.Molecule
 @class Search
