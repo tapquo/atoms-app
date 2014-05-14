@@ -1,18 +1,24 @@
-[data-atom=heading]
-  [data-organism=header] > &
-    z-index: 0
-    position: absolute
-    left: 25%
-    width: 50%
-    min-height: HEADER_HEIGHT
-    text-align: center
-    overflow: hidden
-    white-space: nowrap
-    text-overflow: ellipsis
-    display: block
+[data-atoms="app"]
+  [data-organism=article], [data-organism=aside]
+    > [data-organism=header]
+      > [data-atom=heading]
+        z-index: 0
+        position: absolute
+        left: 25%
+        width: 50%
+        text-align: center
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+        display: block
 
-    & + [data-atom=heading]
-      bottom: .2rem
-      min-height: HEIGHT = (HEADER_HEIGHT / 3.5)
-      line-height: HEIGHT
-      font-size: FONT_SIZE_TINY !important
+      & > h1[data-atom=heading]
+        min-height: HEADER_HEIGHT
+
+      & > h2[data-atom=heading]
+        line-height: (HEADER_HEIGHT / 1.25)
+
+      & > h3[data-atom=heading]
+        bottom: .5rem
+        line-height:  (HEADER_HEIGHT / 3.5)
+        font-size: FONT_SIZE_TINY !important
