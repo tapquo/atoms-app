@@ -1,5 +1,5 @@
 ###
-Basic fieldset for search
+Form
 
 @namespace Atoms.Molecule
 @class Form
@@ -20,6 +20,10 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
 
   @defaults :
     events: ["submit"]
+
+  constructor: ->
+    super
+    @el.bind "submit", (event) -> event.preventDefault()
 
   value: ->
     properties = {}
