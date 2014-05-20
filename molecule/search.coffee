@@ -10,8 +10,6 @@ Basic fieldset for search based on Form molecule
 
 class Atoms.Molecule.Search extends Atoms.Molecule.Form
 
-  @template : """<form {{#if.style}}class="{{style}}"{{/if.style}} onsubmit="return false;"></form>"""
-
   @available: ["Atom.Input", "Atom.Button"]
 
   @events   : ["change", "submit"]
@@ -44,6 +42,6 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
     false
 
   _bubbleSubmit: (event, atom) ->
-    atom?.el?[0].blur()
+    atom.el.blur()
     value = @input.value()
     @bubble "submit", event if value isnt ""
