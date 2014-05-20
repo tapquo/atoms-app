@@ -18,7 +18,7 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
 
   @base     : "Form"
 
-  @defaults :
+  @default  :
     events: ["submit"]
 
   constructor: ->
