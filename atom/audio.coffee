@@ -14,28 +14,50 @@ class Atoms.Atom.Audio extends Atoms.Class.Atom
 
   @base     : "Audio"
 
-  @events   : ["play", "pause", "end", "progress"]
+  @events   : ["load", "error", "downloading", "play", "timing", "pause", "stop", "end"]
+
+  proxy_events:
+    load        : "canplaythrough"
+    downloading : "progress"
+    timing      : "timeupdate"
+    end         : "ended"
 
   constructor: ->
     super
-    for event in @attributes.events or []
-      if event is "play" then @_listen "play", event
-      if event is "pause" then @_listen "pause", event
-      if event is "end" then @_listen "ended", event
-      if event is "progress" then @_listen "progress", event
+    for event in @attributes.events or [] when event of @proxy_events
+      @_listen @proxy_events[event], event
 
   src: (url, type="audio/mpeg") ->
-    @el.attr "src", url
-    @el.attr "type", type if type
+    if url
+      @el.attr "src", url
+      @el.attr "type", type if type
+      @el[0].load()
+    else
+      @el.attr "src"
 
   play: ->
     @el[0].play()
 
   stop: ->
-    @el[0].load()
+    @el[0].time 0
 
   pause: ->
     @el[0].pause()
+
+  volume: (percent) ->
+    if percent?
+      @el[0].volume = parseInt(percent) / 100
+    else
+      @el[0].volume
+
+  time: (value) ->
+    if value
+      @el[0].currentTime = value
+    else
+      @el[0].currentTime
+
+  duration: ->
+    @el[0].duration
 
   _listen: (event, bubble) ->
     @el.bind event, (event) => @bubble bubble, event
