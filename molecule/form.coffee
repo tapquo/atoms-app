@@ -45,7 +45,7 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
   onSelectChange: (event, atom) =>
     @_bubbleChange event, atom
 
-  onSwitchChange: (event, atom) =>
+  onSwitchChanged: (event, atom) =>
     @_bubbleChange event, atom
 
   onButtonTouch: (event, atom) =>
