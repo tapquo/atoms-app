@@ -16,3 +16,6 @@
 [submodule "extension/chart"]
 	path = extension/chart
 	url = https://github.com/tapquo/atoms-app-chart
+[submodule "extension/appnima/payment"]
+	path = extension/appnima/payment
+	url = https://github.com/tapquo/atoms-app-appnima-payment
