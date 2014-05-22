@@ -1,0 +1,14 @@
+[data-atoms=app]
+  [data-atom=progress]
+    display: block
+    width: 100%
+    -webkit-appearance: none
+
+    &.tiny
+      height: .2rem
+    &.small
+      height: 1rem
+    &.big
+      height: 3rem
+    &:not(.tiny):not(.small):not(.big)
+      height: 1.5rem

@@ -12,7 +12,7 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
 
   @template : """<form {{#if.style}}class="{{style}}"{{/if.style}}></form>"""
 
-  @available: ["Atom.Label", "Atom.Input", "Atom.Textarea", "Atom.Select", "Atom.Switch", "Atom.Button"]
+  @available: ["Atom.Button", "Atom.Input", "Atom.Label", "Atom.Progress", "Atom.Select", "Atom.Switch", "Atom.Textarea"]
 
   @events   : ["change", "submit", "error"]
 
