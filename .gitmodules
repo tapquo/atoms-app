@@ -13,6 +13,9 @@
 [submodule "extension/appnima/user"]
 	path = extension/appnima/user
 	url = https://github.com/tapquo/atoms-app-appnima-user
+[submodule "extension/appnima/payment"]
+    path = extension/appnima/payment
+    url = https://github.com/tapquo/atoms-app-appnima-payment
 [submodule "extension/chart"]
 	path = extension/chart
 	url = https://github.com/tapquo/atoms-app-chart
