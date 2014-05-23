@@ -4,12 +4,12 @@ Elemento que representa un elemento de lista en nuestra interfaz.
 ### Attributes
 
 ```
-text       : [REQUIRED]
-description: [OPTIONAL]
-info       : [OPTIONAL]
-image      : [OPTIONAL]
-id         : [OPTIONAL]
-style      : [OPTIONAL]
+text       : String [REQUIRED]
+description: String [OPTIONAL]
+info       : String [OPTIONAL]
+image      : String [OPTIONAL]
+id         : String [OPTIONAL]
+style      : String [OPTIONAL]
 ```
 
 ### Events

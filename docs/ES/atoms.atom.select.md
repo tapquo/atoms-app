@@ -1,16 +1,16 @@
 ## Atom.Select
-Elemento que representa una entrada de valor de tipo lista en nuestra interfaz.
+Elemento que representa una entrada de valor de tipo lista en nuestra interfaz, podrá ser includo dentro de un Molecule.Form.
 
 ### Attributes
 
 ```
-name       : [REQUIRED]
-options    : [OPTIONAL]
-id         : [OPTIONAL]
-value      : [OPTIONAL]
-required   : true|false [OPTIONAL]
-disabled   : true|false [OPTIONAL]
-style      : tiny|small|big [OPTIONAL]
+name       : String [REQUIRED]
+options    : String [OPTIONAL]
+id         : String [OPTIONAL]
+value      : String [OPTIONAL]
+required   : Boolean [OPTIONAL]
+disabled   : Boolean [OPTIONAL]
+style      : String tiny|small|big [OPTIONAL]
 ```
 
 ### Methods

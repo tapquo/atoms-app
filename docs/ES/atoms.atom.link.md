@@ -1,17 +1,17 @@
 ## Atom.Link
-Elemento que representa un enlace en nuestra interfaz, este puede ser contenido en las moleculas [Molecule.Navigation](http://) y [Molecule.Form](http://).
+Elemento que representa un enlace en nuestra interfaz, este puede ser contenido en Molecule.Navigation y Molecule.Form.
 
 
 ### Attributes
 
 ```
-href  : [REQUIRED]
-target: [OPTIONAL]
-id    : [OPTIONAL]
-style : [OPTIONAL]
-icon  : [OPTIONAL]
-text  : [OPTIONAL]
-path  : [OPTIONAL]
+href  : String [REQUIRED]
+target: String [OPTIONAL]
+id    : String [OPTIONAL]
+style : String [OPTIONAL]
+icon  : String [OPTIONAL]
+text  : String [OPTIONAL]
+path  : String [OPTIONAL]
 ```
 
 ### Events

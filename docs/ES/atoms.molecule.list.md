@@ -1,17 +1,20 @@
 ## Molecule.List
-Elemento que representa una lista de elementos del tipo *Atom.Li* y gestiona una entidadla entidad de cada uno de ellos por medio del atributo especial *bind*.
+Elemento que representa una lista de elementos del tipo *Atom.Li* y gestiona una entidad 
+por cada una de ellos por medio del atributo especial *bind*. Podrá ser contenida en un *Organism.Section*.
 
 ### Attributes
 
 ```
-id    : [OPTIONAL]
-style : [OPTIONAL]
-bind  : [OPTIONAL]
-  entity   : [REQUIRED]
-  atom     : [REQUIRED]
-  events   : [OPTIONAL]
-  callbacks: [OPTIONAL]
-  auto     : True|False [OPTIONAL]
+id    : String [OPTIONAL]
+style : String [OPTIONAL]
+bind  : Object [OPTIONAL]
+  entity   : String [REQUIRED]
+  atom     : String [REQUIRED]
+  events   : Array [OPTIONAL]
+  callbacks: Array [OPTIONAL]
+  create   : Boolean [OPTIONAL]
+  update   : Boolean [OPTIONAL]
+  destroy  : Boolean [OPTIONAL]
 ```
 
 ### Methods

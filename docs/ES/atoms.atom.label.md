@@ -5,9 +5,9 @@ Elemento que representa una etiqueta en nuestra interfaz.
 ### Attributes
 
 ```
-text : [REQUIRED]
-id   : [OPTIONAL]
-style: [OPTIONAL]
-icon : [OPTIONAL]
-count: [OPTIONAL]
+text : String [REQUIRED]
+id   : String [OPTIONAL]
+style: String [OPTIONAL]
+icon : String [OPTIONAL]
+count: Number [OPTIONAL]
 ```

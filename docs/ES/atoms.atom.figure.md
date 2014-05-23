@@ -1,13 +1,13 @@
 ## Atom.Figure
-Elemento que representa una figura, ilustración, fotografía en nuestra interfaz.
+Elemento que representa una figura, ilustración o imagen en nuestra interfaz; puede añadirse al Organism.Section.
 
 
 ### Attributes
 
 ```
-url  : Url del contenido [REQUIRED]
-id   : [OPTIONAL]
-style: tiny|small|big|fluid [OPTIONAL]
+url  : String [REQUIRED]
+id   : String [OPTIONAL]
+style: String tiny|small|big|fluid [OPTIONAL]
 ```
 
 ### Events

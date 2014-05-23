@@ -1,14 +1,14 @@
 ## Atom.Progress
-Elemento que representa una barra de progreso, este puede ser contenido tanto en el organismo *Organism.Section* como en *Molecule.Form*.
+Elemento que representa una barra de progreso, este puede ser contenido tanto en Molecule.Form, Organism.Header, Organism.Section y Organism.Footer.
 
 
 ### Attributes
 
 ```
-id    : [OPTIONAL]
-style : tiny|small|big [OPTIONAL]
-max   : number [DEFAULT = 100]
-value : number [DEFAULT = 0]
+id    : String [OPTIONAL]
+style : String tiny|small|big [OPTIONAL]
+max   : Number [DEFAULT = 100]
+value : Number [DEFAULT = 0]
 ```
 
 ### Methods

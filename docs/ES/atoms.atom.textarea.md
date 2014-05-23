@@ -4,13 +4,13 @@ Elemento que representa una entrada de valor de texto en nuestra interfaz.
 ### Attributes
 
 ```
-name       : [REQUIRED]
-id         : [OPTIONAL]
-value      : [OPTIONAL]
-placeholder: [OPTIONAL]
-required   : true|false [OPTIONAL]
-disabled   : true|false [OPTIONAL]
-style      : tiny|small|big [OPTIONAL]
+name       : String [REQUIRED]
+id         : String [OPTIONAL]
+value      : String [OPTIONAL]
+placeholder: String [OPTIONAL]
+required   : Boolean [OPTIONAL]
+disabled   : Boolean [OPTIONAL]
+style      : String tiny|small|big [OPTIONAL]
 ```
 
 ### Methods

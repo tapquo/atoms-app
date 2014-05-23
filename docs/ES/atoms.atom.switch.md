@@ -1,15 +1,15 @@
 ## Atom.Switch
-Elemento que representa una entrada de valor de tipo booleana en nuestra interfaz.
+Elemento que representa una entrada de valor de tipo booleana en nuestra interfaz, podrá ser incluido dentro del Molecule.Form.
 
 ### Attributes
 
 ```
-name       : [REQUIRED]
-id         : [OPTIONAL]
-value      : true|false [OPTIONAL]
-required   : true|false [OPTIONAL]
-disabled   : true|false [OPTIONAL]
-style      : tiny|small|big [OPTIONAL]
+name       : String [REQUIRED]
+id         : String [OPTIONAL]
+value      : Boolean [OPTIONAL]
+required   : Boolean [OPTIONAL]
+disabled   : Boolean [OPTIONAL]
+style      : String tiny|small|big [OPTIONAL]
 ```
 
 ### Methods
@@ -35,5 +35,5 @@ console.log(value);
 ### Events
 
 
-#### change
-Cualquier instancia puede desplegar el evento *change* cuando el valor cambia.
+#### changed
+Cualquier instancia puede desplegar el evento *Bubble.Changed* cuando el valor cambia.

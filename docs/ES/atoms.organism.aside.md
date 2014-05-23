@@ -4,8 +4,8 @@ Al igual que el *Organism.Article* es un elemento contenedor padre donde se cont
 ### Attributes
 
 ```
-id    : [REQUIRED]
-style : [OPTIONAL]
+id    : String [REQUIRED]
+style : String [OPTIONAL]
 ```
 
 ### Methods

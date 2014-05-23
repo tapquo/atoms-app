@@ -59,6 +59,5 @@ scroll  : "Scroll actual en pixels"
 percent : "Porcentaje"
 ```
 
-
 #### pull
 Cualquier instancia puede desplegar el evento *pull* cuando se arrastra el dedo verticalmente y hacia abajo cuando nos encontramos en el scroll minimo

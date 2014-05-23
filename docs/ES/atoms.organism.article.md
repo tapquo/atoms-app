@@ -4,8 +4,8 @@ Es el elemento contenedor padre donde se contendrán todos los subelementos (org
 ### Attributes
 
 ```
-id    : [REQUIRED]
-style : [OPTIONAL]
+id    : String [REQUIRED]
+style : String [OPTIONAL]
 ```
 
 ### Methods

@@ -1,15 +1,15 @@
 ## Atom.Button
-Elemento que representa un botón en nuestra interfaz, este puede ser contenido en las moleculas [Molecule.Navigation](http://) y [Molecule.Form](http://).
+Elemento que representa un botón en nuestra interfaz, este puede ser contenido en: Molecule.Navigation, Molecule.Form y Organism.Section.
 
 
 ### Attributes
 
 ```
-id   : [OPTIONAL]
-style: tiny|small|big|fluid|loading [OPTIONAL]
-icon : [OPTIONAL]
-text : [OPTIONAL]
-path : [OPTIONAL]
+id   : String [OPTIONAL]
+style: String tiny|small|big|fluid|loading [OPTIONAL]
+icon : String [OPTIONAL]
+text : String [OPTIONAL]
+path : String [OPTIONAL]
 ```
 
 ### Events

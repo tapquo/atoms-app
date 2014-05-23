@@ -1,11 +1,11 @@
 ## Molecule.Search
-Elemento que extiende de la clase *Molecule.Form* y que representa un buscador con los átomos *Input* y *Button*.
+Elemento que extiende de la clase *Molecule.Form* y que representa un buscador con los átomos *Input* y *Button*. Puede ser contenido en *Molecule.Navigation* y *Organism.Section*.
 
 ### Attributes
 
 ```
-id    : [OPTIONAL]
-style : [OPTIONAL]
+id       : String [OPTIONAL]
+style    : String [OPTIONAL]
 ```
 
 ### Methods

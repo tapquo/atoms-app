@@ -1,14 +1,14 @@
-## Atom.Figure
+## Atom.Img
 Elemento que representa una imagen en nuestra interfaz.
 
 
 ### Attributes
 
 ```
-url  : Url del contenido [REQUIRED]
-alt  : Url del contenido [OPTIONAL]
-id   : [OPTIONAL]
-style: tiny|small|big|fluid [OPTIONAL]
+id   : String [OPTIONAL]
+url  : String [REQUIRED]
+alt  : String OPTIONAL]
+style: String tiny|small|big|fluid [OPTIONAL]
 ```
 
 ### Events

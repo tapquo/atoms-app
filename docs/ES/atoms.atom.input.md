@@ -4,14 +4,15 @@ Elemento que representa una entrada de valor en nuestra interfaz.
 ### Attributes
 
 ```
-type       : text|password|number|date|datetime|email|search|tel|time|url [REQUIRED]
-name       : [REQUIRED]
-id         : [OPTIONAL]
-value      : [OPTIONAL]
-placeholder: [OPTIONAL]
-required   : true|false [OPTIONAL]
-disabled   : true|false [OPTIONAL]
-style      : tiny|small|big [OPTIONAL]
+type       : String text|password|number|date|datetime|email|search|tel|time|url [REQUIRED]
+name       : String [REQUIRED]
+id         : String [OPTIONAL]
+value      : String [OPTIONAL]
+placeholder: String [OPTIONAL]
+required   : Boolean [OPTIONAL]
+disabled   : Boolean [OPTIONAL]
+style      : String tiny|small|big [OPTIONAL]
+maxlength  : Number [OPTIONAL]
 ```
 
 ### Methods
@@ -33,6 +34,28 @@ input_instance.value("atoms");
 value = input_instance.value();
 console.log(value);
 > "atoms"
+```
+
+#### .error()
+Este método te servirá para establecer la clase CSS "error" para el caso que necesites marcar como una entrada invalida, o para como veremos con Molecule.Form gestione los elementos con atributo required.
+
+**Parameters**
+
+```
+value    : Boolean [REQUIRED]
+focus    : Boolean[OPTIONAL - DEFAULT: True]
+```
+
+**Example**
+
+```
+input_instance.error(true);
+input_instance.el.hasClass("error");
+> true
+
+input_instance.error(false, false);
+input_instance.el.hasClass("error");
+> false
 ```
 
 ### Events

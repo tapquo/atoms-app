@@ -4,8 +4,8 @@ Este elemento sirve para crear ventanas flotantes o mensajes de dialogo dentro d
 ### Attributes
 
 ```
-id    : [REQUIRED]
-style : [OPTIONAL]
+id    : String [REQUIRED]
+style : String [OPTIONAL]
 ```
 
 ### Methods
