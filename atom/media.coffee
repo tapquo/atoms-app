@@ -2,16 +2,17 @@
 
 class __Media extends Atoms.Class.Atom
 
-  proxy_events:
-    load        : "canplaythrough"
-    downloading : "progress"
-    timing      : "timeupdate"
-    end         : "ended"
+  @events: ["load", "error", "downloading", "play", "timing", "pause", "stop", "end"]
 
   constructor: ->
     super
-    for event in @attributes.events or [] when event of @proxy_events
-      @_listen @proxy_events[event], event
+    events =
+      load        : "canplaythrough"
+      downloading : "progress"
+      timing      : "timeupdate"
+      end         : "ended"
+    for event in @attributes.events or [] when event of events
+      @_listen events[event], event
 
   src: (url, type) ->
     if url
@@ -62,6 +63,8 @@ class Atoms.Atom.Audio extends __Media
   @template : """<audio {{#if.autoplay}}autoplay="{{autoplay}}"{{/if.autoplay}} {{#if.controls}}controls="{{controls}}"{{/if.controls}} {{#if.preload}}preload="{{preload}}"{{/if.preload}} {{#if.loop}}loop="{{loop}}"{{/if.loop}} {{#if.src}}src="{{src}}"{{/if.src}}></audio>"""
   @base     : "Audio"
 
+  src: (url, type = "audio/mpeg") ->
+    super url, type
 
 ###
 @TODO
@@ -75,3 +78,6 @@ class Atoms.Atom.Audio extends __Media
 class Atoms.Atom.Video extends __Media
   @template : """<video {{#if.autoplay}}autoplay="{{autoplay}}"{{/if.autoplay}} {{#if.controls}}controls="{{controls}}"{{/if.controls}} {{#if.preload}}preload="{{preload}}"{{/if.preload}} {{#if.loop}}loop="{{loop}}"{{/if.loop}} {{#if.src}}src="{{src}}"{{/if.src}}></video>"""
   @base     : "Video"
+
+  src: (url, type = "audio/mpeg") ->
+    super url, type
