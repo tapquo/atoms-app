@@ -1,9 +1,19 @@
 [data-atoms=app]
+
   [data-atom=progress]
     display: block
     width: 100%
     -webkit-appearance: none
 
+  [data-organism=header], [data-organism=footer]
+    [data-atom=progress]
+      position: absolute
+      height: .2rem
+
+  [data-organism=header] [data-atom=progress]
+    bottom: 0
+
+  [data-organism=section] [data-atom=progress]
     &.tiny
       height: .2rem
     &.small
