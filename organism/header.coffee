@@ -12,7 +12,7 @@ class Atoms.Organism.Header extends Atoms.Class.Organism
 
   @template : """<header {{#if.style}}class="{{style}}"{{/if.style}}></header>"""
 
-  @available: ["Atom.Heading", "Atom.Icon", "Atom.Progress", "Molecule.Navigation"]
+  @available: ["Atom.Heading", "Atom.Icon", "Atom.Image", "Atom.Progress", "Molecule.Navigation"]
 
   @base     : "Header"
 
