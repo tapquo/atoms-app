@@ -10,6 +10,11 @@
       padding: 0
       width: 1px
       text-align: center
+      > small
+        display: inline-block
+        width: 1rem
+        font-size: FONT_SIZE_TINY
+        line-height: 1.05rem
 
   > * > header [data-molecule="navigation"]
     height:  HEADER_HEIGHT
@@ -37,6 +42,10 @@
     & > button
       height:  FOOTER_HEIGHT
       font-size: (FONT_SIZE_NORMAL * 1.5)
+      > small
+        position: absolute
+        top: .5rem
+        margin-left: -.5rem
 
   > [data-system=modal] > article
     & > section, & > footer
