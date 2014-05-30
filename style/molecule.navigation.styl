@@ -23,6 +23,8 @@
 
   > article > [data-molecule="navigation"]
     min-height: ARTICLE_NAV_HEIGHT
+    &.scroll
+      margin-top: -(ARTICLE_NAV_HEIGHT + .5rem)
 
   > article > section [data-molecule="navigation"]
     &, > button

@@ -37,6 +37,15 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
       break
     false
 
+  onSectionScroll: (event, dispatcher) ->
+    if event.down
+      @el.addClass "scroll"
+    else
+      @el.removeClass "scroll"
+    false
+
+
+  # Private
   _active: (atom) ->
     atom.el.addClass("active").siblings().removeClass("active")
 
