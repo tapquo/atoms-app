@@ -40,8 +40,16 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
 
   refresh: ->
     @pulling = false
-    @el.removeAttr "data-state"
-    @el.removeAttr "style"
+    @el
+      .removeAttr "data-state=pull"
+      .style "top", "0px"
+    setTimeout =>
+      @el
+        .removeAttr "style"
+        .removeClass "loading"
+        .removeClass "with-navigation"
+        .removeAttr "data-state"
+    , 300
 
   bindScroll: ->
     @current_scroll = 0
@@ -58,17 +66,24 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
 
   bindPull: ->
     @pulling = false
+    @el.bind "touchstart", (event) =>
+      @el.addClass "with-navigation" if @el.offset().top > 60
+
     @el.bind "swiping", (event) =>
       y = event.quoData.delta.y
       if @el[0].scrollTop < 16 and not @pulling and y > 0
         event.originalEvent.preventDefault()
         y = event.quoData.delta.y
         if y >= 0 and y <= 80
-          @el.attr "style", "position: relative; top: #{y}px"
+          @el
+            .attr "data-state", "pulling"
+            .css "position", "relative"
+            .css "top", "#{y}px"
           if y > 72
             @pulling = true
             @bubble "pull", event
             @el.attr "data-state", "pull"
 
     @el.bind "touchend", (event) =>
-      do @refresh if not @pulling
+      @el.css "transition", "top 300ms"
+      if @pulling then @el.addClass("loading") else do @refresh

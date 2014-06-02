@@ -21,6 +21,21 @@ section
       display: none
     &.active
       display: block
+      &[data-state=pulling], &[data-state=pull]
+        &:before
+          z-index: 0
+          display: block
+          position: fixed
+          left: 50%
+          width: HEIGHT_PULL_REFRESH
+          height: HEIGHT_PULL_REFRESH
+          margin-left: -((HEIGHT_PULL_REFRESH) / 2)
+          line-height: HEIGHT_PULL_REFRESH
+          text-align: center
+        &:not(with-navigation):before
+          top: HEADER_HEIGHT
+        &.with-navigation:before
+          top: 96px
 
   [data-atoms="app"] aside &
     width: 100%
