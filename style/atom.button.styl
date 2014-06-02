@@ -19,10 +19,19 @@ button
   outline: none
   background: none
   text-transform: capitalize
-
-  & > .icon
+  > small
+    display: inline-block
+    min-width: 1.1rem
+    max-width: 1.5rem
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    font-size: .75rem
+    line-height: 1.1rem
+    padding: 0 .2rem 0 .3rem
+  > .icon
     line-height: 0.9em
-  & > .icon + abbr
+  > .icon + abbr
     margin-left: 0.25em
 
   &.loading
@@ -42,10 +51,13 @@ button
 
   [data-atoms=app] header &
     height: HEADER_HEIGHT
-    padding: 0 0.6em
+    padding: 0 .6rem
     vertical-align: top
-    & > .icon
+    > .icon
       font-size: (FONT_SIZE_BIG * 1.25)
+    > small
+      position: absolute
+      top: .6rem
 
   [data-atoms=app] section &
     padding: 0.8em 1.0em
@@ -71,3 +83,11 @@ button
       cursor: default
     & + button
       margin-right: 0.2em
+    > small
+      display: none
+
+  [data-atoms=app] footer &
+    > small
+      position: absolute
+      top: .5rem
+      margin-left: -.5rem
