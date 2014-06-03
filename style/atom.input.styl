@@ -47,4 +47,21 @@
       -webkit-appearance: none
       border: none
 
+  fieldset
+    > datalist
+      display: none
+      z-index: 1
+      position: absolute
+      left: .25rem
+      right: .25rem
+      width: auto
+      margin-top: -.5rem
+      max-height : 13.5rem
 
+      &.active
+        display: block
+
+      > *
+        padding: .6rem
+        font-size: FONT_SIZE_NORMAL
+        line-height: SIZE = 1.5rem
