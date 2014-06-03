@@ -2,23 +2,33 @@
   [data-organism=article], [data-organism=aside]
     > [data-organism=header]
       > [data-atom=heading]
-        z-index: 0
-        position: absolute
-        left: 25%
-        width: 50%
-        text-align: center
         overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
         display: block
+        &:not(.left):not(.right)
+          z-index: 0
+          position: absolute
+          left: 25%
+          width: 50%
+          text-align: center
+
+        &.left, & .right
+          padding: 0 .5rem
+        &.left
+          float: left
+        &.right
+          float: right
+          text-align: right
 
       & > h1[data-atom=heading]
         min-height: HEADER_HEIGHT
 
       & > h2[data-atom=heading]
-        line-height: (HEADER_HEIGHT / 1.25)
+        top: .45rem
+        line-height: (FONT_SIZE_BIG * 1.25)
 
       & > h3[data-atom=heading]
-        bottom: .5rem
-        line-height:  (HEADER_HEIGHT / 3.5)
+        bottom: .4rem
+        line-height: FONT_SIZE_BIG
         font-size: FONT_SIZE_TINY !important
