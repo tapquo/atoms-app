@@ -6,8 +6,8 @@
   line-height: inherit
 
   &[data-atom=li]
-    display-box()
-    box-orient(horizontal)
+    display-flex()
+    flex-direction row
 
     &:not(.anchor)
       padding: PADDING
@@ -22,9 +22,12 @@
       height: SIZE
       margin-right:  PADDING
       background-size: cover
-      display-box()
-      box-align(center)
-      box-pack(center)
+      display-flex()
+      justify-content center
+      align-content center
+      align-items center
+      flex-shrink 0
+
       .icon
         display: block
         font-size: SIZE = 1.8rem
@@ -32,7 +35,7 @@
         height: SIZE
 
     > div
-      box-flex(1)
+      flex-grow 2
 
       span
         float: right
