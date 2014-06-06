@@ -73,7 +73,8 @@ animation-fill-mode()
 
 /* ====================== FLEXBOX ====================== */
 display-flex()
-  vendorValueNoMS('display', 'flex')
+  display: -webkit-flex
+  display: flex
 
 flex()
   vendor('flex', arguments)
@@ -101,8 +102,6 @@ align-items()
 
 order()
   vendor('order', arguments)
-
-
 
 align-self()
   vendor('align-self', arguments)
