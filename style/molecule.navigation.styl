@@ -9,16 +9,26 @@
       padding: 0
       text-align: center
 
-
   > * > header [data-molecule="navigation"]
     height:  HEADER_HEIGHT
     min-width: HEADER_HEIGHT
     text-align: center
 
   > article > [data-molecule="navigation"]
-    min-height: ARTICLE_NAV_HEIGHT
+    height: HEADER_EXTRA_HEIGHT
+    & > button
+      vertical-align: top
+      font-size: FONT_SIZE_TINY
+      height: 1.7rem
+      AIR = .5rem
+      &:first-child
+        margin-left: AIR
+      &:last-child
+        margin-right: AIR
+      > small
+        display: none
     &.scroll
-      margin-top: -(ARTICLE_NAV_HEIGHT + .5rem)
+      margin-top: -(HEADER_EXTRA_HEIGHT + .5rem)
 
   > article > section [data-molecule="navigation"]
     &, > button

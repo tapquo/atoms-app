@@ -41,6 +41,13 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
     @_bubbleSubmit event, atom
     false
 
+  onSectionScroll: (event, dispatcher) ->
+    if event.down
+      @el.addClass "scroll"
+    else
+      @el.removeClass "scroll"
+    false
+
   _bubbleSubmit: (event, atom) ->
     atom.el.blur()
     value = @input.value()

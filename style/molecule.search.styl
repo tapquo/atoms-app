@@ -1,7 +1,7 @@
 [data-atoms=app]
-  [data-molecule=form][data-extend=search]
+  [data-organism=section] > [data-molecule=form][data-extend=search]
     position: relative
-    width: 100%
+    width: inherit
     > *
       margin-top: 0px !important
       margin-bottom: 0px !important
@@ -12,12 +12,17 @@
       & , & > .icon
         line-height: 0.85rem
 
-  [data-molecule=navigation] > [data-molecule=form][data-extend=search]
-    padding: AIR = .4rem
+  [data-organism=article] > [data-molecule=form][data-extend=search]
+    height: HEADER_EXTRA_HEIGHT
+    min-height: HEADER_EXTRA_HEIGHT
+    padding: 0 .5rem
     > input
+      margin: 0 !important
       border: none
-      height: ARTICLE_NAV_HEIGHT - AIR
-      padding: 0 AIR / 2
-      vertical-align: bottom
+      line-height: 1.7rem
+      padding: 0 .4rem
     > button
       display: none
+
+    &.scroll
+      margin-top: -(HEADER_EXTRA_HEIGHT + .5rem)
