@@ -46,10 +46,10 @@ Atoms.App.Url = do (a = Atoms) ->
   _addStepHistory = ->
     state = window.history.state or steps: 0
     state.steps++
-    window.history.replaceState state
+    window.history.replaceState state, document.title
 
   _stepHistory = (value) ->
-    window.history.replaceState steps: value
+    window.history.replaceState steps: value, document.title
 
   Atoms.$ ->
     url = Atoms.Url.path().split("/")

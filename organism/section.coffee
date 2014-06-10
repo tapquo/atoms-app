@@ -42,7 +42,7 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
     @pulling = false
     @el
       .removeAttr "data-state=pull"
-      .style "top", "0px"
+      .css "top", "0px"
     setTimeout =>
       @el
         .removeAttr "style"

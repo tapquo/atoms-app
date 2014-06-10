@@ -34,9 +34,11 @@ class Atoms.Organism.Modal extends Atoms.Class.Organism
     @el.parent().addClass "active"
     @el.addClass "show"
     @trigger "show"
+    #@TODO: Hack for Firefox AnimationEnd listener fails
+    setTimeout (=> do @onAnimationEnd), 450
 
   hide: ->
-    @el.addClass("hide")
+    @el.addClass "hide"
     @trigger "hide"
 
   # Privates
