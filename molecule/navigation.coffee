@@ -26,7 +26,9 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
     false
 
   onLinkTouch: (event, atom) ->
-    __path atom.attributes.path
+    if atom.attributes.path?
+      event.preventDefault()
+      __path atom.attributes.path
     false
 
   # Parent Tunnel Events
