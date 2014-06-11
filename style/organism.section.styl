@@ -1,5 +1,5 @@
-section
-  [data-atoms="app"] article &, [data-atoms="app"] aside &
+[data-organism=section]
+  [data-atoms=app] > [data-organism=article] > &, [data-atoms=app] > [data-organism=aside] > &
     width: auto
     height: auto
     overflow-x: hidden
@@ -17,23 +17,26 @@ section
     & > *
       transform translate3d(0,0,0)
 
-  [data-atoms="app"] article.active > &
+  [data-atoms=app] [data-organism=article].active > &
     &:not(.active)
       display: none
     &.active
       display: block
+      PROGRESS_HEIGHT = .25rem
       &[data-state=pulling], &[data-state=pull]
+        position: relative
         &:before
-          z-index: 0
+          content: " "
           display: block
+          z-index: 0
           position: fixed
-          left: 50%
-          width: HEIGHT_PULL_REFRESH
-          height: HEIGHT_PULL_REFRESH
-          margin-left: -((HEIGHT_PULL_REFRESH) / 2)
-          line-height: HEIGHT_PULL_REFRESH
-          text-align: center
+          left: 0px
+          right: 0px
+          width: 100%
+          height: PROGRESS_HEIGHT
         &:not(with-navigation):before
           top: HEADER_HEIGHT
         &.with-navigation:before
-          top: 96px
+          top: (HEADER_HEIGHT + HEADER_EXTRA_HEIGHT)
+      &.loading
+        top: PROGRESS_HEIGHT !important

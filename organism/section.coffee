@@ -49,7 +49,7 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
         .removeClass "loading"
         .removeClass "with-navigation"
         .removeAttr "data-state"
-    , 300
+    , 450
 
   bindScroll: ->
     @current_scroll = 0
@@ -77,7 +77,6 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
         if y >= 0 and y <= 80
           @el
             .attr "data-state", "pulling"
-            .css "position", "relative"
             .css "top", "#{y}px"
           if y > 72
             @pulling = true
