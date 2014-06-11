@@ -7,5 +7,5 @@ Elemento que representa un icono en nuestra interfaz, el icono vendrá definido 
 ```
 icon : String [REQUIRED]
 id   : String [OPTIONAL]
-style: String [OPTIONAL]
+style: String tiny|small|big [OPTIONAL]
 ```
