@@ -4,9 +4,10 @@
     display-flex()
     align-content stretch
     & > button
-      flex-grow 2
+      flex-grow 1
       margin: 0
       padding: 0
+      width: 100%
       text-align: center
 
   > * > header [data-molecule="navigation"]
@@ -16,10 +17,12 @@
 
   > article > [data-molecule="navigation"]
     height: HEADER_EXTRA_HEIGHT
+    justify-content center
     & > button
       vertical-align: top
       font-size: FONT_SIZE_TINY
       height: 1.7rem
+      max-width: WIDTH = 5rem
       AIR = .5rem
       &:first-child
         margin-left: AIR
