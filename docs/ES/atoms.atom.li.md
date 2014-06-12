@@ -1,4 +1,4 @@
-## Atom.Input
+## Atom.Li
 Elemento que representa un elemento de lista en nuestra interfaz.
 
 ### Attributes
@@ -14,14 +14,15 @@ style      : String [OPTIONAL]
 
 ### Events
 
-#### singleTap
-Cualquier instancia puede desplegar el evento *singleTap* cuando se realiza una pulsación.
-
-#### doubleTap
-Cualquier instancia puede desplegar el evento *doubleTap* cuando se realiza una doble pulsación.
+#### touch
+Cualquier instancia puede desplegar el evento *touch* cuando se realiza una pulsación.
 
 #### hold
 Cualquier instancia puede desplegar el evento *hold* cuando se mantiene una pulsación prolongada de más de 650ms.
+
+#### doubleTap
+Cualquier instancia puede desplegar el evento *doubleTap* cuando se mantiene una pulsación prolongada de más de 650ms.
+
 
 #### swipeLeft
 Cualquier instancia puede desplegar el evento *swipeLeft* cuando se realiza un arrastre de derecha a izquierda.
