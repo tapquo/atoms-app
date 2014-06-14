@@ -53,16 +53,19 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
 
   bindScroll: ->
     @current_scroll = 0
-    @el.bind "scroll", (event) =>
-      down = if event.target.scrollTop > @current_scroll then true else false
-      @current_scroll = event.target.scrollTop
-      event =
-        height : parseInt(event.target.scrollHeight - event.target.getBoundingClientRect().height)
-        scroll : event.target.scrollTop
-        down   : down
-        up     : !down
-      event.percent = parseInt((100 * event.scroll) / event.height)
-      @bubble "scroll", event
+    @el.bind "scroll", @_event
+    @el.bind "touchcancel", @_event
+
+  _event: (event) =>
+    down = if event.target.scrollTop > @current_scroll then true else false
+    @current_scroll = event.target.scrollTop
+    event =
+      height : parseInt(event.target.scrollHeight - event.target.getBoundingClientRect().height)
+      scroll : event.target.scrollTop
+      down   : down
+      up     : !down
+    event.percent = parseInt((100 * event.scroll) / event.height)
+    @bubble "scroll", event
 
   bindPull: ->
     @pulling = false
