@@ -22,8 +22,5 @@ class Atoms.Organism.Header extends Atoms.Class.Organism
 
   # Parent Tunnel Events
   onSectionScroll: (event, dispatcher) ->
-    if event.down
-      @el.addClass "scroll"
-    else
-      @el.removeClass "scroll"
+    @el[(if event.addClass then "addClass" else "removeClass")] "scroll"
     false

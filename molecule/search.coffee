@@ -42,10 +42,7 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
     false
 
   onSectionScroll: (event, dispatcher) ->
-    if event.down
-      @el.addClass "scroll"
-    else
-      @el.removeClass "scroll"
+    @el[(if event.addClass then "addClass" else "removeClass")] "scroll"
     false
 
   _bubbleSubmit: (event, atom) ->

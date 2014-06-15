@@ -76,5 +76,9 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   # Children Bubble Events
   onSectionScroll: (event, section) ->
+    if event.down and (event.percent > 5 or (event.height - event.scroll) < 128)
+      event.addClass = true
+    else
+      event.addClass = false
     @tunnel "onSectionScroll", event
     false
