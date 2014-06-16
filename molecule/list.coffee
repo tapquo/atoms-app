@@ -38,7 +38,7 @@ class Atoms.Molecule.List extends Atoms.Class.Molecule
 
   # Children Bubble Events
   onLiTouch: (event, atom) =>
-    @_bubbleSelect event, atom
+    @_bubbleSelect event, atom if "select" in (@attributes.events or [])
 
   _bubbleSelect: (event, atom) ->
     event.preventDefault()
