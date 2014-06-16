@@ -26,7 +26,8 @@ class __Media extends Atoms.Class.Atom
     @el[0].play()
 
   stop: ->
-    @el[0].time 0
+    @time 0
+    @pause()
 
   pause: ->
     @el[0].pause()
@@ -38,7 +39,7 @@ class __Media extends Atoms.Class.Atom
       @el[0].volume
 
   time: (value) ->
-    if value
+    if value?
       @el[0].currentTime = value
     else
       @el[0].currentTime
