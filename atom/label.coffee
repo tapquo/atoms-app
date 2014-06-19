@@ -13,7 +13,7 @@ class Atoms.Atom.Label extends Atoms.Class.Atom
   @template : """
     <label {{#if.style}}class="{{style}}"{{/if.style}}>
       {{#if.icon}}<span class="icon {{icon}}"></span>{{/if.icon}}
-      {{text}}
+      {{value}}
       {{#if.count}}<strong>{{count}}</strong>{{/if.count}}
     </label>"""
 

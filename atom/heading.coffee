@@ -13,7 +13,7 @@ class Atoms.Atom.Heading extends Atoms.Class.Atom
   @template : """
     <{{size}} {{#if.style}}class="{{style}}"{{/if.style}}>
       {{#if.image}}<img src="image" />{{/if.image}}
-      {{#if.text}}{{text}}{{/if.text}}
+      {{#if.value}}{{value}}{{/if.value}}
     </{{size}}>"""
 
   @base     : "Heading"
