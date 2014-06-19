@@ -28,6 +28,7 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
   onLinkTouch: (event, atom) ->
     if atom.attributes.path?
       event.preventDefault()
+      @bubble "select", event, atom
       __path atom.attributes.path
     false
 
