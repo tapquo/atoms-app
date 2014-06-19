@@ -20,8 +20,8 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   ACTIVE_STATES = ["in", "back-out", "aside-show", "aside-hide", "aside-show-right", "aside-hide-right"]
 
-  constructor: ->
-    super
+  constructor: (attributes = {}, scaffold) ->
+    super attributes, scaffold
     Atoms.App.Article[@constructor.name] = @
 
   render: ->

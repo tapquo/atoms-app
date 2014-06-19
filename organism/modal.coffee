@@ -18,8 +18,8 @@ class Atoms.Organism.Modal extends Atoms.Class.Organism
 
   @events   : ["show", "hide"]
 
-  constructor: (attributes = {}) ->
-    super attributes
+  constructor: (attributes = {}, scaffold) ->
+    super attributes, scaffold
     block_el = Atoms.$(document.createElement("div")).attr "data-system", "modal"
     Atoms.$(@attributes.container or document.body).prepend block_el
     @attributes.container = block_el

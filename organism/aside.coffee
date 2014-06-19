@@ -18,9 +18,9 @@ class Atoms.Organism.Aside extends Atoms.Class.Organism
 
   @events   : ["show", "hide"]
 
-  constructor: (attributes = {})->
+  constructor: (attributes = {}, scaffold) ->
     attributes.method = "prepend"
-    super attributes
+    super attributes, scaffold
     Atoms.App.Aside[@constructor.name] = @
 
   render: ->

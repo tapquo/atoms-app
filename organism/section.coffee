@@ -21,8 +21,8 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
 
   @events   : ["show", "hide", "scroll", "pull"]
 
-  constructor: ->
-    super
+  constructor: (attributes = {}, scaffold) ->
+    super attributes, scaffold
     do @render
 
   render: ->
