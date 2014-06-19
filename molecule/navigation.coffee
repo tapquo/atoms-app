@@ -19,18 +19,11 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
   @events   : ["select"]
 
   # Children Bubble Events
-  onButtonTouch: (event, atom) =>
-    @_active atom
-    @bubble "select", event, atom
-    __path atom.attributes.path
-    false
+  onButtonTouch: (event, atom) ->
+    @_bubbleSelect event, atom
 
   onLinkTouch: (event, atom) ->
-    if atom.attributes.path?
-      event.preventDefault()
-      @bubble "select", event, atom
-      __path atom.attributes.path
-    false
+    @_bubbleSelect event, atom
 
   # Parent Tunnel Events
   onArticleChange: (event, article, hierarchy...) ->
@@ -44,11 +37,15 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
     @el[(if event.addClass then "addClass" else "removeClass")] "scroll"
     false
 
-
   # Private
   _active: (atom) ->
     atom.el.addClass("active").siblings().removeClass("active")
 
+  _bubbleSelect: (event, atom) ->
+    event.preventDefault()
+    @bubble "select", event, atom
+    __path atom.attributes.path if atom.attributes.path?
+    false
 
 __path = (path) ->
   if path?
