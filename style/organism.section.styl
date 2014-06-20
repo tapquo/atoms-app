@@ -7,11 +7,9 @@
 
     &.padding
       padding: .75rem 1rem
-
     &[data-state=pull].pull
       position: relative
       top: 80px
-
     /* BUG (iOS) POSITION: relative childrens */
     & > *
       transform translate3d(0,0,0)
@@ -21,7 +19,6 @@
       display: none
     &.active
       -webkit-overflow-scrolling: touch
-
       &:not(.centered)
         display: block
       &.centered

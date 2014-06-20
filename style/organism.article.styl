@@ -6,10 +6,7 @@
   overflow: hidden
 
   &:not(.active)
+    z-index: -1
     visibility: hidden
-    & > section
-      display: none
-
   &.active
     visibility: visible
-    transform translate3d(0,0,0)
