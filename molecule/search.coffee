@@ -25,7 +25,7 @@ class Atoms.Molecule.Search extends Atoms.Molecule.Form
     ]
 
   value: (value) ->
-    @input.value value or null
+    @input.value value
 
   # Children Bubble Events
   onInputKeyup: (event, atom) =>
