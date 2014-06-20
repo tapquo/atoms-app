@@ -33,7 +33,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     @el.addClass("active").attr("data-state", name)
 
   section: (id) ->
-    @tunnel "onArticleChange", @
+    @tunnel "onArticleChange"
     @tunnel "onSectionScroll"
 
     for child in @children when child.constructor.base is "Section"
