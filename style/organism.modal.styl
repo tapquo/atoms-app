@@ -16,11 +16,11 @@
   &.active
     visibility: visible
 
-  & > [data-organism]
+  > [data-organism]
     backface-visibility hidden
     transform translateZ(0)
 
-  & > [data-extend=loading]
+  > [data-extend=loading]
     padding: PADDING
     &::before, &::after
       content: ""
@@ -34,7 +34,7 @@
       float: right
       margin-left: (PADDING / 2)
 
-  & > :not([data-extend=loading])
+  > :not([data-extend=loading])
     width: MODAL_WIDTH
     text-align: center
     & > header, & > section

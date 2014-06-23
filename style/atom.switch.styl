@@ -1,12 +1,11 @@
 [data-atoms="app"]
-  input[type="checkbox"]
+  [data-atom=switch]
     display: block
     position: relative
     height: (FORM_CIRCLE_HEIGHT + 4)
     width: (FORM_CIRCLE_HEIGHT * 2)
     margin: 0.2rem 0
     cursor: pointer
-
     &:after
       content: ''
       position: absolute
@@ -15,15 +14,14 @@
       height: SIZE
       top: 2px
       left: 2px
-
     &:checked
       &:after
         left: (FORM_CIRCLE_HEIGHT - 2)
 
-  label + input[type="checkbox"], input[type="checkbox"] + input[type="checkbox"]
+  label + [data-atom=switch], [data-atom=switch] + [data-atom=switch]
     display: inline-table
     vertical-align: middle
     margin-left: .5rem
 
-  input[type="checkbox"] + label
+  [data-atom=switch] + label
     display: block

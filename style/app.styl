@@ -1,4 +1,4 @@
-[data-atoms="app"], html
+[data-atoms=app], html
   position: absolute
   height: 100%
   width: 100%
@@ -6,33 +6,33 @@
   padding: 0
   overflow: hidden
 
-[data-atoms="app"]
+[data-atoms=app]
   vendor(transform-style, preserve-3d)
 
-  & > aside, & > article
+  > aside, > article
     position: absolute
     display-flex()
     flex-direction column
     height: inherit
     transform translateZ(0)
 
-    & > header, > footer
+    > header, > footer
       position: relative
 
-    & > header, & > nav, & > form,  & > footer
+    > header, > nav, > form,  > footer
       flex-shrink 0
 
-    & > header
+    > header
       order 1
 
-    & > nav, & > form
+    > nav, > form
       order 2
 
-    & > section
+    > section
       order 3
       flex-grow 2
 
-    & > footer
+    > footer
       order 4
 
   /* -------------------------- CLASSES -------------------------- */

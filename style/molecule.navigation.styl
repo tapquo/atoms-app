@@ -1,24 +1,24 @@
-[data-atoms="app"]
-  > article > [data-molecule="navigation"], > article > footer > [data-molecule="navigation"], > article > section [data-molecule="navigation"]
+[data-atoms=app]
+  > article > [data-molecule=navigation], > article > footer > [data-molecule=navigation], > article > section [data-molecule=navigation]
     width: 100%
     display-flex()
     align-content stretch
-    & > button
+    > button
       flex-grow 1
       margin: 0
       padding: 0
       width: 100%
       text-align: center
 
-  > * > header [data-molecule="navigation"]
+  > * > header [data-molecule=navigation]
     height:  HEADER_HEIGHT
     min-width: HEADER_HEIGHT
     text-align: center
 
-  > article > [data-molecule="navigation"]
+  > article > [data-molecule=navigation]
     height: HEADER_EXTRA_HEIGHT
     justify-content center
-    & > button
+    > button
       vertical-align: top
       font-size: FONT_SIZE_TINY
       height: 1.7rem
@@ -33,28 +33,28 @@
     &.scroll
       margin-top: -(HEADER_EXTRA_HEIGHT + .5rem)
 
-  > article > section [data-molecule="navigation"]
+  > article > section [data-molecule=navigation]
     &, > button
       height:  HEADER_HEIGHT
 
-  > aside > section [data-molecule="navigation"]
+  > aside > section [data-molecule=navigation]
     min-height: HEADER_HEIGHT
 
-  > article > footer [data-molecule="navigation"]
+  > article > footer [data-molecule=navigation]
     height:  FOOTER_HEIGHT
-    & > button
+    > button
       height:  FOOTER_HEIGHT
       font-size: (FONT_SIZE_NORMAL * 1.5)
 
   > [data-system=modal] > article
-    & > section, & > footer
-      & > nav
+    > section, > footer
+      > nav
         min-height: 1rem
 
-    & > footer > nav
+    > footer > nav
       margin: 0 PADDING
       font-size: (FONT_SIZE_NORMAL * 1.05)
-      & > button
+      > button
         line-height: (FONT_SIZE_BIG * 2.6)
         width: 100%
         display: block

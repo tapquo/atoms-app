@@ -1,4 +1,4 @@
-[data-atoms="app"]
+[data-atoms=app]
   [data-organism=article], [data-organism=aside]
     > [data-organism=header]
       > [data-atom=heading]
@@ -13,7 +13,7 @@
           width: 50%
           text-align: center
 
-        &.left, & .right
+        &.left, &.right
           padding: 0 .5rem
         &.left
           float: left
@@ -21,14 +21,14 @@
           float: right
           text-align: right
 
-      & > h1[data-atom=heading]
+      > h1[data-atom=heading]
         min-height: HEADER_HEIGHT
 
-      & > h2[data-atom=heading]
+      > h2[data-atom=heading]
         top: .45rem
         line-height: (FONT_SIZE_BIG * 1.25)
 
-      & > h3[data-atom=heading]
+      > h3[data-atom=heading]
         bottom: .4rem
         line-height: FONT_SIZE_BIG
         font-size: FONT_SIZE_TINY !important

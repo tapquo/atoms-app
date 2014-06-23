@@ -1,6 +1,5 @@
 /* INPUT Elements */
-[data-atoms="app"]
-
+[data-atoms=app]
   input, select, textarea
     -webkit-appearance: none
     -webkit-user-select: text
@@ -9,7 +8,7 @@
     outline: none
 
   /* -------------------------- DEFAULTS -------------------------- */
-  input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
+  input[type=text], input[type=password], input[type=date], input[type=datetime], input[type=email], input[type=number], input[type=search], input[type=tel], input[type=time], input[type=url], select, textarea, label.select
     display: inline-block
     width: 100%
     margin: 0.2rem 0
@@ -20,7 +19,6 @@
 
     &:focus
       outline: none !important
-
     &.big
       padding: 0.85rem 0.75rem
       font-size: FONT_SIZE_BIG
@@ -32,7 +30,7 @@
       font-size: FONT_SIZE_TINY
 
   /* -------------------------- RANGE -------------------------- */
-  input[type="range"]
+  input[type=range]
     height: .2rem
     width: 100%
     margin: 1.5em 0
@@ -57,10 +55,8 @@
       width: auto
       margin-top: -.5rem
       max-height : 13.5rem
-
       &.active
         display: block
-
       > *
         padding: .6rem
         font-size: FONT_SIZE_NORMAL

@@ -1,12 +1,14 @@
-header
-  [data-atoms=app] > article &, [data-atoms=app] > aside &
-    z-index: 1
-    height: HEADER_HEIGHT
-    line-height: HEADER_HEIGHT
+[data-atoms=app]
+  > [data-organism=article], > [data-organism=aside]
+    > [data-organism=header]
+      z-index: 1
+      height: HEADER_HEIGHT
+      line-height: HEADER_HEIGHT
 
-  [data-atoms=app] > article &
-    &.scroll
-      margin-top: -(HEADER_HEIGHT)
+  > [data-organism=article].scroll
+    margin-top: -(HEADER_HEIGHT)
 
-  [data-atoms=app].standalone > article &, [data-atoms=app].standalone > aside &
-    border-top: solid IOS_STANDALONE_HEIGHT #000
+  &.standalone
+    > [data-organism=article], > [data-organism=aside]
+      > [data-organism=header]
+        border-top: solid IOS_STANDALONE_HEIGHT
