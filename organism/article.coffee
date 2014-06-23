@@ -20,6 +20,11 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   ACTIVE_STATES = ["in", "back-out", "aside-show", "aside-hide", "aside-show-right", "aside-hide-right"]
 
+  EVENT =
+    TUNNEL:
+      ARTICLE_CHANGE: "onArticleChange"
+      SECTION_SCROLL: "onSectionScroll"
+
   constructor: (attributes = {}, scaffold) ->
     super attributes, scaffold
     Atoms.App.Article[@constructor.name] = @
@@ -33,8 +38,8 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     @el.addClass("active").attr("data-state", name)
 
   section: (id) ->
-    @tunnel "onArticleChange"
-    @tunnel "onSectionScroll"
+    @tunnel EVENT.TUNNEL.ARTICLE_CHANGE
+    @tunnel EVENT.TUNNEL.SECTION_SCROLL
 
     for child in @children when child.constructor.base is "Section"
       if child.attributes.id is id
@@ -49,14 +54,13 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
   aside: (id) =>
     aside_instance = Atoms.App.Aside[id.toClassName()]
     if aside_instance?
+      aside_instance.tunnel EVENT.TUNNEL.ARTICLE_CHANGE
       method = if @el.hasClass "aside" then "hide" else "show"
       do aside_instance[method]
       if method is "hide"
         @el.removeClass("aside").removeClass("right")
-
       if aside_instance.attributes.style is "right"
         method += "-right"
-
       @state "aside-#{method}"
 
   # Instance Events
