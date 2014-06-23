@@ -54,14 +54,13 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
   aside: (id) =>
     aside_instance = Atoms.App.Aside[id.toClassName()]
     if aside_instance?
-      aside_instance.tunnel EVENT.TUNNEL.ARTICLE_CHANGE
       method = if @el.hasClass "aside" then "hide" else "show"
       do aside_instance[method]
-      if method is "hide"
-        @el.removeClass("aside").removeClass("right")
-      if aside_instance.attributes.style is "right"
-        method += "-right"
+      @el.removeClass("aside").removeClass("right") if method is "hide"
+      method += "-right" if aside_instance.attributes.style is "right"
       @state "aside-#{method}"
+
+      aside_instance.tunnel EVENT.TUNNEL.ARTICLE_CHANGE
 
   # Instance Events
   onAnimationEnd: (event) =>
