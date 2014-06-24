@@ -22,14 +22,17 @@ class Atoms.Atom.Select extends Atoms.Class.Atom
 
   @events   : ["change"]
 
-  constructor: (attributes = {}) ->
-    if attributes.options?.length > 0
-      options = []
-      for option in attributes.options
-        options.push if option.value then option else {value: option, label: option}
-      attributes.options = options
-    super attributes
+  constructor: ->
+    super
     @value @attributes.value if @attributes.value?
+
+  _render: ->
+    if @attributes.options?.length > 0
+      options = []
+      for option in @attributes.options
+        options.push if option.value? then option else {value: option, label: option}
+      @attributes.options = options
+    super
 
   value: (value) ->
     if value? then @el.val value else @el.val()
