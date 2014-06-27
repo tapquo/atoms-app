@@ -47,14 +47,19 @@
       font-size: (FONT_SIZE_NORMAL * 1.5)
 
   > [data-system=modal] > article
-    > section, > footer
+    > footer
       > nav
-        min-height: 1rem
-
-    > footer > nav
-      margin: 0 PADDING
-      font-size: (FONT_SIZE_NORMAL * 1.05)
-      > button
-        line-height: (FONT_SIZE_BIG * 2.6)
+        font-size: FONT_SIZE_TINY
+        text-align: right
         width: 100%
-        display: block
+        &:not(.block)
+          display: inline-block
+        &.block
+          > button
+            display: block
+            width: 100%
+            text-align: right
+            float: none
+        > button
+          padding: 0 .4rem
+          line-height: HEIGHT = (2.5 * FONT_SIZE_TINY)

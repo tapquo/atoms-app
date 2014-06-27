@@ -36,11 +36,16 @@
 
   > :not([data-extend=loading])
     width: MODAL_WIDTH
-    text-align: center
-    & > header, & > section
-      padding: PADDING
-    & > header
-      & > *
-        display: block
-      & .icon
-        font-size: 3.5rem
+    PAD = (1.75 * PADDING)
+    > header
+      padding: PAD
+      > *
+        display: inline-block
+        margin-right: .25rem
+        font-size: FONT_SIZE_BIG
+      + section
+        padding-top: 0
+    > section
+      padding: (.75 * PAD) PAD
+    > footer
+      padding: (1 * PADDING) (1.75 * PADDING)
