@@ -11,9 +11,9 @@ button
   font-size: inherit
   font-family: inherit
   font-weight: inherit
+  line-height: inherit
   text-align: center
   text-decoration: none
-  line-height: 1em
   border: none
   cursor: pointer
   outline: none
@@ -62,32 +62,32 @@ button
       top: .6rem
 
   [data-atoms=app] section &
-    padding: 0.8em 1.0em
-    margin: 0.2em 0
-
-    &.big
-      font-size: FONT_SIZE_BIG
+    margin: 0.2rem 0
     &:not(.big):not(.small):not(.tiny)
-      font-size: 1.1rem
+      padding: .9rem 1.2rem
+      font-size: FONT_SIZE_SMALL
+    &.big
+      padding: 1rem 1.6rem
+      font-size: FONT_SIZE_BIG
     &.small
+      padding: .5rem .6rem
       font-size: FONT_SIZE_SMALL
     &.tiny
-      font-size: FONT_SIZE_TINY
-      padding: 0.5em 0.6em
+      padding: .3rem .6rem
+      font-size: (.9 * FONT_SIZE_TINY)
     &.fluid
       width: 100%
       position: relative
       &:not(.icon) > .icon
         position: absolute
-        left: 1rem
+        left: SIZE = 1rem
+        line-height: SIZE
     &[disabled]
       cursor: default
     & + button
-      margin-right: 0.2em
+      margin-right: 0.2rem
     > small
       display: none
-    > .icon
-      font-size: FONT_SIZE_BIG
 
   [data-atoms=app] footer &
     > small
