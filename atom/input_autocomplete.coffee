@@ -15,7 +15,7 @@ class Atoms.Atom.AutoComplete extends Atoms.Atom.Input
   @template : """
     <fieldset>
       <input type="text" name="{{name}}" {{#if.placeholder}}placeholder="{{placeholder}}"{{/if.placeholder}} {{#if.style}}class="{{style}}"{{/if.style}} {{#if.value}}value="{{value}}"{{/if.value}} {{#required}}required{{/required}} {{#disabled}}disabled{{/disabled}} {{#if.maxlength}}maxlength={{maxlength}}{{/if.maxlength}} />
-      <datalist></datalist>
+      <datalist for="{{name}}"></datalist>
     </fieldset>"""
 
   @events   : ["change", "select"]
