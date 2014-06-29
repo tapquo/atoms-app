@@ -9,8 +9,8 @@
         &:not(.left):not(.right)
           z-index: 0
           position: absolute
-          left: 25%
-          width: 50%
+          left: 20%
+          width: 60%
           text-align: center
 
         &.left, &.right
@@ -25,10 +25,10 @@
         min-height: HEADER_HEIGHT
 
       > h2[data-atom=heading]
-        top: .45rem
+        top: (PADDING / 2)
         line-height: (FONT_SIZE_BIG * 1.25)
 
       > h3[data-atom=heading]
-        bottom: .4rem
+        bottom: (PADDING / 2)
         line-height: FONT_SIZE_BIG
         font-size: FONT_SIZE_TINY !important
