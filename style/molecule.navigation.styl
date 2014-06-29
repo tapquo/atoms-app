@@ -1,37 +1,31 @@
 [data-atoms=app]
-  > article > [data-molecule=navigation], > article > footer > [data-molecule=navigation], > article > section [data-molecule=navigation]
-    width: 100%
-    display-flex()
-    align-content stretch
+  > [data-organism=article]
+    > , > footer, > section
+      [data-molecule=navigation]
+        width: 100%
+        display-flex()
+        align-content stretch
+        > [data-atom=button]
+          flex-grow 1
+          margin: 0
+          padding: 0
+          width: 100%
+          text-align: center
+
+  > article > [data-molecule=navigation]
+    height: HEADER_EXTRA_HEIGHT
     > button
-      flex-grow 1
-      margin: 0
-      padding: 0
-      width: 100%
-      text-align: center
+      font-size: FONT_SIZE_TINY
+      line-height: 1.5rem
+      > small
+        display: none
+    &.scroll
+      margin-top: -(HEADER_EXTRA_HEIGHT + .5rem)
 
   > * > header [data-molecule=navigation]
     height:  HEADER_HEIGHT
     min-width: HEADER_HEIGHT
     text-align: center
-
-  > article > [data-molecule=navigation]
-    height: HEADER_EXTRA_HEIGHT
-    justify-content center
-    > button
-      vertical-align: top
-      font-size: FONT_SIZE_TINY
-      height: 1.7rem
-      max-width: WIDTH = 5rem
-      AIR = .5rem
-      &:first-child
-        margin-left: AIR
-      &:last-child
-        margin-right: AIR
-      > small
-        display: none
-    &.scroll
-      margin-top: -(HEADER_EXTRA_HEIGHT + .5rem)
 
   > article > section [data-molecule=navigation]
     &, > button
