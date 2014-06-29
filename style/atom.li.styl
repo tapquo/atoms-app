@@ -1,40 +1,50 @@
 [data-atoms=app]
   [data-atom=li]
-    list-style-type: none
     position: relative
-    text-align: -webkit-match-parent
     line-height: inherit
-    &[data-atom=li]
-      display-flex()
-      flex-direction row
-      &:not(.anchor)
-        padding: PADDING
-      &.anchor
-        font-size: FONT_SIZE_TINY
-        text-transform: uppercase
-        padding: PADDING PADDING (PADDING / 3) PADDING
-      > figure
-        width: SIZE = 2.8rem
-        height: SIZE
-        margin-right:  PADDING
-        background-size: cover
-        display-flex()
-        justify-content center
-        align-content center
-        align-items center
-        flex-shrink 0
-        .icon
-          display: block
-          font-size: SIZE = 1.8rem
-          width: SIZE
-          height: SIZE
+    flex-direction row
+    justify-content center
+    align-content center
+    align-items center
+    display-flex()
+    text-align: -webkit-match-parent
+    list-style-type: none
+
+    PADDING = .9rem
+    &:not(.anchor)
+      min-height: 3rem
+      padding: PADDING
+      padding: 0 0 0 PADDING
       > div
-        flex-grow 2
-        span
-          float: right
-          font-size: FONT_SIZE_TINY
-        strong, small
-          display: block
-          line-height: 1.4rem
-        small
-          font-size: FONT_SIZE_SMALL
+        padding: PADDING PADDING PADDING 0
+
+    &.anchor
+      font-size: FONT_SIZE_TINY
+      padding: (PADDING / 2) 0 0 PADDING
+
+    > figure
+      width: SIZE = 2.25rem
+      height: SIZE
+      margin-right:  PADDING
+      background-size: cover
+      display-flex()
+      justify-content center
+      align-content center
+      align-items center
+      flex-shrink 0
+      .icon
+        display: block
+        font-size: SIZE = (.6 * SIZE)
+        width: SIZE
+        height: SIZE
+    > div
+      flex-grow 2
+      span
+        float: right
+      strong, small
+        display: block
+      strong
+        line-height: FONT_SIZE_BIG
+      span, small
+        font-size: FONT_SIZE_TINY
+        line-height: FONT_SIZE_SMALL
