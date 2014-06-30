@@ -11,7 +11,7 @@
 class Atoms.Atom.Switch extends Atoms.Class.Atom
 
   @template : """
-    <input type="checkbox" name="{{name}}" {{#if.style}}class="{{style}}"{{/if.style}} {{#required}}required{{/required}} {{#disabled}}disabled{{/disabled}} />"""
+    <input type="checkbox" name="{{name}}" {{#if.style}}class="{{style}}"{{/if.style}} {{#required}}required{{/required}} {{#disabled}}disabled{{/disabled}}/>"""
 
   @base     : "Switch"
 
@@ -33,5 +33,6 @@ class Atoms.Atom.Switch extends Atoms.Class.Atom
 
   onTap: (event) =>
     event.preventDefault()
+    event.stopPropagation()
     @value !(@el.attr "checked")
     @bubble "changed", event
