@@ -19,3 +19,6 @@
 [submodule "extension/appnima/payment"]
 	path = extension/appnima/payment
 	url = https://github.com/tapquo/atoms-app-appnima-payment
+[submodule "extension/leaflet"]
+	path = extension/leaflet
+	url = https://github.com/hicom150/atoms-app-leaflet
