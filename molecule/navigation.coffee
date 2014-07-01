@@ -44,6 +44,9 @@ class Atoms.Molecule.Navigation extends Atoms.Class.Molecule
   _bubbleSelect: (event, atom) ->
     event.preventDefault()
     if not atom.attributes.callbacks?.length > 0
+      atom.el
+        .addClass "active"
+        .siblings().removeClass "active"
       @bubble "select", event, atom
       __path atom.attributes.path if atom.attributes.path?
       false

@@ -51,7 +51,6 @@ class Atoms.Atom.AutoComplete extends Atoms.Atom.Input
       @attributes.options = options
 
   _bindKeyup: (event) =>
-    console.log "_bindKeyup"
     @datalist.removeClass "active"
     value = @el.val().toLowerCase()
     clearTimeout @timer if @timer?
@@ -61,7 +60,6 @@ class Atoms.Atom.AutoComplete extends Atoms.Atom.Input
         markup += """<li value="#{option.value}">#{option.label}</li>"""
       if markup isnt ""
         @datalist.html markup
-
         @datalist.addClass "active"
         @timer = setTimeout (=> do @_hide), 3000
     @bubble "change" if "change" in (@attributes.events or [])

@@ -18,3 +18,5 @@ class Atoms.Atom.Link extends Atoms.Class.Atom
     </a>"""
 
   @base     : "Link"
+
+  @events   : ["touch"]

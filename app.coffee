@@ -1,6 +1,15 @@
-# Globals
+###
+Global namespace for Atoms.App
+
+@namespace Atoms
+@class     App
+
+@author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+###
+"use strict"
+
 window.__ = Atoms.App =
-  version   : "0.06.29"
+  version   : "0.07.01"
   Article   : {}
   Aside     : {}
   Modal     : {}
