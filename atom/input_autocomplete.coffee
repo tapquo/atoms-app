@@ -22,11 +22,11 @@ class Atoms.Atom.AutoComplete extends Atoms.Atom.Input
 
   constructor: ->
     super
-    @datalist = @el.find "datalist"
-    @el = @el.find "input"
+    do @_managePseudoElements
 
-    @el.bind "keyup", @_bindKeyup
-    @datalist.bind "touchstart", @_bindTouch
+  refresh: ->
+    super
+    do @_managePseudoElements
 
   value: (value) ->
     if value?
@@ -38,15 +38,20 @@ class Atoms.Atom.AutoComplete extends Atoms.Atom.Input
         break
       value
 
-  _render: ->
+  _managePseudoElements: ->
+    @datalist = @el.find "datalist"
+    @el = @el.find "input"
+    @el.bind "keyup", @_bindKeyup
+    @datalist.bind "touchstart", @_bindTouch
+
     if @attributes.options?.length > 0
       options = []
       for option in @attributes.options or []
         options.push if option.value? then option else {value: option, label: option}
       @attributes.options = options
-    super
 
   _bindKeyup: (event) =>
+    console.log "_bindKeyup"
     @datalist.removeClass "active"
     value = @el.val().toLowerCase()
     clearTimeout @timer if @timer?
@@ -56,6 +61,7 @@ class Atoms.Atom.AutoComplete extends Atoms.Atom.Input
         markup += """<li value="#{option.value}">#{option.label}</li>"""
       if markup isnt ""
         @datalist.html markup
+
         @datalist.addClass "active"
         @timer = setTimeout (=> do @_hide), 3000
     @bubble "change" if "change" in (@attributes.events or [])
