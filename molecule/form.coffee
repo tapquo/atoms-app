@@ -32,7 +32,11 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
     properties
 
   clean: ->
-    child.value "" for child in @children when child.attributes.name and child.value?
+    for child in @children when child.attributes.name and child.value?
+      if child.constructor.name is "Switch"
+        child.value false
+      else
+        child.value ""
     true
 
   # Children Bubble Events
