@@ -1,4 +1,31 @@
-[data-atoms=app], html
+/**
+ * Stylesheet
+ *
+ * @namespace Atoms
+ * @class App
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+a,abbr,address,article,aside,audio,b,blockquote,body,caption,cite,code,dd,del,dfn,dialog,div,dl,dt,em,fieldset,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video
+  border: 0
+  margin: 0
+  outline: 0
+  padding: 0
+
+*, *:before, *:after
+  margin: 0
+  padding: 0
+  box-sizing(border-box)
+
+audio, video
+  &:not([controls])
+    display: none
+
+[hidden]
+  display: none
+
+html
   position: absolute
   height: 100%
   width: 100%
@@ -6,12 +33,51 @@
   padding: 0
   overflow: hidden
 
+body
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  // overflow-y: visible !important
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: moz-none
+  user-select: none
+  *
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
+
+a
+  text-decoration: none
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+img
+  border: 0
+  -ms-interpolation-mode: bicubic
+  vertical-align: middle
+  font-size: 0
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+th, td, caption
+  vertical-align: top
+  text-align: left
+
+::-webkit-scrollbar
+  width: 0px
+  height: 0px
+
+
 [data-atoms=app]
   vendor(transform-style, preserve-3d)
 
   h1, h2, h3, h4, h5, h6, label, p, span, button, abbr, a
     -webkit-font-smoothing: subpixel-antialiased
     font-smoothing: subpixel-antialiased
+    -webkit-text-size-adjust: 100%
+    -ms-text-size-adjust: 100%
+    text-size-adjust: 100%
 
   > aside, > article
     position: absolute
