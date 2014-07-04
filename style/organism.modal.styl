@@ -21,18 +21,19 @@
     transform translateZ(0)
 
   > [data-extend=loading]
-    padding: PADDING
+    SIZE = .55rem
+    padding: SIZE
     &::before, &::after
       content: ""
       display: block
-      width: SIZE = (PADDING * 2)
-      height: SIZE
+      width: (1.75 * SIZE)
+      height: (1.75 * SIZE)
     &::before
       float: left
-      margin-right: (PADDING / 2)
+      margin-right: (SIZE / 2)
     &::after
       float: right
-      margin-left: (PADDING / 2)
+      margin-left: (SIZE / 2)
 
   > :not([data-extend=loading])
     width: MODAL_WIDTH
