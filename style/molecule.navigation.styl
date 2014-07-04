@@ -24,8 +24,12 @@
   > * > header [data-molecule=navigation]
     z-index: 1
     height:  HEADER_HEIGHT
-    min-width: HEADER_HEIGHT
+    min-width: (HEADER_HEIGHT / 2)
     text-align: center
+    &.left
+      margin-left: .4rem
+    &.right
+      margin-right: .4rem
 
   > article > section [data-molecule=navigation]
     &, > button
