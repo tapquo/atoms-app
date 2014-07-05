@@ -37,15 +37,17 @@
 
   > :not([data-extend=loading])
     width: MODAL_WIDTH
-    PAD = (1.75 * PADDING)
+    PAD = (1.5 * PADDING)
     > header
       padding: PAD
       > *
         display: inline-block
         margin-right: .25rem
         font-size: FONT_SIZE_BIG
-      + section
+    &:not(.cancel):not(.accept):not(.warning)
+      > header + section
         padding-top: 0
+
     > section
       padding: (.75 * PAD) PAD
     > footer
