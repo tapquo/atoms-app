@@ -45,7 +45,6 @@ article_instance.aside("options");
 
 
 ### Events
-
 En este tipo de elementos no tiene ningún sentido el sistema de eventos *Bubble* ya que no tiene ningun elemento padre, por lo tanto la suscripción a los eventos se realizará de la siguiente manera:
 
 ```
