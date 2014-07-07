@@ -23,7 +23,7 @@ id: String [REQUIRED]
 
 ```
 article_instance.section("form");
-// Shows section with id 'form' if exists.
+/* Shows section with id 'form' if exists. */
 ```
 
 
@@ -40,7 +40,7 @@ id: String [REQUIRED]
 
 ```
 article_instance.aside("options");
-// Shows aside with id 'options' if exists.
+/* Shows aside with id 'options' if exists. */
 ```
 
 

@@ -28,9 +28,9 @@ value : number [OPTIONAL]
 progress = new Atoms.Atom.Progress({value: 10});
 
 progress.value();
-// 10
+/* 10 */
 
 progress.value(25);
 progress.value();
-// 25
+/* 25 */
 ```

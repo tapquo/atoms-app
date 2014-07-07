@@ -30,7 +30,7 @@ select_instance.value("atoms");
 
 value = select_instance.value();
 console.log(value);
-// "atoms"
+/* "atoms" */
 ```
 
 ### Events

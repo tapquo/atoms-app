@@ -29,7 +29,7 @@ switch_instance.value(true);
 
 value = switch_instance.value();
 console.log(value);
-// true
+/* true */
 ```
 
 ### Events

@@ -23,7 +23,7 @@ form_instance.appendChild("Atom.Button", {text: "Save"});
 
 value = form_instance.value();
 console.log(value);
-// {name: "@soyjavi", bio: "@tapquo founder"}
+/* {name: "@soyjavi", bio: "@tapquo founder"} */
 ```
 
 #### .clean()
@@ -36,7 +36,7 @@ form_instance.clean();
 
 value = form_instance.value();
 console.log(value);
-// {name: ", bio: ""}
+/* {name: ", bio: ""} */
 ```
 
 

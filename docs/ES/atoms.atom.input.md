@@ -33,7 +33,7 @@ input_instance.value("atoms");
 
 value = input_instance.value();
 console.log(value);
-// "atoms"
+/* "atoms" */
 ```
 
 #### .error()
@@ -51,11 +51,11 @@ focus    : Boolean[OPTIONAL - DEFAULT: True]
 ```
 input_instance.error(true);
 input_instance.el.hasClass("error");
-// true
+/* true */
 
 input_instance.error(false, false);
 input_instance.el.hasClass("error");
-// false
+/* false */
 ```
 
 ### Events

@@ -26,7 +26,7 @@ search_instance.value("@soyjavi");
 
 value = search_instance.value();
 console.log(value);
-// "@soyjavi"
+/* "@soyjavi" */
 ```
 
 ### Events
