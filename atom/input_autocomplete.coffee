@@ -62,12 +62,12 @@ class Atoms.Atom.AutoComplete extends Atoms.Atom.Input
         @datalist.html markup
         @datalist.addClass "active"
         @timer = setTimeout (=> do @_hide), 3000
-    @bubble "change" if "change" in (@attributes.events or [])
+    @bubble "change"
 
   _bindTouch: (event) =>
     @value Atoms.$(event.target).html()
     do @_hide
-    @bubble "select" if "select" in (@attributes.events or [])
+    @bubble "select"
 
   _hide: =>
     @datalist.removeClass "active" if @datalist.hasClass "active"
