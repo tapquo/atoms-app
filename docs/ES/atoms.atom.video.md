@@ -65,11 +65,11 @@ Este método te servirá para establecer y obtener el porcentaje del volumen de 
 
 ```
 video_instance.volume();
-> 50
+// 50
 
 video_instance.volumen(75);
 video_instance.volume();
-> 75
+// 75
 ```
 
 #### .time()
@@ -79,11 +79,11 @@ Este método te servirá para establecer y obtener el tiempo actual en segundos 
 
 ```
 video_instance.time();
-> 10.239238283
+// 10.239238283
 
 video_instance.time(20);
 video_instance.time();
-> 20.23823
+// 20.23823
 ```
 
 #### .duration()
@@ -93,7 +93,7 @@ Este método te servirá para conocer el tiempo total en segundos de la reproduc
 
 ```
 video_instance.duration();
-> 123.23823981
+// 123.23823981
 ```
 
 ### Events

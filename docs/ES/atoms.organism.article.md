@@ -23,7 +23,7 @@ id: String [REQUIRED]
 
 ```
 article_instance.section("form");
-> Shows section with id 'form' if exists.
+// Shows section with id 'form' if exists.
 ```
 
 
@@ -40,13 +40,13 @@ id: String [REQUIRED]
 
 ```
 article_instance.aside("options");
-> Shows aside with id 'options' if exists.
+// Shows aside with id 'options' if exists.
 ```
 
 
 ### Events
 
-En este tipo de elementos no tiene ningún sentido el sistema de eventos *Bubble* ya que no tiene ningun elemento padre, por lo tanto la suscripción a los eventos se realizará de la siguiente manera: 
+En este tipo de elementos no tiene ningún sentido el sistema de eventos *Bubble* ya que no tiene ningun elemento padre, por lo tanto la suscripción a los eventos se realizará de la siguiente manera:
 
 ```
 article_instance.bind(NAME_OF_EVENT, function(event) {

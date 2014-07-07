@@ -11,7 +11,7 @@ style    : String [OPTIONAL]
 ### Methods
 
 #### .value()
-Este método recoge/establece el valor de búsqueda. 
+Este método recoge/establece el valor de búsqueda.
 
 **Parameters**
 
@@ -26,7 +26,7 @@ search_instance.value("@soyjavi");
 
 value = search_instance.value();
 console.log(value);
-> "@soyjavi"
+// "@soyjavi"
 ```
 
 ### Events

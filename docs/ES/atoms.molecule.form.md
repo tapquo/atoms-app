@@ -11,7 +11,7 @@ style      : String [OPTIONAL]
 ### Methods
 
 #### .value()
-Este método recoge los valores de los elementos "hijo" (input, textarea, select, switch...) y genera un objeto con el par key/value como nombre de hijo y su valor con cada uno de sus hijos. 
+Este método recoge los valores de los elementos "hijo" (input, textarea, select, switch...) y genera un objeto con el par key/value como nombre de hijo y su valor con cada uno de sus hijos.
 
 **Example**
 
@@ -23,7 +23,7 @@ form_instance.appendChild("Atom.Button", {text: "Save"});
 
 value = form_instance.value();
 console.log(value);
-> {name: "@soyjavi", bio: "@tapquo founder"}
+// {name: "@soyjavi", bio: "@tapquo founder"}
 ```
 
 #### .clean()
@@ -36,7 +36,7 @@ form_instance.clean();
 
 value = form_instance.value();
 console.log(value);
-> {name: ", bio: ""}
+// {name: ", bio: ""}
 ```
 
 

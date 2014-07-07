@@ -30,7 +30,7 @@ textarea_instance.value("atoms");
 
 value = textarea_instance.value();
 console.log(value);
-> "atoms"
+// "atoms"
 ```
 
 ### Events
