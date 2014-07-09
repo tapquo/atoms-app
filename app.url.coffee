@@ -36,7 +36,7 @@ Atoms.App.Url = do (a = Atoms) ->
           _article.aside _aside if _article?.el.hasClass "aside"
       , 10
 
-  _aside = (id = _aside) ->
+  _activeAside = (id = _aside) ->
     _article?.aside _aside = id
 
   _activeSection = (article, section) ->
@@ -56,4 +56,4 @@ Atoms.App.Url = do (a = Atoms) ->
     if url.length is 3 then _onChangeRoute article: url[1], section: url[2]
     Atoms.Url.listen "/:article/:section", _onChangeRoute
 
-  aside   : _aside
+  aside   : _activeAside
