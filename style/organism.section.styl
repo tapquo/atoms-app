@@ -6,10 +6,11 @@
     overflow-y: scroll
 
     &.padding
-      padding: .75rem 1rem
+      > *
+        margin: .75rem
     &[data-state=pull].pull
-      position: relative
       top: 80px
+
     /* BUG (iOS) POSITION: relative childrens */
     & > *
       transform translate3d(0,0,0)
@@ -28,21 +29,19 @@
         align-content center
         align-items center
 
-      PROGRESS_HEIGHT = .25rem
+      PROGRESS_HEIGHT = .2rem
       &[data-state=pulling], &[data-state=pull]
         position: relative
         &:before
-          content: " "
-          display: block
           z-index: 0
           position: fixed
+          content: " "
+          display: block
           left: 0px
           right: 0px
           width: 100%
           height: PROGRESS_HEIGHT
-        &:not(with-navigation):before
-          top: HEADER_HEIGHT
-        &.with-navigation:before
-          top: (HEADER_HEIGHT + HEADER_EXTRA_HEIGHT)
+      &[data-pull]:before
+        top: attr(data-pull, px)
       &.loading
         top: PROGRESS_HEIGHT !important

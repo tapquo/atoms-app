@@ -47,9 +47,8 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
       @el
         .removeAttr "style"
         .removeClass "loading"
-        .removeClass "with-navigation"
         .removeAttr "data-state"
-    , 450
+    , 300
 
   bindScroll: ->
     @current_scroll = 0
@@ -59,7 +58,8 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
   bindPull: ->
     @pulling = false
     @el.bind "touchstart", (event) =>
-      @el.addClass "with-navigation" if @el.offset().top > 60
+      console.log @el.offset()
+      @el.attr "data-pull", parseInt(@el.offset().top)
 
     @el.bind "swiping", (event) =>
       y = event.quoData.delta.y
