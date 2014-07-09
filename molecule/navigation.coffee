@@ -62,11 +62,7 @@ __path = (path) ->
       else
         Atoms.App.Url.aside parts[0]
 
-    # If it's the same address
-    else if Atoms.Url.path() is "/#{path}"
-      Atoms.App.Url.aside()
-
     # If it's a different address
-    else if parts.length is 2
+    else if parts.length is 2 and Atoms.Url.path() isnt "/#{path}"
       Atoms.Url.path path
   false
