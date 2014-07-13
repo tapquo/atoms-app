@@ -58,7 +58,6 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
   bindPull: ->
     @pulling = false
     @el.bind "touchstart", (event) =>
-      console.log @el.offset()
       @el.attr "data-pull", parseInt(@el.offset().top)
 
     @el.bind "swiping", (event) =>
