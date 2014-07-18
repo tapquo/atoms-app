@@ -39,16 +39,16 @@
     width: MODAL_WIDTH
     PAD = (1.5 * PADDING)
     > header
-      padding: PAD
+      padding: PADDING PAD
       > *
         display: inline-block
         margin-right: .25rem
         font-size: FONT_SIZE_BIG
-    &:not(.cancel):not(.accept):not(.warning)
-      > header + section
-        padding-top: 0
-
     > section
       padding: (.75 * PAD) PAD
     > footer
-      padding: (1 * PADDING) (1.75 * PADDING)
+      padding: PADDING PAD
+
+    &:not(.cancel):not(.accept):not(.warning)
+      > header + section
+        padding-top: 0
