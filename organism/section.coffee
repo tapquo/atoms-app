@@ -61,10 +61,10 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
       @el.attr "data-pull", parseInt(@el.offset().top)
 
     @el.bind "swiping", (event) =>
-      y = event.quoData.delta.y
+      y = event.touch.delta.y
       if @el[0].scrollTop < 16 and not @pulling and y > 0
         event.originalEvent.preventDefault()
-        y = event.quoData.delta.y
+        y = event.touch.delta.y
         if y >= 0 and y <= 80
           @el
             .attr "data-state", "pulling"
