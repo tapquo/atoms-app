@@ -24,6 +24,37 @@ class Atoms.Atom.Li extends Atoms.Class.Atom
 
   @events   : ["touch", "doubleTap", "hold", "swipeLeft", "swipeRight"]
 
+  constructor: ->
+    super
+    do @bindDestroyable
+
+  refresh: ->
+    super
+    do @bindDestroyable
+
+  bindDestroyable: ->
+    if "destroyable" in (@attributes.events or [])
+      @destroying = false
+      @el.bind "touchstart", (event) =>
+        @destroying = false
+        @el.css "transition", "none"
+
+      @el.bind "swiping", (event) =>
+        pixels = event.touch.delta.x
+        return if pixels > 0
+        pixels = Math.abs(pixels)
+        if pixels < 128
+          @el.css "right", "#{pixels}px"
+          if pixels > 80 and not @destroying
+            @destroying = true
+            @el.addClass "destroy"
+            setTimeout (=> @destroy()), 450
+
+      @el.bind "touchend", (event) =>
+        @el
+          .css "transition", "right 450ms"
+          .css "right", "0px"
+
   _render: ->
     super
     if @attributes.image
