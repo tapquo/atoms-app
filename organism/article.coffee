@@ -48,7 +48,6 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
       else if child.el.hasClass "active"
         child.hide()
         child.el.blur()
-
     @aside() if @el.attr("data-state") is "aside-show"
 
   aside: (id) =>
@@ -64,18 +63,19 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   # Instance Events
   onAnimationEnd: (event) =>
-    state = @el.attr "data-state"
-    if state in ["in", "back-out"]
-      @trigger "show"
-    else if state in ["out", "back-in"]
-      @trigger "hide"
+    animation_name = event.animationName.split("-")[0]
+    if animation_name is "article"
+      state = @el.attr "data-state"
+      if state in ["in", "back-out"]
+        @trigger "show"
+      else if state in ["out", "back-in"]
+        @trigger "hide"
 
-    unless state in ACTIVE_STATES then @el.removeClass("active")
-    if state in ["aside-show", "aside-show-right"]
-      @el.addClass "aside"
-      @el.addClass "right" if state is "aside-show-right"
-
-    @el.removeAttr "data-state"
+      unless state in ACTIVE_STATES then @el.removeClass("active")
+      if state in ["aside-show", "aside-show-right"]
+        @el.addClass "aside"
+        @el.addClass "right" if state is "aside-show-right"
+      @el.removeAttr "data-state"
 
   # Children Bubble Events
   onSectionScroll: (event, section) ->
