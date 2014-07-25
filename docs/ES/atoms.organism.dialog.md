@@ -1,4 +1,4 @@
-## Organism.Modal
+## Organism.Dialog
 Este elemento sirve para crear ventanas flotantes o mensajes de dialogo dentro de tu aplicación. Al igual que los organismos *Article* y *Aside* es un elemento contenedor padre donde se contendrán todos los subelementos (organismos, moleculas y átomos).
 
 ### Attributes
@@ -16,7 +16,7 @@ Este método te permite mostrar un determinado *Organism.Aside*.
 **Example**
 
 ```
-modal_instance.show();
+dialog_instance.show();
 ```
 
 
@@ -26,16 +26,16 @@ Este método te permite mostrar un determinado *Organism.Aside*:
 **Example**
 
 ```
-modal_instance.hide();
+dialog_instance.hide();
 ```
 
 
 ### Events
 
-En este tipo de elementos no tiene ningún sentido el sistema de eventos *Bubble* ya que no tiene ningun elemento padre, por lo tanto la suscripción a los eventos se realizará de la siguiente manera: 
+En este tipo de elementos no tiene ningún sentido el sistema de eventos *Bubble* ya que no tiene ningun elemento padre, por lo tanto la suscripción a los eventos se realizará de la siguiente manera:
 
 ```
-modal_instance.bind(NAME_OF_EVENT, function(event) {
+dialog_instance.bind(NAME_OF_EVENT, function(event) {
   /* Your code */
 });
 ```

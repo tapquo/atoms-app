@@ -8,6 +8,6 @@ Base class for Organism
 ###
 "use strict"
 
-class Atoms.Organism.Loading extends Atoms.Organism.Modal
+class Atoms.Organism.Loading extends Atoms.Organism.Dialog
 
 new Atoms.Organism.Loading()

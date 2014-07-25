@@ -1,29 +1,29 @@
 ###
-Base for Modals
+Base for Dialogs
 
 @namespace Atoms.Molecule
-@class Modal
+@class Dialog
 
 @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
 ###
 "use strict"
 
-class Atoms.Organism.Modal extends Atoms.Class.Organism
+class Atoms.Organism.Dialog extends Atoms.Class.Organism
 
   @template : """<article {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></article>"""
 
   @available: ["Organism.Header", "Organism.Section", "Organism.Footer"]
 
-  @base     : "Modal"
+  @base     : "Dialog"
 
   @events   : ["show", "hide"]
 
   constructor: (attributes = {}, scaffold) ->
     super attributes, scaffold
-    block_el = Atoms.$(document.createElement("div")).attr "data-system", "modal"
+    block_el = Atoms.$(document.createElement("div")).attr "data-system", "dialog"
     Atoms.$(@attributes.container or document.body).prepend block_el
     @attributes.container = block_el
-    Atoms.App.Modal[@constructor.name] = @
+    Atoms.App.Dialog[@constructor.name] = @
 
     do @render
     for animation_end in Atoms.Core.Constants.ANIMATION.END.split " "
