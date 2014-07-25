@@ -16,11 +16,11 @@
   &.active
     visibility: visible
 
-  > [data-organism]
+  > [data-organism-dialog]
     backface-visibility hidden
     transform translateZ(0)
 
-  > [data-extend=loading]
+  > [data-organism-dialog=loading]
     SIZE = .6rem
     padding: SIZE
     &::before, &::after
@@ -35,20 +35,20 @@
       float: right
       margin-left: (SIZE / 2)
 
-  > :not([data-extend=loading])
+  > :not([data-organism-dialog=loading])
     width: MODAL_WIDTH
     PAD = (1.5 * PADDING)
-    > header
+    > [data-organism-header]
       padding: PADDING PAD
       > *
         display: inline-block
         margin-right: .25rem
         font-size: FONT_SIZE_BIG
-    > section
+    > [data-organism-section]
       padding: (.75 * PAD) PAD
-    > footer
+    > [data-organism-footer]
       padding: PADDING PAD
 
     &:not(.cancel):not(.accept):not(.warning)
-      > header + section
+      > [data-organism-header] + [data-organism-section]
         padding-top: 0

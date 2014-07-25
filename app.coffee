@@ -9,10 +9,10 @@ Global namespace for Atoms.App
 "use strict"
 
 window.__ = Atoms.App =
-  version   : "0.07.24"
+  version   : "0.07.25"
   Article   : {}
   Aside     : {}
-  Modal     : {}
+  Dialog    : {}
   Entity    : {}
   Extension : {}
   Url       : null

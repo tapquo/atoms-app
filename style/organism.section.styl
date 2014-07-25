@@ -1,5 +1,5 @@
-[data-organism=section]
-  [data-atoms=app] > [data-organism=article] > &, [data-atoms=app] > [data-organism=aside] > &
+[data-organism-section]
+  [data-atoms=app] > [data-organism-article] > &, [data-atoms=app] > [data-organism-aside] > &
     width: auto
     height: auto
     overflow-x: hidden
@@ -16,7 +16,7 @@
     & > *
       transform translate3d(0,0,0)
 
-  [data-atoms=app] [data-organism=article].active > &
+  [data-atoms=app] [data-organism-article].active > &
     &:not(.active)
       display: none
     &.active

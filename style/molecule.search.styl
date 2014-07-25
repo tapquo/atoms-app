@@ -1,25 +1,25 @@
 [data-atoms=app]
-  [data-organism=section] > [data-molecule=form][data-extend=search]
+  [data-organism-section] > [data-molecule-form=search]
     position: relative
     width: inherit
     > *
       margin-top: 0px !important
       margin-bottom: 0px !important
-    > button
+    > [data-atom-button]
       position: absolute
       top: 0px
       right: 0px
       & , & > .icon
         line-height: 0.85rem
 
-  [data-organism=article] > [data-molecule=form][data-extend=search]
+  [data-organism-article] > [data-molecule-form=search]
     min-height: HEADER_EXTRA_HEIGHT
-    > input
+    > [data-atom-input]
       margin: 0 !important
       border: none
       line-height: 1.7rem
       padding: .5rem
-    > button
+    > [data-atom-button]
       display: none
     &.scroll
       margin-top: -(HEADER_EXTRA_HEIGHT + .5rem)

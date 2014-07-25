@@ -1,14 +1,15 @@
-[data-atoms=app] > [data-organism=aside]
-  position: absolute
-  top: 0
-  height: 100%
+[data-atoms=app]
+  > [data-organism-aside]
+    position: absolute
+    top: 0
+    height: 100%
 
-  &:not(.right)
-    left: 0
-  &.right
-    right: 0
+    &:not(.right)
+      left: 0
+    &.right
+      right: 0
 
-  &:not(.active)
-    visibility: hidden
-  &.active
-    visibility: visible
+    &:not(.active)
+      visibility: hidden
+    &.active
+      visibility: visible

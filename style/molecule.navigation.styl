@@ -1,27 +1,27 @@
 [data-atoms=app]
-  > [data-organism=article]
-    > , > footer, > section
-      [data-molecule=navigation]
+  > [data-organism-article]
+    > [data-organism-section], > [data-organism-footer]
+      [data-molecule-navigation]
         width: 100%
         display-flex()
         align-content stretch
-        > [data-atom=button]
+        > [data-atom-button]
           flex-grow 1
           margin: 0
           padding: 0
           width: 100%
           text-align: center
 
-  > article > [data-molecule=navigation]
+  > [data-organism-article] > [data-molecule-navigation]
     height: HEADER_EXTRA_HEIGHT
-    > button
+    > [data-atom-button]
       font-size: FONT_SIZE_TINY
       > small
         display: none
     &.scroll
       margin-top: -(HEADER_EXTRA_HEIGHT + .5rem)
 
-  > * > header [data-molecule=navigation]
+  > * > [data-organism-header] [data-molecule-navigation]
     z-index: 1
     height:  HEADER_HEIGHT
     min-width: (HEADER_HEIGHT / 2)
@@ -31,21 +31,21 @@
     &.right
       margin-right: .4rem
 
-  > article > section [data-molecule=navigation]
-    &, > button
+  > [data-organism-article] > [data-organism-section] [data-molecule-navigation]
+    &, > [data-atom-button]
       height:  HEADER_HEIGHT
 
-  > aside > section [data-molecule=navigation]
+  > [data-organism-aside] > [data-organism-section] [data-molecule-navigation]
     min-height: HEADER_HEIGHT
 
-  > article > footer [data-molecule=navigation]
+  > [data-organism-article] > [data-organism-footer] [data-molecule-navigation]
     height:  FOOTER_HEIGHT
-    > button
+    > [data-atom-button]
       height:  FOOTER_HEIGHT
       font-size: (FONT_SIZE_NORMAL * 1.5)
 
-  > [data-system=dialog] > article
-    > footer
+  > [data-system=dialog] > [data-organism-article]
+    > [data-organism-footer]
       > nav
         font-size: FONT_SIZE_TINY
         text-align: right
@@ -53,11 +53,11 @@
         &:not(.block)
           display: inline-block
         &.block
-          > button
+          > [data-atom-button]
             display: block
             width: 100%
             text-align: right
             float: none
-        > button
+        > [data-atom-button]
           padding: 0 .4rem
           line-height: HEIGHT = (2.5 * FONT_SIZE_TINY)
