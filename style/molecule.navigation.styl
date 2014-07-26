@@ -44,20 +44,18 @@
       height:  FOOTER_HEIGHT
       font-size: (FONT_SIZE_NORMAL * 1.5)
 
-  > [data-system=dialog] > [data-organism-article]
-    > [data-organism-footer]
-      > nav
-        font-size: FONT_SIZE_TINY
-        text-align: right
-        width: 100%
-        &:not(.block)
-          display: inline-block
-        &.block
-          > [data-atom-button]
-            display: block
-            width: 100%
-            text-align: right
-            float: none
+  > [data-system=dialog] [data-organism-footer] > [data-molecule-navigation]
+      font-size: FONT_SIZE_TINY
+      text-align: right
+      width: 100%
+      &:not(.block)
+        display: inline-block
+      &.block
         > [data-atom-button]
-          padding: 0 .4rem
-          line-height: HEIGHT = (2.5 * FONT_SIZE_TINY)
+          display: block
+          width: 100%
+          text-align: right
+          float: none
+      > [data-atom-button]
+        padding: 0 .4rem
+        line-height: HEIGHT = (2.5 * FONT_SIZE_TINY)
