@@ -78,10 +78,13 @@ th, td, caption
     -webkit-text-size-adjust: 100%
     -ms-text-size-adjust: 100%
     text-size-adjust: 100%
+
   span
     -webkit-font-smoothing: antialiased
     font-smoothing: antialiased
 
+
+  /* -------------------------- LAYOUT -------------------------- */
   > aside, > article
     position: absolute
     display-flex()
@@ -107,6 +110,19 @@ th, td, caption
 
     > footer
       order 4
+
+  /* -------------------------- ATTRIBUTES -------------------------- */
+  [data-tooltip]
+    position: relative
+    &:hover:after
+      content: attr(data-tooltip)
+      z-index: 1980
+      display: block
+      position: absolute
+      top: .5rem
+      left: .5rem
+      padding: .2rem .4rem
+      white-space: nowrap
 
   /* -------------------------- CLASSES -------------------------- */
   :not(.align)
