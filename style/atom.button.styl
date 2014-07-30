@@ -29,18 +29,15 @@
     font-size: .75rem
     line-height: 1.1rem
     padding: 0 .2rem 0 .2rem
-  > .icon
-    line-height: 0.9em
   > .icon + abbr
     margin-left: 0.25em
 
   &.loading
     > .icon:before, > abbr:before
-      content: "\f29d"
-      font-family: "Ionicons"
-      font-weight: 100
+      content: "\e666"
+      font-family: "Atoms"
       transform-origin: 50% 50%
-      animation loading-spin 2s infinite linear
+      animation loading-icon 2s infinite linear
     > .icon:before
       position: relative
     > abbr:before
@@ -63,6 +60,10 @@
 
   [data-atoms=app] [data-organism-section] &
     margin: 0.2rem 0
+    > *
+      vertical-align: baseline
+    > .icon
+      margin-top: .1rem
     &:not(.big):not(.small):not(.tiny)
       padding: .8rem 1rem
       font-size: FONT_SIZE_NORMAL
@@ -81,7 +82,8 @@
       &:not(.icon) > .icon
         position: absolute
         left: SIZE = 1rem
-        line-height: SIZE
+        margin-top: .2rem
+
     &[disabled]
       cursor: default
     & + button
