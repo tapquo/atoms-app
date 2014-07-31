@@ -1,10 +1,11 @@
 ###
 Base class for Organism
 
-@namespace Atoms.Organism
-@class Loading
+@namespace  Atoms.Organism
+@extends    Dialog
+@class      Loading
 
-@author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+@author     Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
 ###
 "use strict"
 

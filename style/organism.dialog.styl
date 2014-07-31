@@ -1,15 +1,26 @@
 [data-system=dialog]
   z-index: 1980
   position: absolute
-  top: 0px
   left: 0px
   width: inherit
-  height: inherit
-  display-flex()
-  justify-content center
-  align-content center
-  align-items center
   overflow: hidden
+
+  &:not(.no-block)
+    top: 0px
+    height: inherit
+    display-flex()
+    justify-content center
+    align-content center
+    align-items center
+
+  &.no-block
+    bottom: 0px
+    height: HEIGHT = (HEADER_HEIGHT / 2)
+    padding-top: (.25 * PADDING)
+    line-height: HEIGHT
+    &.expand
+      height: (HEADER_HEIGHT / 2) + (HEADER_HEIGHT * 1.1)
+
 
   &:not(.active)
     visibility: hidden
@@ -35,7 +46,36 @@
       float: right
       margin-left: (SIZE / 2)
 
-  > :not([data-organism-dialog=loading])
+  > [data-organism-dialog=push]
+    PADDING = (.75 * PADDING)
+    > h1
+      font-size: FONT_SIZE_SMALL
+      font-weight: normal
+      padding: 0 PADDING
+    > section
+      height: (1.25 * HEADER_HEIGHT)
+      padding: PADDING
+      display-flex()
+      flex-direction row
+      justify-content center
+      align-content center
+      text-align: -webkit-match-parent
+      SIZE = 2.35rem
+      > figure
+        height: SIZE
+        width: SIZE
+        margin-right: PADDING
+        background-size: cover
+        flex-shrink 0
+      > p
+        flex-grow 2
+        font-size: FONT_SIZE_TINY
+        line-height: FONT_SIZE_BIG
+        height: SIZE
+        overflow: hidden
+
+
+  > :not([data-organism-dialog=loading]):not([data-organism-dialog=push])
     width: MODAL_WIDTH
     PAD = (1.5 * PADDING)
     > [data-organism-header]
