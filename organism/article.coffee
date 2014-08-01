@@ -61,6 +61,12 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
       aside_instance.tunnel EVENT.TUNNEL.ARTICLE_CHANGE
 
+  back: ->
+    @el.addClass "back"
+
+  front: ->
+    @el.removeClass "back"
+
   # Instance Events
   onAnimationEnd: (event) =>
     animation_name = event.animationName.split("-")[0]
