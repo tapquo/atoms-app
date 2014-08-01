@@ -57,3 +57,4 @@ Atoms.App.Url = do (a = Atoms) ->
     Atoms.Url.listen "/:article/:section", _onChangeRoute
 
   aside   : _activeAside
+  current : -> _article
