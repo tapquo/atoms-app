@@ -9,7 +9,7 @@ Global namespace for Atoms.App
 "use strict"
 
 window.__ = Atoms.App =
-  version   : "0.07.31"
+  version   : "0.08.01"
   Article   : {}
   Aside     : {}
   Dialog    : {}
