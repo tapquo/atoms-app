@@ -12,7 +12,7 @@ class Atoms.Organism.Footer extends Atoms.Class.Organism
 
   @template : """<footer {{#if.style}}class="{{style}}"{{/if.style}}></footer>"""
 
-  @available: ["Atom.Progress", "Molecule.Navigation"]
+  @available: ["Atom.Progress", "Molecule.Div", "Molecule.Navigation"]
 
   @base     : "Footer"
 
