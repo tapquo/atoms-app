@@ -79,11 +79,13 @@
     width: MODAL_WIDTH
     PAD = (1.5 * PADDING)
     > [data-organism-header]
-      padding: PADDING PAD
+      > [data-atom-heading]
+        padding: 0 0 0 PAD
+        font-size: FONT_SIZE_BIG
+      > [data-molecule-navigation]
+        padding: 0 PADDING 0 0
       > *
         display: inline-block
-        margin-right: .25rem
-        font-size: FONT_SIZE_BIG
     > [data-organism-section]
       padding: (.75 * PAD) PAD
     > [data-organism-footer]
