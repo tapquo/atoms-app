@@ -78,7 +78,11 @@
   > :not([data-organism-dialog=loading]):not([data-organism-dialog=push])
     width: MODAL_WIDTH
     PAD = (1.5 * PADDING)
+    display-flex()
+    flex-direction column
+
     > [data-organism-header]
+      order 1
       > [data-atom-heading]
         padding: 0 0 0 PAD
         font-size: FONT_SIZE_BIG
@@ -86,11 +90,24 @@
         padding: 0 PADDING 0 0
       > *
         display: inline-block
+
     > [data-organism-section]
+      order 3
+      flex-grow 2
       padding: (.75 * PAD) PAD
+
     > [data-organism-footer]
+      order 4
       padding: PADDING PAD
 
     &:not(.cancel):not(.accept):not(.warning)
       > [data-organism-header] + [data-organism-section]
         padding-top: 0
+
+    &.side
+      position: absolute
+      height: inherit
+      &:not(.right)
+        left: 0px
+      &.right
+        right: 0px
