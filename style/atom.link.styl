@@ -1,20 +1,45 @@
-[data-atoms=app]
-  [data-organism-aside] [data-atom-link]
+/**
+ * Atoms
+ *
+ * @namespace atom.link.styl
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+[data-atom-link]
+  vertical-align: middle
+  font-size: inherit
+  font-family: inherit
+  font-weight: inherit
+  line-height: inherit
+  text-decoration: none
+  border: none
+  cursor: pointer
+  outline: none
+  background: none
+  > .icon
+    font-size: (1.25 * FONT_SIZE_BIG)
+    vertical-align: sub
+
+  [data-atoms=app] [data-organism-header] &
+    display: inline-block
+    height: HEADER_HEIGHT
+    padding: 0 .4rem
+    vertical-align: top
+    > .icon
+      font-size: (FONT_SIZE_BIG * 1.25)
+
+  [data-atoms=app] [data-organism-aside] [data-organism-section] &
     display: block
     height: HEIGHT = (HEADER_HEIGHT / 1.35)
     line-height: HEIGHT
     > *
-      vertical-align: middle
+      vertical-align: text-top
     > .icon
       font-size: (1.1 * FONT_SIZE_BIG)
-      margin-right: 0.2rem
     > small
       float: right
       margin-top: .7rem
       padding: .2rem
       font-size: FONT_SIZE_TINY
       line-height: FONT_SIZE_TINY
-
-  [data-organism-article] [data-organism-header] [data-atom-link]
-    padding: 0 0.5em
-    vertical-align: middle
