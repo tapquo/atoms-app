@@ -23,6 +23,9 @@ class Atoms.Atom.Input extends Atoms.Class.Atom
   value: (value) ->
     if value? then @el.val value else @el.val()
 
+  clean: ->
+    @value ""
+
   error: (value, focus = true) ->
     method = "removeClass"
     if value

@@ -21,3 +21,6 @@ class Atoms.Atom.Progress extends Atoms.Class.Atom
 
   value: (value) ->
     if value? then @el[0].value = value else @el[0].value
+
+  clean: ->
+    @value ""

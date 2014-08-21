@@ -36,8 +36,7 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
       if child.constructor.name is "Switch"
         child.value false
       else
-        child.value ""
-    true
+        child.clean()
 
   # Children Bubble Events
   onInputKeypress: (event, atom) =>

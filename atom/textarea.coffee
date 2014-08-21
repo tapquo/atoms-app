@@ -19,3 +19,6 @@ class Atoms.Atom.Textarea extends Atoms.Class.Atom
 
   value: (value) ->
     if value? then @el.val value else @el.val()
+
+  clean: ->
+    @value ""
