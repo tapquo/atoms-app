@@ -16,13 +16,19 @@
     &:focus
       outline: none !important
     &.big
-      padding: 0.6rem 0
+      padding-left: 0.6rem
+      padding-right: 0.6rem
       font-size: FONT_SIZE_BIG
+    &:not(.big):not(.small):not(tiny)
+      padding-left: 0.5rem
+      padding-right: 0.5rem
     &.small
-      padding: 0.4rem 0
+      padding-left: 0.4rem
+      padding-right: 0.4rem
       font-size: FONT_SIZE_SMALL
     &.tiny
-      padding: 0.3rem 0
+      padding-left: 0.3rem
+      padding-right: 0.3rem
       font-size: FONT_SIZE_TINY
     &.inline
       width: 49%
