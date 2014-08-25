@@ -48,6 +48,15 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
   onInputChange: (event, atom) ->
     @_bubbleChange event, atom
 
+  onTextareaKeypress: (event, atom) =>
+    @_bubbleChange event, atom
+
+  onTextareaKeyup: (event, atom) =>
+    @_bubbleChange event, atom
+
+  onTextareaChange: (event, atom) ->
+    @_bubbleChange event, atom
+
   onSelectChange: (event, atom) =>
     @_bubbleChange event, atom
 
