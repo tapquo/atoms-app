@@ -1,0 +1,62 @@
+[data-atoms=app]
+  // &[data-screen=small]
+  //   > aside, > article
+  //     position: absolute
+
+  // &:not([data-screen=small])
+  //   display-flex()
+  //   flex-direction row
+  //   > aside, > article
+  //     position: relative
+
+
+  > aside, > article
+    display-flex()
+    flex-direction column
+    height: inherit
+    transform translateZ(0)
+
+    > header, > footer
+      position: relative
+
+    > header, > nav, > form,  > footer
+      flex-shrink 0
+
+    > header
+      order 1
+
+    > nav, > form
+      order 2
+
+    > section
+      order 3
+      flex-grow 2
+
+    > footer
+      order 4
+
+@media screen and (min-resolution: 3dppx)
+  [data-atoms=app], html
+    font-size: 110%
+
+WIDTH_FOR_MOBILE = 480px
+
+@media only screen  and (max-width: WIDTH_FOR_MOBILE)
+     , only screen and (max-device-width: WIDTH_FOR_MOBILE) and (orientation: portrait)
+     , only screen and (max-device-height: WIDTH_FOR_MOBILE) and (orientation: landscape)
+
+  [data-organism-header]
+    background-color: green !important
+  [data-atoms=app]
+    > aside, > article
+      position: absolute
+
+@media only screen and (min-width : WIDTH_FOR_MOBILE) and (orientation: portrait)
+  , only screen and (min-device-width : 768px) and (max-device-width : 1024px) /* ipad */
+  [data-organism-header]
+    background-color: red !important
+  [data-atoms=app]
+    display-flex()
+    flex-direction row
+    > aside, > article
+      position: relative

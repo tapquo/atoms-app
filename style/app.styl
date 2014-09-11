@@ -74,34 +74,6 @@ th, td, caption
     -webkit-font-smoothing: antialiased
     font-smoothing: antialiased
 
-
-  /* -------------------------- LAYOUT -------------------------- */
-  > aside, > article
-    position: absolute
-    display-flex()
-    flex-direction column
-    height: inherit
-    transform translateZ(0)
-
-    > header, > footer
-      position: relative
-
-    > header, > nav, > form,  > footer
-      flex-shrink 0
-
-    > header
-      order 1
-
-    > nav, > form
-      order 2
-
-    > section
-      order 3
-      flex-grow 2
-
-    > footer
-      order 4
-
   /* -------------------------- ATTRIBUTES -------------------------- */
   [data-tooltip]
     position: relative
