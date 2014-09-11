@@ -1,15 +1,23 @@
 [data-atoms=app]
   > [data-organism-aside]
-    position: absolute
     top: 0
     height: 100%
-
     &:not(.right)
       left: 0
     &.right
       right: 0
-
     &:not(.active)
       visibility: hidden
     &.active
       visibility: visible
+
+
+@media only screen and (min-width : WIDTH_FOR_MOBILE) and (orientation: portrait)
+  , only screen and (min-device-width : 768px) and (max-device-width : 1024px) /* ipad */
+  [data-atoms=app]
+    > [data-organism-aside]
+      flex-shrink 0
+      &:not(.right)
+        order: 1
+      &.right
+        order: 3
