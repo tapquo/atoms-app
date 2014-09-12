@@ -12,8 +12,9 @@
       visibility: visible
 
 
-@media only screen and (min-width : WIDTH_FOR_MOBILE) and (orientation: portrait)
-  , only screen and (min-device-width : 768px) and (max-device-width : 1024px) /* ipad */
+@media only screen and (min-width: 801px)
+     , only screen and (min-device-width:MOBILE) and (orientation:portrait)
+     , only screen and (min-device-height:MOBILE) and (orientation:landscape)
   [data-atoms=app]
     > [data-organism-aside]
       flex-shrink 0

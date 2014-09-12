@@ -24,18 +24,18 @@
     > footer
       order 4
 
-WIDTH_FOR_MOBILE = 480px
-@media only screen  and (max-width: WIDTH_FOR_MOBILE)
-     , only screen and (max-device-width: WIDTH_FOR_MOBILE) and (orientation: portrait)
-     , only screen and (max-device-height: WIDTH_FOR_MOBILE) and (orientation: landscape)
-  [data-atoms=app]
-    > [data-organism-aside], > [data-organism-article]
-      position: absolute
-
-@media only screen and (min-width : WIDTH_FOR_MOBILE) and (orientation: portrait)
-  , only screen and (min-device-width : 768px) and (max-device-width : 1024px) /* ipad */
+@media only screen and (min-width: MOBILE)
+     , only screen and (min-device-width:MOBILE) and (orientation:portrait)
+     , only screen and (min-device-height:MOBILE) and (orientation:landscape)
   [data-atoms=app]
     display-flex()
     flex-direction row
     > [data-organism-aside], > [data-organism-article]
       position: relative
+
+@media only screen and (max-width: MOBILE)
+     , only screen and (max-device-width: MOBILE) and (orientation: portrait)
+     , only screen and (max-device-height: MOBILE) and (orientation: landscape)
+  [data-atoms=app]
+    > [data-organism-aside], > [data-organism-article]
+      position: absolute
