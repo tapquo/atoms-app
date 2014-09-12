@@ -69,7 +69,8 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   # Instance Events
   onAnimationEnd: (event) =>
-    animation_name = event.animationName.split("-")[0]
+    animation_name = event.animationName or event.originalEvent.animationName
+    animation_name = animation_name.split("-")[0]
     if animation_name is "article"
       state = @el.attr "data-state"
       if state in ["in", "back-out"]
