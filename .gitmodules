@@ -19,3 +19,6 @@
 [submodule "extension/calendar"]
 	path = extension/calendar
 	url = https://github.com/tapquo/atoms-app-calendar.git
+[submodule "extension/leaflet"]
+	path = extension/leaflet
+	url = https://github.com/tapquo/atoms-app-leaflet.git
