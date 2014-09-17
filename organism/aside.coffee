@@ -31,10 +31,14 @@ class Atoms.Organism.Aside extends Atoms.Class.Organism
   show: ->
     unless @el then @render()
     @el.addClass "active"
-    @el.attr "data-state", "in"
+    @el.attr "data-state", "in" if Atoms.Device.screen is "small"
 
   hide: ->
-    if @el?.hasClass "active" then @el.attr "data-state", "out"
+    if @el?.hasClass "active"
+      if Atoms.Device.screen is "small"
+        @el.attr "data-state", "out"
+      else
+        @el.removeClass "active"
 
   onAnimationEnd: (event) =>
     state = @el.attr "data-state"

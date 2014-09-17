@@ -9,7 +9,7 @@ Global namespace for Atoms.App
 "use strict"
 
 window.__ = Atoms.App =
-  version   : "0.09.12"
+  version   : "0.09.17"
   Article   : {}
   Aside     : {}
   Dialog    : {}
@@ -19,24 +19,3 @@ window.__ = Atoms.App =
 
 Atoms.$ ->
   Atoms.$(document.body).addClass "standalone" if navigator.standalone
-
-  # Size
-  w = window.innerWidth
-  h = window.innerHeight
-  Atoms.$(document.body)
-    .attr "data-screen", if (h > w and w < 480) or (h < w and h < 480) then "small" else "normal"
-
-  # Os
-  OS =
-    ios           : /ipad|iphone|ipod/i
-    android       : /android/i
-    blackberry    : /blackberry/i
-    webos         : /webos/i
-    windows_phone : /windows phone/i
-    firefox_os    : /(Mozilla).*Mobile[^\/]*\/([\d\.]*)/
-  useragent = navigator.userAgent.toLowerCase()
-  for type, regexp of OS when regexp.test(useragent) is true
-    w = window.innerWidth
-    h = window.innerHeight
-    Atoms.$(document.body).attr "data-os", type
-    break

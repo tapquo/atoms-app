@@ -34,8 +34,15 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     for animation_end in Atoms.Core.Constants.ANIMATION.END.split " "
       @el.bind animation_end, @onAnimationEnd
 
-  state: (name) ->
-    @el.addClass("active").attr("data-state", name)
+  state: (state) ->
+    if Atoms.Device.screen is "small"
+      @el.addClass("active").attr("data-state", state)
+    else
+      @_trigger state
+      if state in ["in", "back-out", "aside-show", "aside-show-right"]
+        @el.addClass "active"
+      else
+        @el.removeClass "active"
 
   section: (id) ->
     @tunnel EVENT.TUNNEL.ARTICLE_CHANGE
@@ -57,7 +64,10 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
       do aside_instance[method]
       @el.removeClass("aside").removeClass("right") if method is "hide"
       method += "-right" if aside_instance.attributes.style is "right"
-      @state "aside-#{method}"
+      if Atoms.Device.screen is "small"
+        @state "aside-#{method}"
+      else if method is "show"
+        @el.addClass "aside"
 
       aside_instance.tunnel EVENT.TUNNEL.ARTICLE_CHANGE
 
@@ -73,10 +83,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     animation_name = animation_name.split("-")[0]
     if animation_name is "article"
       state = @el.attr "data-state"
-      if state in ["in", "back-out"]
-        @trigger "show"
-      else if state in ["out", "back-in"]
-        @trigger "hide"
+      @_trigger state
 
       unless state in ACTIVE_STATES then @el.removeClass("active")
       if state in ["aside-show", "aside-show-right"]
@@ -92,3 +99,9 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
       event.addClass = false
     @tunnel "onSectionScroll", event
     false
+
+  _trigger: (state) ->
+    if state in ["in", "back-out"]
+      @trigger "show"
+    else if state in ["out", "back-in"]
+      @trigger "hide"

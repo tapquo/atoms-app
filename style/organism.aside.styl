@@ -2,23 +2,22 @@
   > [data-organism-aside]
     top: 0
     height: 100%
-    &:not(.right)
-      left: 0
-    &.right
-      right: 0
     &:not(.active)
       visibility: hidden
     &.active
       visibility: visible
 
+  &[data-screen=small] > [data-organism-aside]
+    &:not(.right)
+      left: 0
+    &.right
+      right: 0
 
-@media only screen and (min-width: 801px)
-     , only screen and (min-device-width:MOBILE) and (orientation:portrait)
-     , only screen and (min-device-height:MOBILE) and (orientation:landscape)
-  [data-atoms=app]
-    > [data-organism-aside]
-      flex-shrink 0
-      &:not(.right)
-        order: 1
-      &.right
-        order: 3
+  &[data-screen=normal] > [data-organism-aside]
+    &:not(.active)
+      display: none
+    flex-shrink 0
+    &:not(.right)
+      order: 1
+    &.right
+      order: 3

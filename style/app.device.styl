@@ -24,18 +24,12 @@
     > footer
       order 4
 
-@media only screen and (min-width: MOBILE)
-     , only screen and (min-device-width:MOBILE) and (orientation:portrait)
-     , only screen and (min-device-height:MOBILE) and (orientation:landscape)
-  [data-atoms=app]
+  &[data-screen=normal]
     display-flex()
     flex-direction row
     > [data-organism-aside], > [data-organism-article]
       position: relative
 
-@media only screen and (max-width: MOBILE)
-     , only screen and (max-device-width: MOBILE) and (orientation: portrait)
-     , only screen and (max-device-height: MOBILE) and (orientation: landscape)
-  [data-atoms=app]
+  &[data-screen=small]
     > [data-organism-aside], > [data-organism-article]
       position: absolute

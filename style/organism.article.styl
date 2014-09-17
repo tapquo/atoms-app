@@ -11,10 +11,6 @@
     &.active
       visibility: visible
 
-
-@media only screen and (min-width: 801px)
-     , only screen and (min-device-width:MOBILE) and (orientation:portrait)
-     , only screen and (min-device-height:MOBILE) and (orientation:landscape)
-  [data-atoms=app]
+  &[data-screen=normal]
     > [data-organism-article]
       order: 1
