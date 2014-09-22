@@ -22,3 +22,6 @@
 [submodule "extension/leaflet"]
 	path = extension/leaflet
 	url = https://github.com/tapquo/atoms-app-leaflet.git
+[submodule "extension/icons"]
+	path = extension/icons
+	url = https://github.com/tapquo/bower-atoms-icons
