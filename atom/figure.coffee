@@ -12,7 +12,7 @@ class Atoms.Atom.Figure extends Atoms.Class.Atom
 
   @template : """
     <figure {{#if.style}}class="{{style}}"{{/if.style}}>
-      {{#if.url}}<span class="icon loading-d"></span>{{/if.url}}
+      {{#if.url}}<span class="icon loading-config"></span>{{/if.url}}
     </figure>"""
 
   @base     : "Figure"
