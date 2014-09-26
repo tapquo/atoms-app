@@ -25,3 +25,6 @@
 [submodule "extension/icons"]
 	path = extension/icons
 	url = https://github.com/tapquo/bower-atoms-icons
+[submodule "extension/payments"]
+	path = extension/payments
+	url = https://github.com/tapquo/atoms-app-payments
