@@ -24,13 +24,20 @@
 
   > * > [data-organism-header] [data-molecule-navigation]
     z-index: 1
-    height:  HEADER_HEIGHT
-    min-width: (HEADER_HEIGHT / 2)
     text-align: center
+    overflow: hidden
+    &:not(.left):not(.right)
+      position: absolute
+      left: 15%
+      width: 70%
+    &.left, &.right
+      z-index: 2
+      height:  HEADER_HEIGHT
+      min-width: (HEADER_HEIGHT / 2)
     &.left
-      margin-left: .4rem
+      margin-left: .5rem
     &.right
-      margin-right: .4rem
+      margin-right: .5rem
 
   > [data-organism-article] > [data-organism-section] [data-molecule-navigation]
     &, > [data-atom-button]
