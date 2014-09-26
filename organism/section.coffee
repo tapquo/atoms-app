@@ -79,12 +79,15 @@ class Atoms.Organism.Section extends Atoms.Class.Organism
       if @pulling then @el.addClass("loading") else do @refresh
 
   _scrollEvent: (event) =>
-    down = if event.target.scrollTop > @current_scroll then true else false
-    @current_scroll = event.target.scrollTop
-    event =
-      height : parseInt(event.target.scrollHeight - event.target.getBoundingClientRect().height)
-      scroll : event.target.scrollTop
-      down   : down
-      up     : !down
-    event.percent = parseInt((100 * event.scroll) / event.height)
-    @bubble "scroll", event
+    now = new Date()
+    if (now - (@previous_gesture or 0)) > 100
+      @previous_gesture = now
+      down = if event.target.scrollTop > @current_scroll then true else false
+      @current_scroll = event.target.scrollTop
+      event =
+        height : parseInt(event.target.scrollHeight - event.target.getBoundingClientRect().height)
+        scroll : event.target.scrollTop
+        down   : down
+        up     : !down
+      event.percent = parseInt((100 * event.scroll) / event.height)
+      @bubble "scroll", event
