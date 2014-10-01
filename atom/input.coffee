@@ -11,7 +11,7 @@
 class Atoms.Atom.Input extends Atoms.Class.Atom
 
   @template : """
-    <input type="{{type}}" name="{{name}}" {{#if.placeholder}}placeholder="{{placeholder}}"{{/if.placeholder}} {{#if.style}}class="{{style}}"{{/if.style}} {{#if.value}}value="{{value}}"{{/if.value}} {{#required}}required{{/required}} {{#disabled}}disabled{{/disabled}} {{#if.maxlength}}maxlength={{maxlength}}{{/if.maxlength}} />"""
+    <input type="{{type}}" name="{{name}}" {{#if.placeholder}}placeholder="{{placeholder}}"{{/if.placeholder}} {{#if.style}}class="{{style}}"{{/if.style}} {{#if.value}}value="{{value}}"{{/if.value}} {{#required}}required{{/required}} {{#disabled}}disabled{{/disabled}} {{#if.maxlength}}maxlength={{maxlength}}{{/if.maxlength}} {{#if.checked}}checked{{/if.checked}} />"""
 
   @base     : "Input"
 
@@ -21,7 +21,10 @@ class Atoms.Atom.Input extends Atoms.Class.Atom
     type: "text"
 
   value: (value) ->
-    if value? then @el.val value else @el.val()
+    if @attributes.type is "checkbox"
+      if value? then @el[0].checked value else @el[0].checked
+    else
+      if value? then @el.val value else @el.val()
 
   clean: ->
     @value ""

@@ -6,7 +6,7 @@
     outline: none
 
   /* -------------------------- DEFAULTS -------------------------- */
-  [data-atom-input]:not([type=range]):not([data-atom-input=autocomplete]), [data-atom-input=autocomplete] > input, [data-atom-select], [data-atom-textarea]
+  [data-atom-input]:not([type=range]):not([data-atom-input=autocomplete]):not([data-atom-input=checkbox]), [data-atom-input=autocomplete] > input, [data-atom-select], [data-atom-textarea]
     display: inline-block
     width: 100%
     font-family: inherit
@@ -34,7 +34,7 @@
       width: 49%
       margin-right: 1%
 
-  /* -------------------------- RANGE -------------------------- */
+  /* -- RANGE --------------------------------------------------------------- */
   [data-atom-input][type=range]
     height: .1rem
     width: 100%
@@ -49,3 +49,24 @@
       height: FORM_CIRCLE_HEIGHT
       -webkit-appearance: none
       border: none
+
+  /* -- CHECKBOX ------------------------------------------------------------ */
+  [data-atom-input][type=checkbox]
+    position: relative
+    max-width: SIZE = (1.25 * UNIT)
+    width: SIZE
+    height: SIZE
+    text-align: center
+    font-size: inherit
+    line-height: SIZE
+    &:checked
+      &:after
+        content:'\2713'
+        position: absolute
+        left: 0px
+        width: SIZE
+    + [data-atom-label]
+      vertical-align: top
+      display: inline-block
+      line-height: SIZE
+      margin: 0 (UNIT / 2) 0 (UNIT / 4)
