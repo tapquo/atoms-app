@@ -16,9 +16,11 @@
       font-size: FONT_SIZE_TINY
       padding: (PADDING / 2) 0 0 PADDING
 
-    > figure
-      width: SIZE = 2.25rem
+    SIZE = 2.25rem
+    > figure, > .icon
+      width: SIZE
       height: SIZE
+    > figure
       margin-right:  PADDING
       background-size: cover
       display-flex()
@@ -31,6 +33,10 @@
         font-size: SIZE = (.6 * SIZE)
         animation loading-icon 2s infinite linear
         color: WHITE
+    > .icon
+      font-size: SIZE
+      margin-right:  (PADDING / 3)
+
     > div
       flex-grow 2
       span
