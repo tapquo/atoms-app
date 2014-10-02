@@ -25,3 +25,6 @@
 [submodule "extension/payments"]
 	path = extension/payments
 	url = https://github.com/tapquo/atoms-app-payments
+[submodule "extension/inputrange"]
+	path = extension/inputrange
+	url = https://github.com/tapquo/atoms-app-inputrange
