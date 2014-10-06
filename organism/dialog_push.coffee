@@ -22,20 +22,26 @@ class Atoms.Organism.Push extends Atoms.Organism.Dialog
 
   constructor: (attributes) ->
     super attributes
-    @el.parent().addClass "no-block"
+    @parent = @el.parent().addClass "no-block"
+    @title = @el.children("h1")
+    @text = @el.find("p")
+    @figure = @el.find("figure")
     @el.on "touch", @_onTouch
 
   # -- Instance Methods ---------------------------------------------------------
-  show: (title, description, image = "", timeout = 3000) ->
+  show: (attributes, timeout = 3000) ->
     clearTimeout @id_timeout
-    @el.parent().removeClass "expand"
-    @el.children("h1").html title
-    @el.find("p").html description
-    @el.find("figure").css "background-image", "url('#{image}')"
+    @parent.removeClass "expand"
+    @title.html attributes.title
+    @text.html attributes.description
+    @figure.hide()
+    if attributes.image?
+      @figure.show().css "background-image", "url('#{attributes.image}')"
     super
-    @id_timeout = setTimeout =>
-      do @hide unless @el.parent().hasClass "expand"
-    , timeout
+    if attributes.timeout?
+      @id_timeout = setTimeout =>
+        do @hide unless @parent.hasClass "expand"
+      , attributes.timeout
 
   hide: ->
     super
@@ -44,8 +50,8 @@ class Atoms.Organism.Push extends Atoms.Organism.Dialog
 
   # -- Private Methods --------------------------------------------------------
   _onTouch: (event) =>
-    unless @el.parent().hasClass "expand"
-      @el.parent().addClass "expand"
+    unless @parent.hasClass "expand"
+      @parent.addClass "expand"
       __.Url.current().back()
     else
       do @hide
