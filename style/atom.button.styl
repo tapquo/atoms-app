@@ -43,7 +43,7 @@
   [data-atoms=app] [data-organism-header] &
     height: HEADER_HEIGHT
     padding: 0 .5rem
-    vertical-align: middle
+    vertical-align: top
     > abbr
       font-size: FONT_SIZE_SMALL
     > .icon
@@ -90,7 +90,22 @@
       display: none
 
   [data-atoms=app] [data-organism-footer] &
+    position: relative
+    height:  FOOTER_HEIGHT
+    display-flex()
+    flex-direction column
+    justify-content center
+    align-content center
+    align-items center
+    > abbr
+      margin-left: 0
+      font-weight: FONT_WEIGHT_NORMAL
+      line-height: FONT_SIZE_TINY
+    > .icon
+      font-size: (FONT_SIZE_NORMAL * 1.75)
+      + abbr
+        font-size: FONT_SIZE_TINY
     > small
       position: absolute
       top: .5rem
-      margin-left: -.5rem
+      margin-left: 1.5rem
