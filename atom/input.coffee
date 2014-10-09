@@ -22,7 +22,7 @@ class Atoms.Atom.Input extends Atoms.Class.Atom
 
   value: (value) ->
     if @attributes.type is "checkbox"
-      if value? then @el[0].checked value else @el[0].checked
+      if value? then @el[0].checked = value else @el[0].checked
     else
       if value? then @el.val value else @el.val()
 
