@@ -31,12 +31,12 @@
       font-family: "Atoms"
       transform-origin: 50% 50%
       animation loading-icon 2s infinite linear
+
     > .icon:before
       position: relative
     > abbr:before
       position: absolute
       left: UNIT
-      top: UNIT
     > .icon + abbr:before
       content: ""
 
@@ -80,7 +80,6 @@
       &:not(.icon) > .icon
         position: absolute
         left: SIZE = 1rem
-        margin-top: .2rem
 
     &[disabled]
       cursor: default
@@ -89,7 +88,7 @@
     > small
       display: none
 
-  [data-atoms=app] [data-organism-footer] &
+  [data-atoms=app] [data-organism-article] [data-organism-footer] &
     position: relative
     height:  FOOTER_HEIGHT
     display-flex()
