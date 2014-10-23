@@ -4,5 +4,6 @@ Elemento que representa un contenedor agnostico, el cual puede contener cualquie
 ### Attributes
 
 ```
+id    : String [OPTIONAL]
 style : String [OPTIONAL]
 ```
