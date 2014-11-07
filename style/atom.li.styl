@@ -1,27 +1,10 @@
 [data-atoms=app]
   [data-atom-li]
     position: relative
-    line-height: inherit
     display-flex()
-    flex-direction row
-    justify-content center
-    align-content center
-    align-items center
-    text-align: -webkit-match-parent
+    line-height: inherit
     list-style-type: none
-
-    &:not(.anchor)
-      padding: PADDING
-    &.anchor
-      font-size: FONT_SIZE_TINY
-      padding: (PADDING / 2) 0 0 PADDING
-
-    SIZE = 2.25rem
-    > figure, > .icon
-      width: SIZE
-      height: SIZE
     > figure
-      margin-right:  PADDING
       background-size: cover
       display-flex()
       justify-content center
@@ -30,13 +13,9 @@
       flex-shrink 0
       .icon
         display: block
-        font-size: SIZE = (.6 * SIZE)
+        font-size: (1.5 * U)
         animation loading-icon 2s infinite linear
         color: WHITE
-    > .icon
-      font-size: SIZE
-      margin-right:  (PADDING / 3)
-
     > div
       flex-grow 2
       span
@@ -48,3 +27,35 @@
       span, small
         font-size: FONT_SIZE_TINY
         line-height: FONT_SIZE_SMALL
+
+    &.anchor
+      font-size: FONT_SIZE_TINY
+      padding: (PADDING / 2) 0 0 PADDING
+
+    &:not(.thumb):not(.anchor)
+      padding: PADDING
+      flex-direction row
+      justify-content center
+      align-content center
+      align-items center
+      text-align: -webkit-match-parent
+      > figure, > .icon
+        width: SIZE = 2.25rem
+        height: SIZE
+      > figure
+        margin-right:  PADDING
+      > .icon
+        font-size: (2.4 * U)
+        margin-right:  (PADDING / 3)
+
+    &.thumb:not(.anchor)
+      flex-direction column
+      > figure
+        order: 2
+        width: 100%
+        height: 320px
+      > .icon
+        display: none
+      > div
+        order: 1
+        padding: (U / 2.25) (U / 2)
