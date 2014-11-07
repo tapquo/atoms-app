@@ -30,7 +30,11 @@
 
     &.anchor
       font-size: FONT_SIZE_TINY
-      padding: (PADDING / 2) 0 0 PADDING
+      padding:  (PADDING / 5) (PADDING / 2.5)
+      > .icon
+        margin:(PADDING / 5) (PADDING / 2.5) 0 0
+      > div > small
+        display: none
 
     &:not(.thumb):not(.anchor)
       padding: PADDING
@@ -58,4 +62,4 @@
         display: none
       > div
         order: 1
-        padding: (U / 2.25) (U / 2)
+        padding: (PADDING / 2.25) (PADDING / 2)
