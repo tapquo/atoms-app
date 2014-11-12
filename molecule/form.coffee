@@ -12,7 +12,8 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
 
   @template : """<form {{#if.style}}class="{{style}}"{{/if.style}}></form>"""
 
-  @available: ["Atom.Button", "Atom.Input", "Atom.Label", "Atom.Progress", "Atom.Select", "Atom.Switch", "Atom.Textarea"]
+  @available: ["Atom.Button", "Atom.Input", "Atom.Label", "Atom.Progress",
+               "Atom.Select", "Atom.Switch", "Atom.Textarea"]
 
   @events   : ["change", "submit", "error"]
 
@@ -39,29 +40,21 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
         child.clean()
 
   # Children Bubble Events
-  onInputKeypress: (event, atom) =>
-    @_bubbleChange event, atom
+  onInputKeypress: (event, atom) -> @_bubbleChange event, atom
 
-  onInputKeyup: (event, atom) =>
-    @_bubbleChange event, atom
+  onInputKeyup: (event, atom) -> @_bubbleChange event, atom
 
-  onInputChange: (event, atom) ->
-    @_bubbleChange event, atom
+  onInputChange: (event, atom) -> @_bubbleChange event, atom
 
-  onTextareaKeypress: (event, atom) =>
-    @_bubbleChange event, atom
+  onTextareaKeypress: (event, atom) -> @_bubbleChange event, atom
 
-  onTextareaKeyup: (event, atom) =>
-    @_bubbleChange event, atom
+  onTextareaKeyup: (event, atom) -> @_bubbleChange event, atom
 
-  onTextareaChange: (event, atom) ->
-    @_bubbleChange event, atom
+  onTextareaChange: (event, atom) -> @_bubbleChange event, atom
 
-  onSelectChange: (event, atom) =>
-    @_bubbleChange event, atom
+  onSelectChange: (event, atom) -> @_bubbleChange event, atom
 
-  onSwitchChanged: (event, atom) =>
-    @_bubbleChange event, atom
+  onSwitchChanged: (event, atom) -> @_bubbleChange event, atom
 
   onButtonTouch: (event, atom) =>
     event.preventDefault()
