@@ -26,8 +26,8 @@ class Atoms.Molecule.List extends Atoms.Class.Molecule
     do @clean
     @children = []
     if callback
-      records = (record for record in @_records when callback record.entity)
-    for record in records or @_records
+      records = (record for record in @cache when callback record.entity)
+    for record in records or @cache
       @_addAtomEntity record.entity, @attributes.bind, record = false
 
   all: ->
@@ -36,11 +36,7 @@ class Atoms.Molecule.List extends Atoms.Class.Molecule
   clean: ->
     @el.html ""
 
-  # Children Bubble Events
+  # -- Children Bubble Events --------------------------------------------------
   onLiTouch: (event, atom) =>
-    @_bubbleSelect event, atom if "select" in (@attributes.events or [])
-
-  _bubbleSelect: (event, atom) ->
-    event.preventDefault()
     @bubble "select", atom
     false
