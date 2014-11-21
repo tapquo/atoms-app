@@ -6,6 +6,7 @@
     -webkit-touch-callout: none
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
     outline: none
+    background: transparent
 
   /* -------------------------- DEFAULTS -------------------------- */
   [data-atom-input]:not([type=range]):not([data-atom-input=autocomplete]):not([data-atom-input=checkbox]), [data-atom-input=autocomplete] > input, [data-atom-select], [data-atom-textarea]
@@ -34,8 +35,13 @@
     margin: 1.5rem 0
     padding: 0
     border: none
-    -webkit-appearance: none
-    outline: none
+    &::-moz-range-thumb
+      position: relative
+      width: FORM_CIRCLE_HEIGHT
+      height: FORM_CIRCLE_HEIGHT
+      -moz-appearance:none
+      background: transparent
+      border: none
     &::-webkit-slider-thumb
       position: relative
       width: FORM_CIRCLE_HEIGHT
@@ -49,6 +55,8 @@
     max-width: SIZE = (1.25 * UNIT)
     width: SIZE
     height: SIZE
+    min-width: SIZE
+    min-height: SIZE
     text-align: center
     font-size: inherit
     line-height: SIZE
