@@ -26,11 +26,15 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
     super
     @el.bind "submit", (event) -> event.preventDefault()
 
-  value: ->
-    properties = {}
-    for child in @children when child.attributes.name and child.value?
-      properties[child.attributes.name.toLowerCase()] = child.value()
-    properties
+  value: (values) ->
+    if values
+      for child in @children when child.attributes.name and child.value?
+        child.value values[child.attributes.name] if values[child.attributes.name]
+    else
+      values = {}
+      for child in @children when child.attributes.name and child.value?
+        values[child.attributes.name.toLowerCase()] = child.value()
+    values
 
   clean: ->
     for child in @children when child.attributes.name and child.value?
@@ -39,7 +43,7 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
       else
         child.clean()
 
-  # Children Bubble Events
+  # -- Children Bubble Events --------------------------------------------------
   onInputKeypress: (event, atom) -> @_bubbleChange event, atom
 
   onInputKeyup: (event, atom) -> @_bubbleChange event, atom
