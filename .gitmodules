@@ -28,3 +28,9 @@
 [submodule "extension/inputrange"]
 	path = extension/inputrange
 	url = https://github.com/tapquo/atoms-app-inputrange
+[submodule "extension/table"]
+	path = extension/table
+	url = https://github.com/tapquo/atoms-app-table
+[submodule "extension/crud"]
+	path = extension/crud
+	url = https://github.com/tapquo/atoms-app-crud
