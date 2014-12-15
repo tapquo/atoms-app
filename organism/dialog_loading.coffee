@@ -11,4 +11,13 @@ Base class for Organism
 
 class Atoms.Organism.Loading extends Atoms.Organism.Dialog
 
+  # Publics
+  show: ->
+    @el.parent().addClass "active"
+    @el.addClass "show"
+    setTimeout (=> do @onAnimationEnd), 450
+
+  hide: ->
+    @el.addClass "hide"
+
 new Atoms.Organism.Loading()

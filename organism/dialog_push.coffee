@@ -37,15 +37,23 @@ class Atoms.Organism.Push extends Atoms.Organism.Dialog
     @figure.hide()
     if attributes.image?
       @figure.show().css "background-image", "url('#{attributes.image}')"
-    super
+
+    @el.parent().addClass "active"
+    @el.addClass "show"
+    @trigger "show"
+    #@TODO: Hack for Firefox AnimationEnd listener fails
+    setTimeout (=> do @onAnimationEnd), 450
+
     if attributes.timeout?
       @id_timeout = setTimeout =>
         do @hide unless @parent.hasClass "expand"
       , attributes.timeout
 
   hide: ->
-    super
-    __.Url.current().front()
+    @el.addClass "hide"
+    @trigger "hide"
+    __.Url.current?().front?()
+
     clearTimeout @id_timeout
 
   # -- Private Methods --------------------------------------------------------
