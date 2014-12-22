@@ -19,10 +19,10 @@ Atoms.App.Url = do (a = Atoms) ->
     article = a.App.Article[properties.article.toClassName()]
     if article
       unless article.el then article.render()
+      _article.aside _aside if _article?.el.hasClass "aside"
       setTimeout ->
         unless _options.forward then _stepHistory 0
         _activeSection article, properties.section
-
         if _article isnt article
           if _options.forward
             _stepHistory 1
@@ -32,8 +32,6 @@ Atoms.App.Url = do (a = Atoms) ->
             _article.state("out")
             article.state("back-out").removeClass(_article.attributes.style)
           _article = article
-        else
-          _article.aside _aside if _article?.el.hasClass "aside"
       , 10
 
   _activeAside = (id = _aside) ->
