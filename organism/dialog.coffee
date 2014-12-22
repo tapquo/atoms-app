@@ -23,7 +23,7 @@ class Atoms.Organism.Dialog extends Atoms.Class.Organism
     block_el = Atoms.$(document.createElement("div")).attr "data-system", "dialog"
     Atoms.$(@attributes.container or document.body).prepend block_el
     @attributes.container = block_el
-    Atoms.App.Dialog[@constructor.name] = @
+    Atoms.App.Dialog[@attributes.id?.toClassName() or @constructor.name] = @
 
     do @render
     for animation_end in Atoms.Core.Constants.ANIMATION.END.split " "
