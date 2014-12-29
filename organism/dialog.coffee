@@ -36,12 +36,12 @@ class Atoms.Organism.Dialog extends Atoms.Class.Organism
     @trigger "show"
     #@TODO: Hack for Firefox AnimationEnd listener fails
     setTimeout (=> do @onAnimationEnd), 450
-    __.Url.current()?.back?()
+    __.Url.current()?.back()
 
   hide: ->
     @el.addClass "hide"
     @trigger "hide"
-    __.Url.current?().front?()
+    __.Url.current()?.front()
 
   # Privates
   onAnimationEnd: =>

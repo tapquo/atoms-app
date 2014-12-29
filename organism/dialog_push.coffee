@@ -52,7 +52,7 @@ class Atoms.Organism.Push extends Atoms.Organism.Dialog
   hide: ->
     @el.addClass "hide"
     @trigger "hide"
-    __.Url.current?().front?()
+    __.Url.current()?.front()
 
     clearTimeout @id_timeout
 
@@ -60,7 +60,7 @@ class Atoms.Organism.Push extends Atoms.Organism.Dialog
   _onTouch: (event) =>
     unless @parent.hasClass "expand"
       @parent.addClass "expand"
-      __.Url.current().back()
+      __.Url.current()?.back()
     else
       do @hide
 
