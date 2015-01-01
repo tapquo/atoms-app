@@ -12,7 +12,7 @@ class Atoms.Atom.Li extends Atoms.Class.Atom
 
   @template : """
     <li {{#if.style}}class="{{style}}"{{/if.style}}>
-      {{#if.image}}<figure><span class="icon loading-config"></span></figure>{{/if.image}}
+      {{#if.image}}<figure><span class="loading-animation"></span></figure>{{/if.image}}
       {{#if.icon}}<span class="icon {{icon}}"></span>{{/if.icon}}
       <div>
         {{#if.info}}<span>{{info}}</span>{{/if.info}}

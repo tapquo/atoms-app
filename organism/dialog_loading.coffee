@@ -13,6 +13,7 @@ class Atoms.Organism.Loading extends Atoms.Organism.Dialog
 
   constructor: (attributes) ->
     super attributes
+    @el.html """<span class="loading-animation"></span>"""
     @el.parent().addClass "loading"
 
   # Publics
