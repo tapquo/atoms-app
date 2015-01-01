@@ -22,7 +22,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   EVENT =
     TUNNEL:
-      ARTICLE_CHANGE: "onArticleChange"
+      URL_CHANGE    : "onUrlChange"
       SECTION_SCROLL: "onSectionScroll"
 
   constructor: (attributes = {}, scaffold) ->
@@ -45,7 +45,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
         @el.removeClass "active"
 
   section: (id) ->
-    @tunnel EVENT.TUNNEL.ARTICLE_CHANGE
+    @tunnel EVENT.TUNNEL.URL_CHANGE
     @tunnel EVENT.TUNNEL.SECTION_SCROLL
 
     for child in @children when child.constructor.base is "Section"
@@ -69,7 +69,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
       else if method is "show"
         @el.addClass "aside"
 
-      aside_instance.tunnel EVENT.TUNNEL.ARTICLE_CHANGE
+      aside_instance.tunnel EVENT.TUNNEL.URL_CHANGE
 
   back: ->
     @el.addClass "back"
