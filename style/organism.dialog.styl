@@ -32,19 +32,19 @@
     transform translateZ(0)
 
   > [data-organism-dialog=loading]
-    SIZE = .6rem
-    padding: SIZE
+    width: 100%
+    height: 100%
+    position: relative
     &::before, &::after
       content: ""
-      display: block
-      width: (1.75 * SIZE)
-      height: (1.75 * SIZE)
-    &::before
-      float: left
-      margin-right: (SIZE / 2)
-    &::after
-      float: right
-      margin-left: (SIZE / 2)
+      width: SIZE = (3.5 * UNIT)
+      height: SIZE
+      position: absolute
+      top: 50%
+      left: 50%
+      margin-left: -(SIZE / 2)
+      margin-top: -(SIZE / 2)
+      transform scale(0.0)
 
   > [data-organism-dialog=push]
     PADDING = (.75 * PADDING)
