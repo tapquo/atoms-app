@@ -11,6 +11,10 @@ Base class for Organism
 
 class Atoms.Organism.Loading extends Atoms.Organism.Dialog
 
+  constructor: (attributes) ->
+    super attributes
+    @el.parent().addClass "loading"
+
   # Publics
   show: ->
     @el.parent().addClass "active"
