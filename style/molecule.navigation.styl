@@ -50,8 +50,16 @@
   > [data-organism-article] > [data-organism-footer] [data-molecule-navigation]
     height:  FOOTER_HEIGHT
 
-  > [data-system=dialog]
-    [data-organism-footer] > [data-molecule-navigation]
+  > [data-system=dialog] > [data-organism-dialog]
+    > [data-molecule-navigation]
+      z-index: 3
+      margin-top: -(U / 2)
+      padding: 0 U
+      font-size : FONT_SIZE_TINY
+      > *
+        padding: 0 (U / 4) (U / 4) (U / 4)
+
+    > [data-organism-footer] [data-molecule-navigation]
       font-size: FONT_SIZE_TINY
       text-align: right
       width: 100%

@@ -12,7 +12,7 @@ class Atoms.Organism.Dialog extends Atoms.Class.Organism
 
   @template : """<article {{#if.id}}id="{{id}}"{{/if.id}} {{#if.style}}class="{{style}}"{{/if.style}}></article>"""
 
-  @available: ["Organism.Header", "Organism.Section", "Organism.Footer"]
+  @available: ["Organism.Header", "Molecule.Navigation", "Organism.Section", "Organism.Footer"]
 
   @base     : "Dialog"
 
