@@ -78,7 +78,9 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
     event.preventDefault()
     if atom.attributes.required and not atom.value()
       atom.el.addClass "error"
+      @bubble "error", event
     else
       atom.el.removeClass "error"
+      @bubble "complete", event
     @bubble "change", event
     false
