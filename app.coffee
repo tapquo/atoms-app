@@ -9,7 +9,7 @@ Global namespace for Atoms.App
 "use strict"
 
 window.__ = Atoms.App =
-  version   : "0.13.14"
+  version   : "0.13.22"
   Article   : {}
   Aside     : {}
   Dialog    : {}
@@ -19,4 +19,3 @@ window.__ = Atoms.App =
 
 Atoms.$ ->
   Atoms.$(document.body).addClass "standalone" if navigator.standalone
-g
