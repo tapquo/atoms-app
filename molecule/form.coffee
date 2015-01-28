@@ -15,7 +15,7 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
   @available: ["Atom.Button", "Atom.Input", "Atom.Label", "Atom.Progress",
                "Atom.Select", "Atom.Switch", "Atom.Textarea"]
 
-  @events   : ["change", "submit", "error"]
+  @events   : ["change", "submit", "error", "complete"]
 
   @base     : "Form"
 
