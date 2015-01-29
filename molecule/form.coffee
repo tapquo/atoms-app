@@ -81,6 +81,10 @@ class Atoms.Molecule.Form extends Atoms.Class.Molecule
       @bubble "error", event
     else
       atom.el.removeClass "error"
-      @bubble "complete", event
+      complete = true
+      for child in @children when child.attributes.required and not child.value?()
+        complete = false
+        break
+      @bubble "complete", event if complete
     @bubble "change", event
     false
