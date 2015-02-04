@@ -26,7 +26,7 @@ class Atoms.Organism.Dialog extends Atoms.Class.Organism
     Atoms.App.Dialog[@attributes.id?.toClassName() or @constructor.name] = @
 
     do @render
-    for animation_end in Atoms.Core.Constants.ANIMATION.END.split " "
+    for animation_end in __.Constants.ANIMATION.END.split " "
       @el.bind animation_end, @onAnimationEnd
 
   # Publics
@@ -35,7 +35,7 @@ class Atoms.Organism.Dialog extends Atoms.Class.Organism
     @el.addClass "show"
     @trigger "show"
     #@TODO: Hack for Firefox AnimationEnd listener fails
-    setTimeout (=> do @onAnimationEnd), 450
+    setTimeout (=> do @onAnimationEnd), __.Constants.ANIMATION.DURATION
     __.Url.current()?.back()
 
   hide: ->

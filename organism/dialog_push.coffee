@@ -42,7 +42,7 @@ class Atoms.Organism.Push extends Atoms.Organism.Dialog
     @el.addClass "show"
     @trigger "show"
     #@TODO: Hack for Firefox AnimationEnd listener fails
-    setTimeout (=> do @onAnimationEnd), 450
+    setTimeout (=> do @onAnimationEnd), __.Constants.ANIMATION.DURATION
 
     if attributes.timeout?
       @id_timeout = setTimeout =>

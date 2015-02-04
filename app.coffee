@@ -9,13 +9,17 @@ Global namespace for Atoms.App
 "use strict"
 
 window.__ = Atoms.App =
-  version   : "0.13.29"
-  Article   : {}
-  Aside     : {}
-  Dialog    : {}
-  Entity    : {}
-  Extension : {}
-  Url       : null
+  version     : "0.14.04"
+  Article     : {}
+  Aside       : {}
+  Dialog      : {}
+  Entity      : {}
+  Extension   : {}
+  Url         : null
+  Constants   :
+    ANIMATION:
+      DURATION: 450
+      END     : "webkitAnimationEnd MSAnimationEnd animationend"
 
 Atoms.$ ->
   Atoms.$(document.body).addClass "standalone" if navigator.standalone

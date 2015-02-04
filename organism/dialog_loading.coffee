@@ -20,7 +20,7 @@ class Atoms.Organism.Loading extends Atoms.Organism.Dialog
   show: ->
     @el.parent().addClass "active"
     @el.addClass "show"
-    setTimeout (=> do @onAnimationEnd), 450
+    setTimeout (=> do @onAnimationEnd), __.Constants.ANIMATION.DURATION
 
   hide: ->
     @el.addClass "hide"

@@ -49,11 +49,11 @@ class Atoms.Atom.Li extends Atoms.Class.Atom
           if pixels > 80 and not @destroying
             @destroying = true
             @el.addClass "destroy"
-            setTimeout (=> @destroy()), 450
+            setTimeout (=> @destroy()), __.Constants.ANIMATION.DURATION
 
       @el.bind "touchend", (event) =>
         @el
-          .css "transition", "right 450ms"
+          .css "transition", "right #{__.Constants.ANIMATION.DURATION}ms"
           .css "right", "0px"
 
   _render: ->

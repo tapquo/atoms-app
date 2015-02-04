@@ -25,7 +25,7 @@ class Atoms.Organism.Aside extends Atoms.Class.Organism
 
   render: ->
     super
-    for animation_end in Atoms.Core.Constants.ANIMATION.END.split " "
+    for animation_end in __.Constants.ANIMATION.END.split " "
       @el.bind animation_end, @onAnimationEnd
 
   show: ->
