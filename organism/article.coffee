@@ -31,7 +31,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
 
   render: ->
     super
-    for animation_end in Atoms.Core.Constants.ANIMATION.END.split " "
+    for animation_end in __.Constants.ANIMATION.END.split " "
       @el.bind animation_end, @onAnimationEnd
 
   state: (state) ->
@@ -47,7 +47,6 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
   section: (id) ->
     @tunnel EVENT.TUNNEL.URL_CHANGE
     @tunnel EVENT.TUNNEL.SECTION_SCROLL
-
     for child in @children when child.constructor.base is "Section"
       if child.attributes.id is id
         child.show()
@@ -62,13 +61,11 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     if aside_instance?
       method = if @el.hasClass "aside" then "hide" else "show"
       do aside_instance[method]
-      @el.removeClass("aside").removeClass("right") if method is "hide"
-      method += "-right" if aside_instance.attributes.style is "right"
-      if Atoms.Device.screen is "small"
-        @state "aside-#{method}"
-      else if method is "show"
-        @el.addClass "aside"
-
+      if method is "hide"
+        @el.removeClass("aside").removeClass("right")
+      else
+        @el.addClass("right") if aside_instance.attributes.style is "right"
+        @el.addClass("aside")
       aside_instance.tunnel EVENT.TUNNEL.URL_CHANGE
 
   back: ->
@@ -84,11 +81,7 @@ class Atoms.Organism.Article extends Atoms.Class.Organism
     if animation_name is "article"
       state = @el.attr "data-state"
       @_trigger state
-
       unless state in ACTIVE_STATES then @el.removeClass("active")
-      if state in ["aside-show", "aside-show-right"]
-        @el.addClass "aside"
-        @el.addClass "right" if state is "aside-show-right"
       @el.removeAttr "data-state"
 
   # Children Bubble Events
