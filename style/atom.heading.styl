@@ -6,30 +6,12 @@
         white-space: nowrap
         text-overflow: ellipsis
         display: block
+        flex-grow: 2
         &:not(.left):not(.right)
-          z-index: 0
-          position: absolute
-          left: 20%
-          width: 60%
           text-align: center
-
         &.left, &.right
-          padding: 0 .5rem
+          padding: 0 (U / 2)
         &.left
-          float: left
+          text-align: left
         &.right
-          float: right
           text-align: right
-
-      > h1[data-atom-heading]
-        min-height: HEADER_HEIGHT
-        line-height: HEADER_HEIGHT
-  
-      > h2[data-atom-heading]
-        top: (PADDING / 2)
-        line-height: (FONT_SIZE_BIG * 1.25)
-
-      > h3[data-atom-heading]
-        bottom: (PADDING / 2)
-        line-height: FONT_SIZE_BIG
-        font-size: FONT_SIZE_TINY !important

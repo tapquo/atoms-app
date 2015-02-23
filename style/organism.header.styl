@@ -2,8 +2,17 @@
   > [data-organism-article],> [data-organism-aside], [data-organism-dialog]
     > [data-organism-header]
       z-index: 2
+      padding: 0 (U / 2)
       height: HEADER_HEIGHT
       line-height: HEADER_HEIGHT
+      display-flex()
+      flex-direction  row
+
+      > *
+        &.left
+          order: -1
+        &.right
+          order: 2
 
   > [data-organism-article] > [data-organism-header].scroll
     margin-top: -(HEADER_HEIGHT)

@@ -27,18 +27,12 @@
     overflow: hidden
     &:not(.left):not(.right)
       z-index: 1
-      position: absolute
-      left: 17%
-      width: 66%
-      height: HEADER_HEIGHT
+      flex-grow: 2
+      padding-top: (U / 5.5)
     &.left, &.right
       z-index: 2
       height:  HEADER_HEIGHT
       min-width: (HEADER_HEIGHT / 2)
-    &.left
-      margin-left: .5rem
-    &.right
-      margin-right: .5rem
 
   > [data-organism-article] > [data-organism-section] [data-molecule-navigation]
     &, > [data-atom-button]
