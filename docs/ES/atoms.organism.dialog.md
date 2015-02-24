@@ -46,3 +46,18 @@ Cualquier instancia puede desplegar el evento *show* cuando se muestra la propia
 
 #### hide
 Cualquier instancia puede desplegar el evento *hide* cuando se oculta la propia instancia.
+
+### Dialog especiales
+Existen dos tipos de dialog que son especiales en cuanto a su estilo y funcionalidad. Uno de ellos es el dialog **loading** y el otro el dialog **push**.
+<br>
+<br>
+Es primero es para usarse cuando se está esperando a que se cargue algo.
+```
+__.Dialog.Loading.show()
+```
+
+El segundo se usa para enviar una mensaje push y hay que enviarle los atributos que se quieren mostrar:
+
+```
+__.Dialog.Push.show({title: "push_title", description: "push_text", image: "push_image"})
+```
