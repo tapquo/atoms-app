@@ -13,9 +13,12 @@ class Atoms.Organism.Push extends Atoms.Organism.Dialog
 
   @template: """
               <article>
-                <h1></h1>
-                <section>
+                <header>
                   <figure></figure>
+                  <span class="icon user"></span>
+                  <h1></h1>
+                </header>
+                <section>
                   <p></p>
                 </section>
               </article>"""
@@ -23,9 +26,10 @@ class Atoms.Organism.Push extends Atoms.Organism.Dialog
   constructor: (attributes) ->
     super attributes
     @parent = @el.parent().addClass "no-block"
-    @title = @el.children("h1")
-    @text = @el.find("p")
     @figure = @el.find("figure")
+    @icon = @el.find(".icon")
+    @title = @el.find("h1")
+    @text = @el.find("p")
     @el.on "touch", @_onTouch
 
   # -- Instance Methods ---------------------------------------------------------
@@ -37,6 +41,9 @@ class Atoms.Organism.Push extends Atoms.Organism.Dialog
     @figure.hide()
     if attributes.image?
       @figure.show().css "background-image", "url('#{attributes.image}')"
+    @icon.hide()
+    if attributes.icon?
+      @icon.show().attr "class", "icon #{attributes.icon}"
 
     @el.parent().addClass "active"
     @el.addClass "show"

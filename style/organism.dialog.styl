@@ -16,11 +16,10 @@
   &.no-block
     position: absolute
     bottom: 0
-    height: HEIGHT = (HEADER_HEIGHT / 2)
-    padding-top: (.5 * PADDING)
+    height: HEIGHT = (HEADER_HEIGHT / 1.05)
     line-height: HEIGHT
     &.expand
-      height: (HEADER_HEIGHT / 2) + (HEADER_HEIGHT * 1.1)
+      height: HEIGHT + (1.125 * HEADER_HEIGHT)
 
   &:not(.active)
     visibility: hidden
@@ -48,31 +47,31 @@
         height: SIZE
 
   > [data-organism-dialog=push]
-    PADDING = (.75 * PADDING)
-    > h1
-      font-size: FONT_SIZE_SMALL
-      font-weight: normal
-      padding: 0 PADDING
-    > section
-      height: (1.25 * HEADER_HEIGHT)
-      padding: PADDING
+    > header
+      height: (HEADER_HEIGHT / 1.05)
+      line-height: HEADER_HEIGHT
       display-flex()
       flex-direction row
-      justify-content center
-      align-content center
       text-align: -webkit-match-parent
-      SIZE = 2.35rem
-      > figure
-        height: SIZE
+      > h1
+        font-size: FONT_SIZE_SMALL
+        font-weight: normal
+      > figure, > .icon
+        margin: (U / 2)
+        height: SIZE = (2.2 * U)
         width: SIZE
-        margin-right: PADDING
-        background-size: cover
+        font-size: SIZE
         flex-shrink 0
+      > figure
+        background-size: cover
+
+    > section
+      height: HEADER_HEIGHT
+      padding: (U / 2.5) (U / 1.5)
       > p
         flex-grow 2
         font-size: FONT_SIZE_TINY
-        line-height: FONT_SIZE_BIG
-        height: SIZE
+        line-height: (FONT_SIZE_NORMAL * 1.1)
         overflow: hidden
 
 
