@@ -1,6 +1,9 @@
 [data-atoms=app]
   [data-molecule-list]
-    display-flex()
-    flex-direction column
-    // flex-direction row
-    // flex-wrap wrap
+    &.vertical, &.horizontal
+      display-flex()
+    &.vertical
+      flex-direction column
+    &.horizontal
+      flex-direction row
+      flex-wrap wrap
