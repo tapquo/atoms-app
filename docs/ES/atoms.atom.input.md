@@ -13,6 +13,9 @@ required   : Boolean [OPTIONAL]
 disabled   : Boolean [OPTIONAL]
 style      : String tiny|small|big [OPTIONAL]
 maxlength  : Number [OPTIONAL]
+checked    : Boolean [OPTIONAL]
+autofocus  : Boolean [OPTIONAL]
+readonly   : Boolean [OPTIONAL]
 ```
 
 ### Methods

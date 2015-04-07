@@ -11,7 +11,7 @@
 class Atoms.Atom.Input extends Atoms.Class.Atom
 
   @template : """
-    <input type="{{type}}" name="{{name}}" {{#if.placeholder}}placeholder="{{placeholder}}"{{/if.placeholder}} {{#if.style}}class="{{style}}"{{/if.style}} {{#if.value}}value="{{value}}"{{/if.value}} {{#required}}required{{/required}} {{#disabled}}disabled{{/disabled}} {{#if.maxlength}}maxlength={{maxlength}}{{/if.maxlength}} {{#if.checked}}checked{{/if.checked}} />"""
+    <input type="{{type}}" name="{{name}}" {{#if.placeholder}}placeholder="{{placeholder}}"{{/if.placeholder}} {{#if.style}}class="{{style}}"{{/if.style}} {{#if.value}}value="{{value}}"{{/if.value}} {{#required}}required{{/required}} {{#disabled}}disabled{{/disabled}} {{#if.maxlength}}maxlength={{maxlength}}{{/if.maxlength}} {{#if.checked}}checked{{/if.checked}} {{#autofocus}}autofocus{{/autofocus}} {{#readonly}}readonly{{/readonly}} />"""
 
   @base     : "Input"
 
